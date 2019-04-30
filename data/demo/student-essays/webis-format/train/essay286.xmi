@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?><xmi:XMI xmlns:pos="http:///de/tudarmstadt/ukp/dkpro/core/api/lexmorph/type/pos.ecore" xmlns:tcas="http:///uima/tcas.ecore" xmlns:xmi="http://www.omg.org/XMI" xmlns:cas="http:///uima/cas.ecore" xmlns:tweet="http:///de/tudarmstadt/ukp/dkpro/core/api/lexmorph/type/pos/tweet.ecore" xmlns:dependency="http:///de/tudarmstadt/ukp/dkpro/core/api/syntax/type/dependency.ecore" xmlns:infexba="http:///de/aitools/ie/uima/type/infexba.ecore" xmlns:core="http:///de/aitools/ie/uima/type/core.ecore" xmlns:type7="http:///de/tudarmstadt/ukp/dkpro/core/api/semantics/type.ecore" xmlns:argumentation="http:///de/aitools/ie/uima/type/argumentation.ecore" xmlns:article="http:///de/aitools/ie/uima/type/article.ecore" xmlns:supertype="http:///de/aitools/ie/uima/type/supertype.ecore" xmlns:type4="http:///de/tudarmstadt/ukp/dkpro/core/api/metadata/type.ecore" xmlns:type2="http:///de/tudarmstadt/ukp/dkpro/core/api/coref/type.ecore" xmlns:type8="http:///de/tudarmstadt/ukp/dkpro/core/api/structure/type.ecore" xmlns:types="http:///de/tudarmstadt/ukp/dkpro/argumentation/types.ecore" xmlns:morph="http:///de/tudarmstadt/ukp/dkpro/core/api/lexmorph/type/morph.ecore" xmlns:type3="http:///de/tudarmstadt/ukp/dkpro/core/api/frequency/tfidf/type.ecore" xmlns:type="http:///de/tudarmstadt/ukp/dkpro/core/api/anomaly/type.ecore" xmlns:type9="http:///de/tudarmstadt/ukp/dkpro/core/api/syntax/type.ecore" xmlns:type10="http:///de/tudarmstadt/ukp/dkpro/tc/type.ecore" xmlns:type5="http:///de/tudarmstadt/ukp/dkpro/core/api/ner/type.ecore" xmlns:type6="http:///de/tudarmstadt/ukp/dkpro/core/api/segmentation/type.ecore" xmlns:constituent="http:///de/tudarmstadt/ukp/dkpro/core/api/syntax/type/constituent.ecore" xmlns:arguana="http:///de/aitools/ie/uima/type/arguana.ecore" xmlns:chunk="http:///de/tudarmstadt/ukp/dkpro/core/api/syntax/type/chunk.ecore" xmi:version="2.0">
+    <cas:NULL xmi:id="0"/>
+    <tcas:DocumentAnnotation xmi:id="8" sofa="1" begin="0" end="1886" language="x-unspecified"/>
+    <core:SourceDocumentInformation xmi:id="13" sofa="1" begin="0" end="1886" uri="/Users/teacher/Documents/Arbeit/workspace/software_ArguAna/../../Corpora/corpus-ukp-argument-annotated-essays-v2/original/brat-project-final/essay286.txt" offsetInSource="0" documentSize="1886" lastSegment="false"/>
+    <argumentation:MetadataAAE xmi:id="21" sofa="1" begin="0" end="1886" filename="essay286" topic="What are some of experiences that have shaped your outlook and the way you live now."/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="59" sofa="1" begin="1" end="61" unitType="majorclaim"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="89" sofa="1" begin="63" end="126" unitType="claim-for"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="94" sofa="1" begin="141" end="264" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="134" sofa="1" begin="324" end="400" unitType="claim-for"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="99" sofa="1" begin="415" end="492" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="104" sofa="1" begin="494" end="574" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="114" sofa="1" begin="576" end="621" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="109" sofa="1" begin="623" end="700" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="124" sofa="1" begin="702" end="765" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="119" sofa="1" begin="767" end="810" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="144" sofa="1" begin="822" end="884" unitType="claim-for"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="139" sofa="1" begin="900" end="1001" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="149" sofa="1" begin="1009" end="1060" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="34" sofa="1" begin="1062" end="1093" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="29" sofa="1" begin="1104" end="1128" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="129" sofa="1" begin="1130" end="1173" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="39" sofa="1" begin="1183" end="1237" unitType="claim-for"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="54" sofa="1" begin="1252" end="1318" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="49" sofa="1" begin="1334" end="1429" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="44" sofa="1" begin="1431" end="1504" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="64" sofa="1" begin="1521" end="1618" unitType="majorclaim"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="74" sofa="1" begin="1628" end="1671" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="79" sofa="1" begin="1682" end="1741" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="84" sofa="1" begin="1753" end="1816" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="69" sofa="1" begin="1818" end="1885" unitType="claim-for"/>
+    <argumentation:Argument xmi:id="184" sofa="1" begin="63" end="264" premises="94" conclusion="89" argumentType="supports"/>
+    <argumentation:Argument xmi:id="244" sofa="1" begin="324" end="810" premises="119" conclusion="134" argumentType="supports"/>
+    <argumentation:Argument xmi:id="234" sofa="1" begin="324" end="765" premises="124" conclusion="134" argumentType="supports"/>
+    <argumentation:Argument xmi:id="224" sofa="1" begin="324" end="700" premises="109" conclusion="134" argumentType="supports"/>
+    <argumentation:Argument xmi:id="214" sofa="1" begin="324" end="621" premises="114" conclusion="134" argumentType="supports"/>
+    <argumentation:Argument xmi:id="204" sofa="1" begin="324" end="574" premises="104" conclusion="134" argumentType="supports"/>
+    <argumentation:Argument xmi:id="194" sofa="1" begin="324" end="492" premises="99" conclusion="134" argumentType="supports"/>
+    <argumentation:Argument xmi:id="284" sofa="1" begin="822" end="1173" premises="129" conclusion="144" argumentType="supports"/>
+    <argumentation:Argument xmi:id="274" sofa="1" begin="822" end="1128" premises="29" conclusion="144" argumentType="supports"/>
+    <argumentation:Argument xmi:id="304" sofa="1" begin="822" end="1060" premises="149" conclusion="144" argumentType="supports"/>
+    <argumentation:Argument xmi:id="254" sofa="1" begin="900" end="1060" premises="139" conclusion="149" argumentType="supports"/>
+    <argumentation:Argument xmi:id="264" sofa="1" begin="1062" end="1128" premises="34" conclusion="29" argumentType="supports"/>
+    <argumentation:Argument xmi:id="324" sofa="1" begin="1183" end="1429" premises="49" conclusion="39" argumentType="supports"/>
+    <argumentation:Argument xmi:id="314" sofa="1" begin="1252" end="1429" premises="54" conclusion="49" argumentType="supports"/>
+    <argumentation:Argument xmi:id="294" sofa="1" begin="1334" end="1504" premises="44" conclusion="49" argumentType="supports"/>
+    <argumentation:Argument xmi:id="154" sofa="1" begin="1628" end="1885" premises="74" conclusion="69" argumentType="supports"/>
+    <argumentation:Argument xmi:id="174" sofa="1" begin="1682" end="1885" premises="79" conclusion="69" argumentType="supports"/>
+    <argumentation:Argument xmi:id="164" sofa="1" begin="1753" end="1885" premises="84" conclusion="69" argumentType="supports"/>
+    <cas:Sofa xmi:id="1" sofaNum="1" sofaID="_InitialView" mimeType="text" sofaString="&#10;Many circumstances that I experienced change the way I think. There are many experiences that are improve my life in many way. For example, I could improve the way that I solve problems, improve how I take care of my health, and improve to plan my life for future. I will give reasons to support my opinion.&#10;To begin with, studying in university taught me to be more prudent person to solve problems. For example, in math class, the way that we learnt to find an answer by doing step by step. Start with find cause of problem and the way to do research to solve the problem. I could adapt this method to use my real life. When I want to go to somewhere, I try to find the way to reach to destination. Which ways are shortest and which ways are less consume my time. I could find a better way to solve problems.&#10;Secondly, Some experiences could teach me the way to take care of myself. For instance, reading and listening the news about choosing a good diet are the way to keep myself are more healthy. Thus, I am always buy a quality food such as organic food. This food are not have chemical. So that, I can have a good health. This experience teach me to aware my health.&#10;Lastly, experiences are also change to plan for my future life. For example, I read about saving money for my retire is a good plan for my life. Consequently, I start changing myself from spending many thing that I want to saving money for my entire life. This experience change me to concern about making plan for my future life.&#10;In conclusion, experiences that shape my thinking and the way to live my life are teach me to be a better person. Because I could find a better way to solve problems. Besides, experiences could shape me to be more aware about my health. Moreover, these experiences could make me to make plan for my future life. These experiences taught me to change my life to be a better person."/>
+    <cas:View sofa="1" members="8 13 21 59 89 94 134 99 104 114 109 124 119 144 139 149 34 29 129 39 54 49 44 64 74 79 84 69 184 244 234 224 214 204 194 284 274 304 254 264 324 314 294 154 174 164"/>
+</xmi:XMI>

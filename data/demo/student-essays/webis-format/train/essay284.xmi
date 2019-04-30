@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?><xmi:XMI xmlns:pos="http:///de/tudarmstadt/ukp/dkpro/core/api/lexmorph/type/pos.ecore" xmlns:tcas="http:///uima/tcas.ecore" xmlns:xmi="http://www.omg.org/XMI" xmlns:cas="http:///uima/cas.ecore" xmlns:tweet="http:///de/tudarmstadt/ukp/dkpro/core/api/lexmorph/type/pos/tweet.ecore" xmlns:dependency="http:///de/tudarmstadt/ukp/dkpro/core/api/syntax/type/dependency.ecore" xmlns:infexba="http:///de/aitools/ie/uima/type/infexba.ecore" xmlns:core="http:///de/aitools/ie/uima/type/core.ecore" xmlns:type7="http:///de/tudarmstadt/ukp/dkpro/core/api/semantics/type.ecore" xmlns:argumentation="http:///de/aitools/ie/uima/type/argumentation.ecore" xmlns:article="http:///de/aitools/ie/uima/type/article.ecore" xmlns:supertype="http:///de/aitools/ie/uima/type/supertype.ecore" xmlns:type4="http:///de/tudarmstadt/ukp/dkpro/core/api/metadata/type.ecore" xmlns:type2="http:///de/tudarmstadt/ukp/dkpro/core/api/coref/type.ecore" xmlns:type8="http:///de/tudarmstadt/ukp/dkpro/core/api/structure/type.ecore" xmlns:types="http:///de/tudarmstadt/ukp/dkpro/argumentation/types.ecore" xmlns:morph="http:///de/tudarmstadt/ukp/dkpro/core/api/lexmorph/type/morph.ecore" xmlns:type3="http:///de/tudarmstadt/ukp/dkpro/core/api/frequency/tfidf/type.ecore" xmlns:type="http:///de/tudarmstadt/ukp/dkpro/core/api/anomaly/type.ecore" xmlns:type9="http:///de/tudarmstadt/ukp/dkpro/core/api/syntax/type.ecore" xmlns:type10="http:///de/tudarmstadt/ukp/dkpro/tc/type.ecore" xmlns:type5="http:///de/tudarmstadt/ukp/dkpro/core/api/ner/type.ecore" xmlns:type6="http:///de/tudarmstadt/ukp/dkpro/core/api/segmentation/type.ecore" xmlns:constituent="http:///de/tudarmstadt/ukp/dkpro/core/api/syntax/type/constituent.ecore" xmlns:arguana="http:///de/aitools/ie/uima/type/arguana.ecore" xmlns:chunk="http:///de/tudarmstadt/ukp/dkpro/core/api/syntax/type/chunk.ecore" xmi:version="2.0">
+    <cas:NULL xmi:id="0"/>
+    <tcas:DocumentAnnotation xmi:id="8" sofa="1" begin="0" end="2018" language="x-unspecified"/>
+    <core:SourceDocumentInformation xmi:id="13" sofa="1" begin="0" end="2018" uri="/Users/teacher/Documents/Arbeit/workspace/software_ArguAna/../../Corpora/corpus-ukp-argument-annotated-essays-v2/original/brat-project-final/essay284.txt" offsetInSource="0" documentSize="2018" lastSegment="false"/>
+    <argumentation:MetadataAAE xmi:id="21" sofa="1" begin="0" end="2018" filename="essay284" topic="Do you agree or disagree with the following statement? Movies and television programs should present stories in which good people are rewarded and bad people are punished."/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="54" sofa="1" begin="234" end="306" unitType="majorclaim"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="59" sofa="1" begin="315" end="373" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="64" sofa="1" begin="375" end="449" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="74" sofa="1" begin="451" end="492" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="79" sofa="1" begin="494" end="616" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="84" sofa="1" begin="631" end="717" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="89" sofa="1" begin="719" end="777" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="94" sofa="1" begin="779" end="838" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="69" sofa="1" begin="843" end="911" unitType="claim-for"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="124" sofa="1" begin="913" end="979" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="139" sofa="1" begin="993" end="1052" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="99" sofa="1" begin="1057" end="1177" unitType="claim-for"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="109" sofa="1" begin="1179" end="1218" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="104" sofa="1" begin="1224" end="1276" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="119" sofa="1" begin="1278" end="1385" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="114" sofa="1" begin="1400" end="1466" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="129" sofa="1" begin="1471" end="1542" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="134" sofa="1" begin="1553" end="1593" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="144" sofa="1" begin="1595" end="1642" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="34" sofa="1" begin="1661" end="1698" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="29" sofa="1" begin="1708" end="1743" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="44" sofa="1" begin="1758" end="1804" unitType="claim-for"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="39" sofa="1" begin="1810" end="1876" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="49" sofa="1" begin="1915" end="2017" unitType="majorclaim"/>
+    <argumentation:Argument xmi:id="189" sofa="1" begin="315" end="911" premises="59" conclusion="69" argumentType="supports"/>
+    <argumentation:Argument xmi:id="199" sofa="1" begin="375" end="911" premises="64" conclusion="69" argumentType="supports"/>
+    <argumentation:Argument xmi:id="209" sofa="1" begin="451" end="911" premises="74" conclusion="69" argumentType="supports"/>
+    <argumentation:Argument xmi:id="179" sofa="1" begin="494" end="911" premises="79" conclusion="69" argumentType="supports"/>
+    <argumentation:Argument xmi:id="169" sofa="1" begin="631" end="911" premises="84" conclusion="69" argumentType="supports"/>
+    <argumentation:Argument xmi:id="159" sofa="1" begin="719" end="911" premises="89" conclusion="69" argumentType="supports"/>
+    <argumentation:Argument xmi:id="149" sofa="1" begin="779" end="911" premises="94" conclusion="69" argumentType="supports"/>
+    <argumentation:Argument xmi:id="259" sofa="1" begin="913" end="1177" premises="124" conclusion="99" argumentType="supports"/>
+    <argumentation:Argument xmi:id="229" sofa="1" begin="993" end="1177" premises="139" conclusion="99" argumentType="supports"/>
+    <argumentation:Argument xmi:id="269" sofa="1" begin="1057" end="1542" premises="129" conclusion="99" argumentType="supports"/>
+    <argumentation:Argument xmi:id="279" sofa="1" begin="1057" end="1385" premises="119" conclusion="99" argumentType="supports"/>
+    <argumentation:Argument xmi:id="249" sofa="1" begin="1057" end="1276" premises="104" conclusion="99" argumentType="supports"/>
+    <argumentation:Argument xmi:id="239" sofa="1" begin="1057" end="1218" premises="109" conclusion="99" argumentType="supports"/>
+    <argumentation:Argument xmi:id="219" sofa="1" begin="1400" end="1542" premises="114" conclusion="129" argumentType="supports"/>
+    <argumentation:Argument xmi:id="319" sofa="1" begin="1553" end="1804" premises="134" conclusion="44" argumentType="attacks"/>
+    <argumentation:Argument xmi:id="329" sofa="1" begin="1553" end="1698" premises="34" conclusion="134" argumentType="attacks"/>
+    <argumentation:Argument xmi:id="299" sofa="1" begin="1553" end="1642" premises="144" conclusion="134" argumentType="supports"/>
+    <argumentation:Argument xmi:id="309" sofa="1" begin="1661" end="1743" premises="29" conclusion="34" argumentType="supports"/>
+    <argumentation:Argument xmi:id="289" sofa="1" begin="1758" end="1876" premises="39" conclusion="44" argumentType="supports"/>
+    <cas:Sofa xmi:id="1" sofaNum="1" sofaID="_InitialView" mimeType="text" sofaString="&#10;When we watch movies or dramas, some of us like to see good people have a good ending and bad people are punished. While there are also some people who do not like this. Personally, I prefer to see good people get rewarded. However, if the good people always get an happy ending, I don’t think it’s proper.&#10;First, if all the story end up in the same way, it will be boring. If good people always win, we can guess the ending of the movies or dramas. Then we will feel less interested in them. But if the good people are not always rewarded, we will try to finish the movie or dramas to find out the end of the story. For example, Hollywood stories usually have a happy ending like a hero beats a crime and get a girl. But now many people, including me, have been tired with it. I don’t want to see the same kind of ending again and again. So we can’t always let good people be rewarded in movies or TV programs.&#10;Even in the real world, good people can get a bad ending sometimes. And I think it happen more often in the real world than in those movies. So if children always watch the TV programs that good people get rewarded, they may think it will be true in the real world. They will be misleading by those movies. And they may act like good people in order to get reward. Once they find the good people are not always get rewarded, they may feel upset and not to be a good person. But in fact, the good people do good things no matter the ending is good or not. So we should tell this to the young children to avoid the misunderstanding.&#10;In fact, those good endings sometimes are helpful. Some people may be encouraged to do good things. But like I said, this kind of behavior won’t last long, because someday they will realize the truth. So I suggest we should show people the truth in the stories. And if they can, they will be good people no matter how the story ends.&#10;Based on my arguments above, I think movies and TV programs should present different stories in which good people get reward or get nothing."/>
+    <cas:View sofa="1" members="8 13 21 54 59 64 74 79 84 89 94 69 124 139 99 109 104 119 114 129 134 144 34 29 44 39 49 189 199 209 179 169 159 149 259 229 269 279 249 239 219 319 329 299 309 289"/>
+</xmi:XMI>

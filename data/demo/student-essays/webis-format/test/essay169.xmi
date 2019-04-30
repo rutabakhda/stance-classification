@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?><xmi:XMI xmlns:pos="http:///de/tudarmstadt/ukp/dkpro/core/api/lexmorph/type/pos.ecore" xmlns:tcas="http:///uima/tcas.ecore" xmlns:xmi="http://www.omg.org/XMI" xmlns:cas="http:///uima/cas.ecore" xmlns:tweet="http:///de/tudarmstadt/ukp/dkpro/core/api/lexmorph/type/pos/tweet.ecore" xmlns:dependency="http:///de/tudarmstadt/ukp/dkpro/core/api/syntax/type/dependency.ecore" xmlns:infexba="http:///de/aitools/ie/uima/type/infexba.ecore" xmlns:core="http:///de/aitools/ie/uima/type/core.ecore" xmlns:type7="http:///de/tudarmstadt/ukp/dkpro/core/api/semantics/type.ecore" xmlns:argumentation="http:///de/aitools/ie/uima/type/argumentation.ecore" xmlns:article="http:///de/aitools/ie/uima/type/article.ecore" xmlns:supertype="http:///de/aitools/ie/uima/type/supertype.ecore" xmlns:type4="http:///de/tudarmstadt/ukp/dkpro/core/api/metadata/type.ecore" xmlns:type2="http:///de/tudarmstadt/ukp/dkpro/core/api/coref/type.ecore" xmlns:type8="http:///de/tudarmstadt/ukp/dkpro/core/api/structure/type.ecore" xmlns:types="http:///de/tudarmstadt/ukp/dkpro/argumentation/types.ecore" xmlns:morph="http:///de/tudarmstadt/ukp/dkpro/core/api/lexmorph/type/morph.ecore" xmlns:type3="http:///de/tudarmstadt/ukp/dkpro/core/api/frequency/tfidf/type.ecore" xmlns:type="http:///de/tudarmstadt/ukp/dkpro/core/api/anomaly/type.ecore" xmlns:type9="http:///de/tudarmstadt/ukp/dkpro/core/api/syntax/type.ecore" xmlns:type10="http:///de/tudarmstadt/ukp/dkpro/tc/type.ecore" xmlns:type5="http:///de/tudarmstadt/ukp/dkpro/core/api/ner/type.ecore" xmlns:type6="http:///de/tudarmstadt/ukp/dkpro/core/api/segmentation/type.ecore" xmlns:constituent="http:///de/tudarmstadt/ukp/dkpro/core/api/syntax/type/constituent.ecore" xmlns:arguana="http:///de/aitools/ie/uima/type/arguana.ecore" xmlns:chunk="http:///de/tudarmstadt/ukp/dkpro/core/api/syntax/type/chunk.ecore" xmi:version="2.0">
+    <cas:NULL xmi:id="0"/>
+    <tcas:DocumentAnnotation xmi:id="8" sofa="1" begin="0" end="2563" language="x-unspecified"/>
+    <core:SourceDocumentInformation xmi:id="13" sofa="1" begin="0" end="2563" uri="/Users/teacher/Documents/Arbeit/workspace/software_ArguAna/../../Corpora/corpus-ukp-argument-annotated-essays-v2/original/brat-project-final/essay169.txt" offsetInSource="0" documentSize="2563" lastSegment="false"/>
+    <argumentation:MetadataAAE xmi:id="21" sofa="1" begin="0" end="2563" filename="essay169" topic="Some people think that a university professor should focus time on doing research, while others think that the main role of a professor is to educate students in a university. What is your opinion and why? Use specific reasons to support your answer.�"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="99" sofa="1" begin="97" end="162" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="94" sofa="1" begin="164" end="208" unitType="claim-for"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="104" sofa="1" begin="236" end="304" unitType="majorclaim"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="109" sofa="1" begin="338" end="392" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="124" sofa="1" begin="394" end="468" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="139" sofa="1" begin="470" end="612" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="134" sofa="1" begin="614" end="708" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="149" sofa="1" begin="723" end="846" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="129" sofa="1" begin="859" end="949" unitType="claim-for"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="144" sofa="1" begin="970" end="1109" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="159" sofa="1" begin="1111" end="1210" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="154" sofa="1" begin="1212" end="1279" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="164" sofa="1" begin="1294" end="1353" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="69" sofa="1" begin="1355" end="1396" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="34" sofa="1" begin="1411" end="1517" unitType="claim-for"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="114" sofa="1" begin="1533" end="1594" unitType="claim-against"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="29" sofa="1" begin="1596" end="1644" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="44" sofa="1" begin="1646" end="1757" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="39" sofa="1" begin="1773" end="1862" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="54" sofa="1" begin="1864" end="1919" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="49" sofa="1" begin="1921" end="1983" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="64" sofa="1" begin="1994" end="2110" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="59" sofa="1" begin="2112" end="2168" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="119" sofa="1" begin="2185" end="2231" unitType="claim-for"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="84" sofa="1" begin="2247" end="2320" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="89" sofa="1" begin="2331" end="2411" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="79" sofa="1" begin="2413" end="2477" unitType="claim-for"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="74" sofa="1" begin="2479" end="2562" unitType="majorclaim"/>
+    <argumentation:Argument xmi:id="229" sofa="1" begin="97" end="208" premises="99" conclusion="94" argumentType="attacks"/>
+    <argumentation:Argument xmi:id="209" sofa="1" begin="338" end="949" premises="109" conclusion="129" argumentType="supports"/>
+    <argumentation:Argument xmi:id="219" sofa="1" begin="394" end="949" premises="124" conclusion="129" argumentType="supports"/>
+    <argumentation:Argument xmi:id="199" sofa="1" begin="470" end="949" premises="139" conclusion="129" argumentType="supports"/>
+    <argumentation:Argument xmi:id="189" sofa="1" begin="614" end="949" premises="134" conclusion="129" argumentType="supports"/>
+    <argumentation:Argument xmi:id="179" sofa="1" begin="723" end="949" premises="149" conclusion="129" argumentType="supports"/>
+    <argumentation:Argument xmi:id="269" sofa="1" begin="970" end="1517" premises="144" conclusion="34" argumentType="supports"/>
+    <argumentation:Argument xmi:id="249" sofa="1" begin="1111" end="1517" premises="159" conclusion="34" argumentType="supports"/>
+    <argumentation:Argument xmi:id="259" sofa="1" begin="1212" end="1517" premises="154" conclusion="34" argumentType="supports"/>
+    <argumentation:Argument xmi:id="239" sofa="1" begin="1294" end="1396" premises="164" conclusion="69" argumentType="supports"/>
+    <argumentation:Argument xmi:id="289" sofa="1" begin="1355" end="1517" premises="69" conclusion="34" argumentType="supports"/>
+    <argumentation:Argument xmi:id="309" sofa="1" begin="1533" end="1757" premises="44" conclusion="114" argumentType="supports"/>
+    <argumentation:Argument xmi:id="279" sofa="1" begin="1533" end="1644" premises="29" conclusion="114" argumentType="supports"/>
+    <argumentation:Argument xmi:id="319" sofa="1" begin="1646" end="1983" premises="49" conclusion="44" argumentType="supports"/>
+    <argumentation:Argument xmi:id="329" sofa="1" begin="1646" end="1919" premises="54" conclusion="44" argumentType="supports"/>
+    <argumentation:Argument xmi:id="299" sofa="1" begin="1646" end="1862" premises="39" conclusion="44" argumentType="supports"/>
+    <argumentation:Argument xmi:id="349" sofa="1" begin="1994" end="2231" premises="64" conclusion="119" argumentType="supports"/>
+    <argumentation:Argument xmi:id="339" sofa="1" begin="2112" end="2231" premises="59" conclusion="119" argumentType="supports"/>
+    <argumentation:Argument xmi:id="169" sofa="1" begin="2247" end="2477" premises="84" conclusion="79" argumentType="attacks"/>
+    <argumentation:Argument xmi:id="359" sofa="1" begin="2247" end="2411" premises="89" conclusion="84" argumentType="attacks"/>
+    <cas:Sofa xmi:id="1" sofaNum="1" sofaID="_InitialView" mimeType="text" sofaString="&#10;Nowadays, many professors conduct research while teaching in colleges or universities. Although research could bring funding and latest achievements in the field, the research takes up too much teaching time. As far as I am concerned, professors should spend more time on preparing courses than research.&#10;To begin with, it is vital that professors should assist students to acquire knowledge. The professors’ duty is to nurture students, and prepare excellent courses. If professors spend a lot of time on research, he will cut the time on preparing courses is reduced, which may decrease the quality of classes. The reason why people enter a university is that they want to learn cutting-edged technologies. In this way, professors should provide well-preparation courses to convey the state-of-art knowledge for college and university students. Therefore, professors should pay more attention on how to teach students rather than conduct research.&#10;On the other hand, if professors are busy in doing research, ignoring preparing appropriate courses for students, it would ruin the reputation of universities. Students are unsatisfied with the unprepared course, and the enrollment of universities may decline. Many students would not choose these kinds of universities to study. In this way, hardly can professors find assistants to help with projects. It is adverse to the whole academic field. Accordingly, spending more time to nurture excellent students is more consequential to professors, rather than research.&#10;Nevertheless, professors could teach students through research and projects. Some students enjoy taking part in some research. Through to use the equipment and invent their own work, they may get more experience in the process of research. For instance, electronic students always invent new machines such as robots, MP3 and remote control car. They can manage the electric theory in practical skills. And some students will be rewarded by investing new inventions. However, only under specific circumstance, when students master all of the systematic knowledge, can they accomplish research. This is requires professors provide high quality courses. In other word, professor should concern about preparing class.&#10;Consequently, conducting research is helpful for professors and students to some extent. However, the precondition of doing research is growing students’ solid theory fundamental. Only by developing students, can we have a better academic field. Professors could combine doing research and preparing good courses in a dynamic way."/>
+    <cas:View sofa="1" members="8 13 21 99 94 104 109 124 139 134 149 129 144 159 154 164 69 34 114 29 44 39 54 49 64 59 119 84 89 79 74 229 209 219 199 189 179 269 249 259 239 289 309 279 319 329 299 349 339 169 359"/>
+</xmi:XMI>

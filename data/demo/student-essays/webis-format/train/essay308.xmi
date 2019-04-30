@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?><xmi:XMI xmlns:pos="http:///de/tudarmstadt/ukp/dkpro/core/api/lexmorph/type/pos.ecore" xmlns:tcas="http:///uima/tcas.ecore" xmlns:xmi="http://www.omg.org/XMI" xmlns:cas="http:///uima/cas.ecore" xmlns:tweet="http:///de/tudarmstadt/ukp/dkpro/core/api/lexmorph/type/pos/tweet.ecore" xmlns:dependency="http:///de/tudarmstadt/ukp/dkpro/core/api/syntax/type/dependency.ecore" xmlns:infexba="http:///de/aitools/ie/uima/type/infexba.ecore" xmlns:core="http:///de/aitools/ie/uima/type/core.ecore" xmlns:type7="http:///de/tudarmstadt/ukp/dkpro/core/api/semantics/type.ecore" xmlns:argumentation="http:///de/aitools/ie/uima/type/argumentation.ecore" xmlns:article="http:///de/aitools/ie/uima/type/article.ecore" xmlns:supertype="http:///de/aitools/ie/uima/type/supertype.ecore" xmlns:type4="http:///de/tudarmstadt/ukp/dkpro/core/api/metadata/type.ecore" xmlns:type2="http:///de/tudarmstadt/ukp/dkpro/core/api/coref/type.ecore" xmlns:type8="http:///de/tudarmstadt/ukp/dkpro/core/api/structure/type.ecore" xmlns:types="http:///de/tudarmstadt/ukp/dkpro/argumentation/types.ecore" xmlns:morph="http:///de/tudarmstadt/ukp/dkpro/core/api/lexmorph/type/morph.ecore" xmlns:type3="http:///de/tudarmstadt/ukp/dkpro/core/api/frequency/tfidf/type.ecore" xmlns:type="http:///de/tudarmstadt/ukp/dkpro/core/api/anomaly/type.ecore" xmlns:type9="http:///de/tudarmstadt/ukp/dkpro/core/api/syntax/type.ecore" xmlns:type10="http:///de/tudarmstadt/ukp/dkpro/tc/type.ecore" xmlns:type5="http:///de/tudarmstadt/ukp/dkpro/core/api/ner/type.ecore" xmlns:type6="http:///de/tudarmstadt/ukp/dkpro/core/api/segmentation/type.ecore" xmlns:constituent="http:///de/tudarmstadt/ukp/dkpro/core/api/syntax/type/constituent.ecore" xmlns:arguana="http:///de/aitools/ie/uima/type/arguana.ecore" xmlns:chunk="http:///de/tudarmstadt/ukp/dkpro/core/api/syntax/type/chunk.ecore" xmi:version="2.0">
+    <cas:NULL xmi:id="0"/>
+    <tcas:DocumentAnnotation xmi:id="8" sofa="1" begin="0" end="1560" language="x-unspecified"/>
+    <core:SourceDocumentInformation xmi:id="13" sofa="1" begin="0" end="1560" uri="/Users/teacher/Documents/Arbeit/workspace/software_ArguAna/../../Corpora/corpus-ukp-argument-annotated-essays-v2/original/brat-project-final/essay308.txt" offsetInSource="0" documentSize="1560" lastSegment="false"/>
+    <argumentation:MetadataAAE xmi:id="21" sofa="1" begin="0" end="1560" filename="essay308" topic="Which do you prefer: staying in one place or moving in search of another place?"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="34" sofa="1" begin="154" end="220" unitType="majorclaim"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="39" sofa="1" begin="222" end="346" unitType="claim-for"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="49" sofa="1" begin="394" end="532" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="54" sofa="1" begin="534" end="612" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="59" sofa="1" begin="614" end="678" unitType="claim-for"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="44" sofa="1" begin="680" end="729" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="99" sofa="1" begin="731" end="750" unitType="claim-for"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="84" sofa="1" begin="759" end="792" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="64" sofa="1" begin="794" end="828" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="69" sofa="1" begin="833" end="863" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="74" sofa="1" begin="865" end="920" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="79" sofa="1" begin="922" end="960" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="89" sofa="1" begin="962" end="1013" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="119" sofa="1" begin="1015" end="1050" unitType="claim-for"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="94" sofa="1" begin="1052" end="1209" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="109" sofa="1" begin="1211" end="1237" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="104" sofa="1" begin="1241" end="1276" unitType="premise"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="114" sofa="1" begin="1314" end="1373" unitType="majorclaim"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="124" sofa="1" begin="1375" end="1430" unitType="claim-against"/>
+    <argumentation:ArgumentativeDiscourseUnit xmi:id="29" sofa="1" begin="1435" end="1559" unitType="premise"/>
+    <argumentation:Argument xmi:id="139" sofa="1" begin="394" end="678" premises="49" conclusion="59" argumentType="supports"/>
+    <argumentation:Argument xmi:id="149" sofa="1" begin="534" end="678" premises="54" conclusion="59" argumentType="supports"/>
+    <argumentation:Argument xmi:id="129" sofa="1" begin="614" end="729" premises="44" conclusion="59" argumentType="supports"/>
+    <argumentation:Argument xmi:id="169" sofa="1" begin="731" end="792" premises="84" conclusion="99" argumentType="supports"/>
+    <argumentation:Argument xmi:id="209" sofa="1" begin="759" end="1013" premises="89" conclusion="84" argumentType="supports"/>
+    <argumentation:Argument xmi:id="199" sofa="1" begin="759" end="960" premises="79" conclusion="84" argumentType="supports"/>
+    <argumentation:Argument xmi:id="189" sofa="1" begin="759" end="920" premises="74" conclusion="84" argumentType="supports"/>
+    <argumentation:Argument xmi:id="179" sofa="1" begin="759" end="863" premises="69" conclusion="84" argumentType="supports"/>
+    <argumentation:Argument xmi:id="159" sofa="1" begin="794" end="863" premises="64" conclusion="69" argumentType="supports"/>
+    <argumentation:Argument xmi:id="229" sofa="1" begin="1015" end="1276" premises="104" conclusion="119" argumentType="supports"/>
+    <argumentation:Argument xmi:id="239" sofa="1" begin="1015" end="1209" premises="94" conclusion="119" argumentType="supports"/>
+    <argumentation:Argument xmi:id="219" sofa="1" begin="1211" end="1276" premises="109" conclusion="104" argumentType="supports"/>
+    <argumentation:Argument xmi:id="249" sofa="1" begin="1375" end="1559" premises="29" conclusion="124" argumentType="attacks"/>
+    <cas:Sofa xmi:id="1" sofaNum="1" sofaID="_InitialView" mimeType="text" sofaString="&#10;Some people may prefer to live in different places at different time because of many reasons such as looking for better job, house, community and so on. I prefer to spend my entire live in one place which is my hometown. In my hometown, I have a lot of friends and good relationships, I love the traffic in here, and the environment is wonderful.&#10;I was born and grew up in here, a small town. In here, I have a lot of friends, and we usually spend free time to play sports like soccer, basketball and of course we have a lot of fun. Every people in my town have known each others, and we have good relationships. If anyone needs help, his neighbor will help as much as possible. Nowhere else can give me some people like in here.&#10;I want to live here because I love the traffic system in here. We have large streets but few cars, so we can move easily to anywhere. Last week, I went to the city center to meet my friends. The traffic in the city was too crowed. I have to wait for an hour to go to my friend house.&#10;I also love the environment in here. I have been gone to some places to travel and stay for a short time, and I realize that the environment in some place isn't clean and fresh like my home town. There were a lot of people so the environment can't be keep clean.&#10;In conclusion, I strongly feel that staying in one place is better than moving number of places. Moving some places can give to you a lot of experiences but living in one place like your hometown can make you feel comfortable about the traffic, people and of course the environment."/>
+    <cas:View sofa="1" members="8 13 21 34 39 49 54 59 44 99 84 64 69 74 79 89 119 94 109 104 114 124 29 139 149 129 169 209 199 189 179 159 229 239 219 249"/>
+</xmi:XMI>
