@@ -33,8 +33,8 @@ public class AduAnnotationPipeline {
 			"../aitools4-ie-uima/conf/uima-descriptors/collection-readers/UIMAPlainTextReader.xml";
 	
 	private static final String ANALYSIS_ENGINE_PATH = 
-			//"src/main/resources/uima/aggregates/posTokenAggregate.xml";
-			"../aitools4-ie-uima/conf/uima-descriptors/primitive-AEs/template/DummyAnalysisEngine.xml"; //DummAnalysisEngine
+			"src/main/resources/uima/aggregates/PosTokenTagger.xml";
+			//"../aitools4-ie-uima/conf/uima-descriptors/primitive-AEs/template/DummyAnalysisEngine.xml"; //DummAnalysisEngine
 	private static final String OUTPUT_COLLECTION_DIR = 
 			"data/demo/processed/webis-debate-16";
 	
@@ -84,7 +84,7 @@ public class AduAnnotationPipeline {
 					
 					
 					
-					//analysisEngine.process(jcas);
+					analysisEngine.process(jcas);
 					String fileName = "/" + Integer.toString(i) + Integer.toString(j) + ".xmi";
 					File output = new File(OUTPUT_COLLECTION_DIR + fileName);
 					FileOutputStream outputStream = new FileOutputStream(output);
