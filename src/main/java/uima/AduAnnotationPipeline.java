@@ -34,7 +34,7 @@ public class AduAnnotationPipeline {
 	
 	private static final String ANALYSIS_ENGINE_PATH = 
 			"src/main/resources/uima/aggregates/PosTokenTagger.xml";
-			//"../aitools4-ie-uima/conf/uima-descriptors/primitive-AEs/template/DummyAnalysisEngine.xml"; //DummAnalysisEngine
+
 	private static final String OUTPUT_COLLECTION_DIR = 
 			"data/demo/processed/webis-debate-16";
 	

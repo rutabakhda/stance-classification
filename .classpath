@@ -9,5 +9,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="/home/weci2587/apache-uima/lib/uima-core.jar"/>
+	<classpathentry kind="lib" path="/home/weci2587/projects/thirdparty-stanford-postagger-3.1.5/stanford-postagger-3.1.5.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
