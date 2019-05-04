@@ -1,0 +1,38 @@
+// Apply plugins
+
+plugins {
+  id 'java'
+}
+
+
+version = '1.0'
+
+
+// Basic configuration and settings for all (sub-)projects
+allprojects {
+    group = 'de.webis.webisstud'
+    version = version
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    // Set source file encoding
+    compileJava.options.encoding = "UTF-8"
+    compileTestJava.options.encoding = "UTF-8"
+    javadoc.options.encoding = 'UTF-8'
+
+    // Declare global dependencies
+    dependencies {
+    	implementation group: 'de.webis.aitools', name: 'aitools4-ie-uima', version: '1.0'
+        implementation group: 'org.apache.uima', name: 'uimaj-core', version: '2.7.0'
+       	implementation group: 'org.apache.uima', name: 'uimaj-tools', version: '2.7.0'
+        implementation group: 'org.apache.uima', name: 'uimaj-document-annotation', version: '2.7.0'
+        
+    }
+}
+
+javadoc {
+    options.tags = [ "generated", "modifiable", "ordered" ]
+}
+
+// Include Artifactory configuration
+apply from: 'artifactory.gradle'

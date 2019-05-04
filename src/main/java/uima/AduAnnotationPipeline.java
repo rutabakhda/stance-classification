@@ -3,6 +3,7 @@ package uima;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.nio.file.Paths;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -41,7 +42,6 @@ public class AduAnnotationPipeline {
 	
 	
 	private void processCollection() {
-		
 		CollectionReader collectionReader = this.createCollectionReader(COLLECTION_READER_PATH, INPUT_COLLECTION_DIR);
 		AnalysisEngine analysisEngine = this.createAnalysisEngine(ANALYSIS_ENGINE_PATH);
 		try {
