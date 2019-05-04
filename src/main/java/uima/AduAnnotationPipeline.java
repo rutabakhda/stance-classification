@@ -89,7 +89,6 @@ public class AduAnnotationPipeline {
 					File output = new File(OUTPUT_COLLECTION_DIR + fileName);
 					FileOutputStream outputStream = new FileOutputStream(output);
 					XmiCasSerializer.serialize(jcas.getCas(), outputStream);
-					break;//delete!!!!!
 				}
 				i++;
 			}
