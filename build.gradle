@@ -22,7 +22,6 @@ allprojects {
 
     // Declare global dependencies
     dependencies {
-    	implementation group: 'de.webis.aitools', name: 'aitools4-ie-uima', version: '1.0'
         implementation group: 'org.apache.uima', name: 'uimaj-core', version: '2.7.0'
        	implementation group: 'org.apache.uima', name: 'uimaj-tools', version: '2.7.0'
         implementation group: 'org.apache.uima', name: 'uimaj-document-annotation', version: '2.7.0'
