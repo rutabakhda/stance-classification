@@ -3,7 +3,6 @@ package uima;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.nio.file.Paths;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -85,7 +84,9 @@ public class AduAnnotationPipeline {
 					
 					
 					analysisEngine.process(jcas);
-					String fileName = "/" + Integer.toString(i) + Integer.toString(j) + ".xmi";
+					if (!new File(OUTPUT_COLLECTION_DIR + "/document-" + Integer.toString(i)).exists())
+						new File(OUTPUT_COLLECTION_DIR + "/document-" + Integer.toString(i)).mkdirs();
+					String fileName = "/" + "document-" + Integer.toString(i) + "/" + "unit-" + Integer.toString(j) + ".xmi";
 					File output = new File(OUTPUT_COLLECTION_DIR + fileName);
 					FileOutputStream outputStream = new FileOutputStream(output);
 					XmiCasSerializer.serialize(jcas.getCas(), outputStream);
