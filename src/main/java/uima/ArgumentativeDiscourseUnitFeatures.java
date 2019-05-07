@@ -8,7 +8,7 @@ import org.apache.uima.jcas.JCas;
 
 import de.aitools.ie.uima.feature.IFeatureType;
 import de.aitools.ie.uima.feature.content.TokenNGrams;
-import de.aitools.ie.uima.feature.length.TextLength;
+//import de.aitools.ie.uima.feature.length.TextLength;
 import de.aitools.ie.uima.feature.style.POSNGrams;
 
 public class ArgumentativeDiscourseUnitFeatures implements IFeatureType {
