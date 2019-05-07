@@ -20,8 +20,8 @@ class Preprocessing():
     def __init__(self):
         super().__init__()
         #task 1 : find most common words
-        #self.find_cliche(self.datapath_sbm,'combined.csv')
-        #self.find_cliche(self.datapath_oq,'combined.csv')
+        self.find_cliche(self.datapath_sbm,'combined.csv')
+        self.find_cliche(self.datapath_oq,'combined.csv')
 
         #Task 2 : Report 10 most occuring subtopic in Oral Questions and Statement by Members
         print("Subtopic 10 most occurence for Oral Questions")
