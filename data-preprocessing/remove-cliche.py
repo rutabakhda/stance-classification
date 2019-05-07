@@ -12,10 +12,8 @@ pattern = r"[{}]".format(rem)
 
 class Preprocessing():
     basepath = os.path.dirname(os.path.abspath(__file__))
-    # Datapath for Statement by Members
-    datapath_sbm = basepath + "/lipad/statement-by-members/combined-all-csv/"
-    #Datapath for Oral Questions
-    datapath_oq = basepath + "/lipad/oral-questions/combined-all-csv/"
+    datapath_sbm = basepath + "/lipad/statement-by-members/combined-all-csv/"  # Datapath for Statement by Members
+    datapath_oq = basepath + "/lipad/oral-questions/combined-all-csv/"  #Datapath for Oral Questions
 
     def __init__(self):
         super().__init__()
@@ -43,8 +41,7 @@ class Preprocessing():
 
         """
         data = self.read_csv(datapath,filename)
-        #Removing all panctuations from speech text
-        speechtext = data.speechtext.str.replace(pattern, '')
+        speechtext = data.speechtext.str.replace(pattern, '')  #Removing all panctuations from speech text
 
         #Using tf idf to find words or tokens that are less important
         vectorizer = TfidfVectorizer(decode_error='replace', token_pattern=r'(?u)\b[A-Za-z]+\b',stop_words='english',encoding='utf-8',ngram_range=(1,2))
