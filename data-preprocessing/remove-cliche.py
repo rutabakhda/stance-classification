@@ -22,44 +22,44 @@ class Preprocessing():
         result = open("week2.txt", "a+")
         result.write("=== Cliches in Oral Questions ===")
         result.write(" ")
-        #self.found_cliche = self.find_cliche(self.datapath_oq,'unduplicated_oral_questions.csv')
-        #self.remove_cliche(self.found_cliche, self.datapath_oq, 'unduplicated_oral_questions.csv')
+        self.found_cliche = self.find_cliche(self.datapath_oq,'unduplicated_oral_questions.csv')
+        self.remove_cliche(self.found_cliche, self.datapath_oq, 'unduplicated_oral_questions.csv')
 
         #result.write("=== Cliches in Statement by Members ===")
         #result.write(" ")
-        #self.found_cliche = self.find_cliche(self.datapath_sbm,'unduplicated_statements_by_members.csv')
-        #self.remove_cliche(self.found_cliche, self.datapath_sbm, 'unduplicated_statements_by_members.csv')
+        self.found_cliche = self.find_cliche(self.datapath_sbm,'unduplicated_statements_by_members.csv')
+        self.remove_cliche(self.found_cliche, self.datapath_sbm, 'unduplicated_statements_by_members.csv')
 
 
         #Task 2 : Report 10 most occurring subtopic in Oral Questions and Statement by Members
         #result.write("=== Subtopic 10 most occurence for Oral Questions ===")
         #result.write(" ")
         #print("Subtopic 10 most occurence for Oral Questions")
-        #self.subtopic_most_count(self.datapath_oq,'unduplicated_oral_questions.csv')
+        self.subtopic_most_count(self.datapath_oq,'unduplicated_oral_questions.csv')
         #result.write("=== Subtopic 10 most occurence for Statement by Members ===")
         #result.write(" ")
         #print("Subtopic 10 most occurence for Statement by Members")
-        #self.subtopic_most_count(self.datapath_sbm,'unduplicated_statements_by_members.csv')
+        self.subtopic_most_count(self.datapath_sbm,'unduplicated_statements_by_members.csv')
 
         #Task 3 : Finding controversial topics in Oral Questions and Statement by Members
 
         self.outname = 'controversial-data.csv'
-        #self.fullname_oq = os.path.join(self.datapath_oq, self.outname)
-        #self.find_controversial_topics(self.datapath_oq, 'removed-cliche.csv', self.fullname_oq)
+        self.fullname_oq = os.path.join(self.datapath_oq, self.outname)
+        self.find_controversial_topics(self.datapath_oq, 'removed-cliche.csv', self.fullname_oq)
 
-        #self.fullname_sbm = os.path.join(self.datapath_sbm, self.outname)
-        #self.find_controversial_topics(self.datapath_sbm, 'removed-cliche.csv',self.fullname_sbm)
+        self.fullname_sbm = os.path.join(self.datapath_sbm, self.outname)
+        self.find_controversial_topics(self.datapath_sbm, 'removed-cliche.csv',self.fullname_sbm)
 
 
         #Task 4 : Report 10 most occurring subtopics in Controversial Oral Questions and Statement by Members
         #result.write("=== Subtopic 10 most occurence for Controversial Oral Questions ===")
         #result.write(" ")
         #print("Subtopic 10 most occurence for Controversial Oral Questions")
-        #self.subtopic_most_count(self.datapath_oq, 'controversial-data.csv')
+        self.subtopic_most_count(self.datapath_oq, 'controversial-data.csv')
         #result.write("=== Subtopic 10 most occurence for Controversial Statement by Members ===")
         #result.write(" ")
         #print("Subtopic 10 most occurence for Controversial Statement by Members")
-        #self.subtopic_most_count(self.datapath_sbm, 'controversial-data.csv')
+        self.subtopic_most_count(self.datapath_sbm, 'controversial-data.csv')
 
         #Task 5 : Sentiment Analysis for speechtext
         self.do_sentiment_analysis(self.datapath_oq,'removed-cliche.csv')
