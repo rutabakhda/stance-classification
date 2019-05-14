@@ -43,6 +43,11 @@
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="/home/weci2587/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.9.8/f5a654e4675769c716e5b387830d19b501ca191/jackson-core-2.9.8.jar" sourcepath="/home/weci2587/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.9.8/ecaea301e166a0b48f11615864246de739b6619b/jackson-core-2.9.8-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="lib" path="/home/weci2587/.gradle/caches/modules-2/files-2.1/org.apache.uima/jVinci/2.7.0/a1ae863231ceb2c2463eeaa7d4aa254aa1dccec6/jVinci-2.7.0.jar" sourcepath="/home/weci2587/.gradle/caches/modules-2/files-2.1/org.apache.uima/jVinci/2.7.0/da8615baed10c6b28014fe16346a68c87448a8b2/jVinci-2.7.0-sources.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
