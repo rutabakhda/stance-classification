@@ -17,8 +17,13 @@ import org.apache.uima.util.XMLInputSource;
 
 import de.aitools.ie.uima.type.argumentation.ArgumentativeDiscourseUnit;
 
-
-public class AduAnnotationPipeline {
+/**
+ * 
+ * Implements the uima annotation pipeline used for the webis-debate-16 corpus.
+ * @author lukas.peter.trautner@uni-weimar.de
+ * 
+ */
+public class WebisDebate16AnnotationPipeline {
 	
 	private static final Pattern ARGUMENTATIVE = Pattern.compile("^Argumentative[\\s]*");
 	
@@ -27,7 +32,7 @@ public class AduAnnotationPipeline {
 	
 	
 	private static final String INPUT_COLLECTION_DIR = 
-			"data/demo/webis-debate-16";
+			"data/webis-debate-16/webis-debate-16";
 	
 	private static final String COLLECTION_READER_PATH = 
 			"../aitools4-ie-uima/conf/uima-descriptors/collection-readers/UIMAPlainTextReader.xml";
@@ -36,10 +41,12 @@ public class AduAnnotationPipeline {
 			"src/main/resources/uima/aggregates/PosTokenTagger.xml";
 
 	private static final String OUTPUT_COLLECTION_DIR = 
-			"data/demo/processed/webis-debate-16";
+			"data/webis-debate-16/processed/webis-debate-16";
 	
 	
-	
+	/**
+	 * Processes a collection with the specified collection reader and analysis engine.
+	 */
 	private void processCollection() {
 		CollectionReader collectionReader = this.createCollectionReader(COLLECTION_READER_PATH, INPUT_COLLECTION_DIR);
 		AnalysisEngine analysisEngine = this.createAnalysisEngine(ANALYSIS_ENGINE_PATH);
@@ -104,7 +111,12 @@ public class AduAnnotationPipeline {
 	
 	
 	
-	
+	/**
+	 * Creates a collection reader.
+	 * @param crPath the path of the collection reader
+	 * @param inputDir the input directory for the collection reader
+	 * @return the collection reader
+	 */
 	private CollectionReader createCollectionReader(String crPath, String inputDir) {
 		
 		CollectionReader collectionReader = null;
@@ -122,7 +134,11 @@ public class AduAnnotationPipeline {
 	}
 	
 	
-	
+	/**
+	 * Creates an analysis engine.
+	 * @param aePath the path of the anlyis engine
+	 * @return the analysis engine
+	 */
 	private AnalysisEngine createAnalysisEngine (String aePath) {
 		
 		AnalysisEngine analysisEngine = null;
@@ -141,7 +157,7 @@ public class AduAnnotationPipeline {
 	
 
 	public static void main(String[] args) {
-		AduAnnotationPipeline pipe = new AduAnnotationPipeline();
+		WebisDebate16AnnotationPipeline pipe = new WebisDebate16AnnotationPipeline();
 		pipe.processCollection();
 	}
 

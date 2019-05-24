@@ -11,7 +11,12 @@ import de.aitools.ie.uima.feature.content.TokenNGrams;
 //import de.aitools.ie.uima.feature.length.TextLength;
 import de.aitools.ie.uima.feature.style.POSNGrams;
 
-public class ArgumentativeDiscourseUnitFeatures implements IFeatureType {
+/**
+ * Implements an aggregate feature type, which consists of TokenNGram and PosNGram features.
+ * @author lukas.peter.trautner@uni-weimar.de
+ *
+ */
+public class TokenPosNGrams implements IFeatureType {
 	
 	
 	private IFeatureType tokenNgrams;

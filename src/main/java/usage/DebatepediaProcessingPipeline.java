@@ -1,26 +1,16 @@
 package usage;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.util.regex.Matcher;
 
-import org.apache.uima.UIMAFramework;
-import org.apache.uima.analysis_engine.AnalysisEngine;
-import org.apache.uima.cas.CAS;
-import org.apache.uima.cas.impl.XmiCasSerializer;
-import org.apache.uima.collection.CollectionReader;
-import org.apache.uima.jcas.JCas;
-import org.apache.uima.resource.ResourceSpecifier;
-import org.apache.uima.util.XMLInputSource;
-
-import com.fasterxml.jackson.core.JsonFactory;
-import com.fasterxml.jackson.core.JsonParser;
-
-import de.aitools.ie.uima.type.argumentation.ArgumentativeDiscourseUnit;
-
-@SuppressWarnings("unused")
-public class JsonProcessingPipeline {
+/**
+ * 
+ * Implements the uima annotation pipeline used for the debatepedia corpus.
+ * @author lukas.peter.trautner@uni-weimar.de
+ * 
+ */
+public class DebatepediaProcessingPipeline {
 	
+	//TODO
+	/**
 	private static final String INPUT_COLLECTION_DIR = 
 			"data/demo/webis-debate-16";
 	
@@ -97,8 +87,9 @@ public class JsonProcessingPipeline {
 		
 		
 	public static void main(String[] args) {
-		JsonProcessingPipeline pipeline = new JsonProcessingPipeline();
+		DebatepediaProcessingPipeline pipeline = new DebatepediaProcessingPipeline();
 		pipeline.processCollection();
 	}
+	*/
 
 }
