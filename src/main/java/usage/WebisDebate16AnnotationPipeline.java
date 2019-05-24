@@ -41,7 +41,7 @@ public class WebisDebate16AnnotationPipeline {
 			"src/main/resources/uima/aggregates/PosTokenTagger.xml";
 
 	private static final String OUTPUT_COLLECTION_DIR = 
-			"data/webis-debate-16/processed/webis-debate-16";
+			"data/webis-debate-16/processed/full";
 	
 	
 	/**
