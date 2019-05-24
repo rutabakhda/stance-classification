@@ -1,4 +1,4 @@
-package aduClassification;
+package feature.aggregate;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package aduClassification;
+package usage;
 
 import de.aitools.ie.uima.usage.GenericFeatureFileGenerator;
 

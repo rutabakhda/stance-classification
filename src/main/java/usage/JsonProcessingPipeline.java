@@ -1,4 +1,4 @@
-package claimDetection;
+package usage;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -16,7 +16,6 @@ import org.apache.uima.util.XMLInputSource;
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonParser;
 
-import aduClassification.AduAnnotationPipeline;
 import de.aitools.ie.uima.type.argumentation.ArgumentativeDiscourseUnit;
 
 @SuppressWarnings("unused")
