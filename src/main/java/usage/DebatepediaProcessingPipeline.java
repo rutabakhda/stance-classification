@@ -13,6 +13,8 @@ import org.apache.uima.cas.impl.XmiCasSerializer;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceSpecifier;
 import org.apache.uima.util.XMLInputSource;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import de.aitools.ie.uima.type.argumentation.ArgumentativeDiscourseUnit;
 
@@ -37,7 +39,7 @@ public class DebatepediaProcessingPipeline {
 	
 	
 	/**
-	 *  
+	 *  TODO java documentation
 	 */
 	private void processCollection() {
 		
@@ -62,29 +64,33 @@ public class DebatepediaProcessingPipeline {
 			String json = this.readJsonFile(inputFile);
 			
 			if (!json.equals("")) {
-				
-				JSONArray argumentativeDiscourseUnits = new JSONArray(json);
-				File outputDirectory = this.createOutputDirectory(fileName);
-				CAS cas = analysisEngine.newCAS();
-				
-				for (int i = 0; i < argumentativeDiscourseUnits.length(); i++) {
-					JCas jcas = cas.getJCas();
+				try {
+					JSONArray argumentativeDiscourseUnits = new JSONArray(json);
+					File outputDirectory = this.createOutputDirectory(fileName);
 					
-					JSONObject argumentativeDiscourseUnit = argumentativeDiscourseUnits.getJSONObject(i);
-					String type = argumentativeDiscourseUnit.getString("unitType");
-					String content = argumentativeDiscourseUnit.getString("content");
-					
-					jcas.setDocumentText(content);
-					jcas.setDocumentLanguage("english");
-					ArgumentativeDiscourseUnit unit = new ArgumentativeDiscourseUnit(jcas, 0, jcas.getDocumentText().length());
-					unit.setUnitType(type);
-					unit.addToIndexes(jcas);
-					analysisEngine.process(jcas);
-					
-					File outputFile = new File(outputDirectory.getAbsolutePath() + "/debatepedia-adu-" + Integer.toString(i) + ".xmi");
-					FileOutputStream outputStream = new FileOutputStream(outputFile);
-					XmiCasSerializer.serialize(jcas.getCas(), outputStream);
-				}	
+					for (int i = 0; i < argumentativeDiscourseUnits.length(); i++) {
+						CAS cas = analysisEngine.newCAS();
+						JCas jcas = cas.getJCas();
+						
+						JSONObject argumentativeDiscourseUnit = argumentativeDiscourseUnits.getJSONObject(i);
+						String type = argumentativeDiscourseUnit.getString("unitType");
+						String content = argumentativeDiscourseUnit.getString("content");
+						
+						jcas.setDocumentText(content);
+						jcas.setDocumentLanguage("english");
+						ArgumentativeDiscourseUnit unit = new ArgumentativeDiscourseUnit(jcas, 0, jcas.getDocumentText().length());
+						unit.setUnitType(type);
+						unit.addToIndexes(jcas);
+						analysisEngine.process(jcas);
+						
+						File outputFile = new File(outputDirectory.getAbsolutePath() + "/debatepedia-adu-" + Integer.toString(i) + ".xmi");
+						FileOutputStream outputStream = new FileOutputStream(outputFile);
+						XmiCasSerializer.serialize(jcas.getCas(), outputStream);
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+	
 			} else {
 				continue;
 			}
@@ -93,6 +99,7 @@ public class DebatepediaProcessingPipeline {
 	
 
 	/**
+	 * TODO java documentation
 	 * 
 	 * @param inputFile
 	 * @return
@@ -115,6 +122,8 @@ public class DebatepediaProcessingPipeline {
 	
 	
 	/**
+	 * 
+	 * TODO java documentation
 	 * 
 	 * @param fileName
 	 * @return
