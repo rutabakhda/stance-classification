@@ -23,7 +23,7 @@ import de.aitools.ie.uima.type.argumentation.ArgumentativeDiscourseUnit;
  * @author lukas.peter.trautner@uni-weimar.de
  * 
  */
-public class WebisDebate16AnnotationPipeline {
+public class WebisDebate16ProcessingPipeline {
 	
 	private static final Pattern ARGUMENTATIVE = Pattern.compile("^Argumentative[\\s]*");
 	
@@ -157,7 +157,7 @@ public class WebisDebate16AnnotationPipeline {
 	
 
 	public static void main(String[] args) {
-		WebisDebate16AnnotationPipeline pipe = new WebisDebate16AnnotationPipeline();
+		WebisDebate16ProcessingPipeline pipe = new WebisDebate16ProcessingPipeline();
 		pipe.processCollection();
 	}
 
