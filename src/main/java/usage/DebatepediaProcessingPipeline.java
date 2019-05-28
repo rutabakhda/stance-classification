@@ -131,7 +131,7 @@ public class DebatepediaProcessingPipeline {
 	private File createOutputDirectory(String fileName) {
 		String outputDirName = fileName.replace(".json", "");
 		File outputDir = new File(OUTPUT_COLLECTION_DIR + "/" + outputDirName);
-		if (!(outputDir.exists() || outputDir.mkdir())) throw new RuntimeException();
+		if (!(outputDir.exists() || outputDir.mkdirs())) throw new RuntimeException();
 		return outputDir;
 	}
 	
