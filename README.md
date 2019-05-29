@@ -53,7 +53,7 @@ All Projects need to be on the same level, otherwise the project will not be wor
 
 ### Corpora
 
-In the [data](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/tree/master/data) directory exists a subdirectory for ever corpus we were working on.
+In the [data](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/tree/master/data) directory exists a subdirectory for every corpus we were working on.
 
 In the directories of the different corpora there exist an "arff" directory (e.g. [debatepedia](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/tree/master/data/debatepedia/arff)), which contains the arff feature files for the corpora.
 
@@ -63,11 +63,11 @@ The [notebook](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/tree/mas
 
 ### Java
 
-The [java](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/tree/master/src/main/java) directory contains the java source code.
+The [src/main/java](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/tree/master/src/main/java) directory contains the java source code.
 
 ### Resources
 
-The [resources](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/tree/master/src/main/resources) directory contains uima descriptor files and property files for the feature extraction process.
+The [src/main/resources](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/tree/master/src/main/resources) directory contains uima descriptor files and property files for the feature extraction process.
 
 The [properties](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/tree/master/src/main/resources/properties) directory contains the [experiment](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/tree/master/src/main/resources/properties/experiment), [feature](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/tree/master/src/main/resources/properties/feature) and [normalization](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/tree/master/src/main/resources/properties/normalization) directories.
 
