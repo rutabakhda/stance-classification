@@ -7,7 +7,7 @@ The repository for the student project "visit the dome".
 ### Install Eclipse, Gradle and the Required Eclipse-Plugins
 
 * Install the Eclipse IDE.
-* Install the Eclipse UIMA-Plugins. (Instruction can be found [here](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/blob/master/documentation/overview_and_setup.pdf) Chapter 3.1.2)
+* Install the Eclipse UIMA-Plugins. (Instruction can be found [here](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/blob/master/documentation/overview_and_setup.pdf) in chapter 3.1.2)
 * Install Gradle.
 
 ### Clone the required Repositories
@@ -24,14 +24,18 @@ git clone git@webis.uni-weimar.de:webisstud/wstud-visit-the-dome-ss19.git
 git clone git@webis.uni-weimar.de:aitools/aitools4-ie-uima.git
 ```
 
-* Clone the [tt4j-tree-tagger](https://git.webis.de/thirdparty/thirdparty-tt4j-1.1.0) repository.
+* Clone the [tt4j-wrapper](https://git.webis.de/aitools/aitools4-ie-tt4j-wrapper) repository.
 ```
-git clone git@webis.uni-weimar.de:thirdparty/thirdparty-tt4j-1.1.0.git
+git clone git@webis.uni-weimar.de:aitools/aitools4-ie-tt4j-wrapper.git
 ```
 
-### Put the "lib" Directory into the aitools4-ie-uima Repository
+### Copy the "lib" Directory into the aitools4-ie-uima Repository
 
-* [TODO]
+```
+cd aitools4-ie-tt4j-wrapper/
+cp -avr lib/ ../aitools4-ie-uima/
+
+```
 
 
 ### Import the Projects to Eclipse
@@ -74,6 +78,3 @@ The [feature](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/tree/mast
 The [normalization](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/tree/master/src/main/resources/properties/normalization) directory contains the property files, which are used for the computation of the features. They are created automatically during the feature computation process, so there is no need to modify anything in this directory.
 
 
-## Contributors
-
-* [TODO]
