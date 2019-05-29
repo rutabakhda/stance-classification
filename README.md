@@ -7,7 +7,7 @@ The repository for the student project "visit the dome".
 ### Install Eclipse, Gradle and the Required Eclipse-Plugins
 
 * Install the Eclipse IDE.
-* Install the Eclipse UIMA-Plugins. (Instruction can be found [here](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/blob/master/documentation/overview_and_setup.pdf))
+* Install the Eclipse UIMA-Plugins. (Instruction can be found [here](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/blob/master/documentation/overview_and_setup.pdf) Chapter 3.1.2)
 * Install Gradle.
 
 ### Clone the required Repositories
