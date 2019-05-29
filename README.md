@@ -4,7 +4,7 @@ The repository for the student project "visit the dome".
 
 ## Project Setup
 
-### Install Eclipse, Gradle and the Required Eclipse-Plugins
+### Install Eclipse, Gradle and the required Eclipse-Plugins
 
 * Install the Eclipse IDE.
 * Install the Eclipse UIMA-Plugins. (Instruction can be found [here](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/blob/master/documentation/overview_and_setup.pdf) in chapter 3.1.2)
@@ -29,13 +29,14 @@ git clone git@webis.uni-weimar.de:aitools/aitools4-ie-uima.git
 git clone git@webis.uni-weimar.de:aitools/aitools4-ie-tt4j-wrapper.git
 ```
 
-### Copy the "lib" Directory into the aitools4-ie-uima Repository
+### Copy the lib Directory
 
 ```
 cd aitools4-ie-tt4j-wrapper/
 cp -avr lib/ ../aitools4-ie-uima/
 
 ```
+The [tt4j-wrapper](https://git.webis.de/aitools/aitools4-ie-tt4j-wrapper) repository can be deleted afterwards.
 
 
 ### Import the Projects to Eclipse
