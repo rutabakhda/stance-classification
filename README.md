@@ -8,7 +8,6 @@ The repository for the student project "visit the dome".
 
 * Install the Eclipse IDE.
 * Install the Eclipse UIMA-Plugins. (Instruction can be found [here](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/blob/master/documentation/overview_and_setup.pdf) in chapter 3.1.2)
-* Install Gradle.
 
 ### Clone the required Repositories
 
@@ -41,13 +40,13 @@ The [tt4j-wrapper](https://git.webis.de/aitools/aitools4-ie-tt4j-wrapper) reposi
 
 ### Import the Projects to Eclipse
 
-All Projects need to be on the same level, otherwise the project will not be working properly.
+All Projects need to be on the same level in Eclipse, otherwise the project will not be working properly.
 
-* Open Eclipse
+* Open Eclipse.
 
-* Import the aitools4-ie-uima project as a gradle project.
+* Import the [aitools4-ie-uima](https://git.webis.de/aitools/aitools4-ie-uima) project as a gradle project.
 
-* Import the wstud-visit-the-dome-ss19 project as a gradle project. 
+* Import the [wstud-visit-the-dome-ss19](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19) project as a gradle project. 
 
 
 ## Project Structure
