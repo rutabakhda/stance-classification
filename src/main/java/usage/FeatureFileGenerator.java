@@ -16,8 +16,14 @@ public class FeatureFileGenerator {
 	
 	
 	public static void main(String[] args) {
-		
-		new GenericFeatureFileGenerator(PROPERTIES_PATH).generatorFeatureFiles();
+		String propertiesPath;
+		System.out.println(args.toString());
+		if (args.length>=1 && args[0].length()>3) {
+			propertiesPath = args[0];
+		} else {
+			propertiesPath = PROPERTIES_PATH;
+		}
+		new GenericFeatureFileGenerator(propertiesPath).generatorFeatureFiles();
 	}
 	
 }

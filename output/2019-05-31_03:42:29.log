@@ -1,0 +1,11 @@
+/home/ciso0478/wstud-visit-the-dome-ss19
+
+Split File into Training & Testing
+/home/ciso0478/wstud-visit-the-dome-ss19/data/debatepedia/2019-05-31_03:42:29
+....ok
+
+Use UIMA to convert to XMI files
+input directory: /home/ciso0478/wstud-visit-the-dome-ss19/data/debatepedia/2019-05-31_03:42:29
+filename: debatepedia-preprocessed_train.json
+output directory: /home/ciso0478/wstud-visit-the-dome-ss19/data/debatepedia/2019-05-31_03:42:29/xmi/debatepedia-preprocessed_train
+.................................................................................................................................................................................................
