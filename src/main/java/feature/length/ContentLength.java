@@ -12,7 +12,16 @@ import de.aitools.ie.uima.feature.IFeatureType;
 import de.aitools.ie.uima.type.core.Token;
 
 /**
+ * This class denotes a feature type that captures the length of a 
+ * text in different ways. All lengths lie in the range 0 to 1. 
+ * Where necessary, normalization is done based on the maximum length values 
+ * found in a training set. 
  * 
+ *  In particular, the following length values are computed:
+ * <UL>
+ *   <LI>The number of characters</LI> 
+ *   <LI>The number of tokens</LI> 
+ * </UL>
  * @author lukas.peter.trautner@uni-weimar.de
  *
  */
@@ -39,7 +48,7 @@ public class ContentLength implements IFeatureType {
 
 	/**
 	 * Name of the output parameter that specifies
-	 * the maximum number of tokens in a text from a text collection in order
+	 * the maximum number of characters in a text from a text collection in order
 	 * to consider it for feature computations.
 	 */
 	private static final String PARAM_MAX_ABS_CHAR_OCCURRENCE =
