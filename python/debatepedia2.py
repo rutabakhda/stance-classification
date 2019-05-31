@@ -59,11 +59,11 @@ def split_json():
     n = len(topics)
     n_t = math.floor(n * 0.8)
     if(int(random)==1):
-        df.iloc[np.random.permutation(len(df))]
+        df1 = df.reindex(np.random.permutation(df.index))
         n1 = len(df)
         n1_t = math.floor(n1 * 0.8)
-        df_tr = df[:n1_t]
-        df_te = df[n1_t:]
+        df_tr = df1[:n1_t]
+        df_te = df1[n1_t:]
 
     else:
         topics_tr = topics[:n_t]
