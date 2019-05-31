@@ -16,7 +16,7 @@ import org.apache.uima.util.XMLInputSource;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import com.github.javaparser.printer.Printable;
+//import com.github.javaparser.printer.Printable;
 
 import de.aitools.ie.uima.type.argumentation.ArgumentativeDiscourseUnit;
 

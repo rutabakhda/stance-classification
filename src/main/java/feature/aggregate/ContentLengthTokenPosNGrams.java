@@ -12,7 +12,8 @@ import de.aitools.ie.uima.feature.style.POSNGrams;
 import feature.length.ContentLength;
 
 /**
- * Implements an aggregate feature type, which consists of TokenNGram and PosNGram features.
+ * This class implements an aggregate feature type, which consists
+ * of TokenNGram, PosNGram and Content Length features.
  * @author lukas.peter.trautner@uni-weimar.de
  *
  */
