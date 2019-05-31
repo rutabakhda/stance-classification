@@ -17,8 +17,7 @@ public class FeatureFileGenerator {
 	
 	public static void main(String[] args) {
 		String propertiesPath;
-		System.out.println(args.toString());
-		if (args.length>=1 && args[0].length()>3) {
+		if (args.length>=1 && args[0].length()>10) {//TODO: bugs in the length comparison, put 10 at the moment
 			propertiesPath = args[0];
 		} else {
 			propertiesPath = PROPERTIES_PATH;

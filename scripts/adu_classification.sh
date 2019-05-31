@@ -5,9 +5,12 @@
 # Input: Json File
 # Process:
 STEP1="Split File into Training & Testing"
+STEP1a="Split XMI folders into 5 sets, each contain one training and testing set"
 STEP2="Use UIMA to convert to XMI files"
 STEP3="Generate Feature Files"
+STEP3a="Generate Feature Files for cross validation"
 STEP4="Use Weka to train classifier"
+STEP4a="Use Weka to train classifier for cross validation"
 # 4. Generate output results
 # Output: Performace of Classfier or Labelled Data
 #
@@ -23,8 +26,26 @@ function step1(){
     # source ../my_env/bin/activate
     cd python
     PATH_TO_JSON=../data/debatepedia/debatepedia-preprocessed.json
+    if [[ "$1" == "random" ]]
+    then
+    split_path=`python debatepedia2.py -p $PATH_TO_JSON -r 1`
+    else
     split_path=`python debatepedia2.py -p $PATH_TO_JSON`
+    fi
     echo $split_path
+    cd ..
+    echo ....ok
+    echo
+}
+
+function step1a(){
+    # step 1
+    echo $STEP1a
+    # source ../my_env/bin/activate
+    cd python
+    PATH_TO_XMI=../data/debatepedia/xmi
+    all_split_path=`python debatepedia2.py -p $PATH_TO_XMI -m split_kfold`
+    echo all_split_path: all_split_path
     cd ..
     echo ....ok
     echo
@@ -41,10 +62,21 @@ function step2(){
 function step3(){
     # step 3
     echo $STEP3
+
     file_path=src/main/resources/properties/experiment/experiment-config_debatepedia.properties
-    training_path="$split_path/xmi/debatepedia-preprocessed_train"
-    testing_path="$split_path/xmi/debatepedia-preprocessed_test"
-    output_path="$split_path/arff"
+    if [ $# -eq 0 ]
+    then
+    training_path=`find $split_path/xmi -type d -name "*train"`
+    testing_path=`find $split_path/xmi -type d -name "*test"`
+    echo training_path: $training_path
+    echo testing_path: $testing_path
+    else
+    training_path=$1
+    testing_path=$2
+    fi
+
+    output_path=$split_path/arff
+    echo output_arff : $output_path
     # replace training path
     search_pattern="input_corpus_folder_0"
     replace_line="$search_pattern=$training_path"
@@ -62,21 +94,45 @@ function step3(){
     echo
 }
 
+function step3a(){
+    echo $STEP3a
+    for i in 1 2 3 4 5
+    do
+        # update split path to set
+        split_path=$all_split_path/set$i
+        echo $split_path
+        step3 $split_path/train $split_path/test
+    done
+
+}
+
 function step4(){
     # step 4
     echo $STEP4
-    echo $split_path
     arff_folder=$split_path/arff
-
+    train_path=`find $arff_folder -type f -name "*train.arff"`
+    test_path=`find $arff_folder -type f -name "*test.arff"`
+    echo arff_folder: $arff_folder
+    echo train_path: $train_path
+    echo test_path: $test_path
     java -classpath ../weka/weka.jar weka.classifiers.trees.RandomForest -P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1 \
-    -t $arff_folder/*train.arff \
-    -T $arff_folder/*test.arff \
-    -do-not-check-capabilities -o
+    -t $train_path \
+    -T $test_path \
+    -do-not-check-capabilities -o #output statistics only
 
     echo ....ok
     echo
 }
 
+function step4a(){
+    echo $STEP4a
+    for i in 1 2 3 4 5
+    do
+        split_path=$all_split_path/set$i
+        step4
+    done
+
+}
 #configLine [searchPattern] [replaceLine] [filePath]
 function configLine {
   local OLD_LINE_PATTERN=$1; shift
@@ -92,6 +148,7 @@ function configLine {
   fi
 }
 
+# ADU Classification Individual Step
 #split_path='data/debatepedia/2019-05-31_02:41:04'
 if [[ "$1" == "1" ]]
 then
@@ -99,12 +156,43 @@ step1
 elif [[ "$1" == "2" ]]
 then
 step2
+split_path=$2
 elif [[ "$1" == "3" ]]
 then
+split_path=$2
 step3
 elif [[ "$1" == "4" ]]
 then
+split_path=$2
 step4
+
+# K fold Validation Individual Step
+elif [[ "$1" == "3a" ]]
+then
+all_split_path=$2
+step3a
+elif [[ "$1" == "4a" ]]
+then
+all_split_path=$2
+step4a
+
+# Full K fold Validation
+elif [[ "$1" == "kfold" ]]
+then
+step1a
+step3a
+step4a
+
+# Full ADU Classification Random Split
+elif [[ "$1" == "random" ]]
+then
+step1 random
+step2
+step3
+step4
+
+# Full ADU Classificaion
+#all_split_path="/home/ciso0478/wstud-visit-the-dome-ss19/data/debatepedia/2019-05-31_16:00:59"
 else
 step1
 step2
