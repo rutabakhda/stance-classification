@@ -158,6 +158,17 @@ public class TrainTestSplitter {
 				e.printStackTrace();
 			} 
 		}
+		this.copyAll(instancesConclusions, instancesPremises);
+	}
+	
+	
+	/**
+	 * 
+	 * @param instancesConclusions
+	 * @param instancesPremises
+	 * @throws IOException
+	 */
+	private void copyAll(ArrayList<File> instancesConclusions, ArrayList<File> instancesPremises) throws IOException {
 		
 		Random randomGenerator = new Random(123456789);
 		ArrayList<Integer> indices = new ArrayList<Integer>();
@@ -171,24 +182,6 @@ public class TrainTestSplitter {
 		this.copy(indices, instancesPremises, this.inputDirectory, this.trainingSetDirectory);
 		this.copy(instancesConclusions, this.inputDirectory, this.testSetDirectory);
 		this.copy(instancesPremises, this.inputDirectory, this.testSetDirectory);
-	}
-	
-	
-	/**
-	 * 
-	 * @param range
-	 * @param numIndices
-	 * @param indices
-	 * @param randomGenerator
-	 */
-	private void sampleIndices(int range, int numIndices, ArrayList<Integer> indices, Random randomGenerator) {
-		for (int i = 0; i < numIndices; i++) {
-			int rand = randomGenerator.nextInt(range);
-			while (indices.contains(new Integer(rand))) {
-				rand = randomGenerator.nextInt(range);
-			}
-			indices.add(new Integer(rand));
-		}
 	}
 	
 	
@@ -225,6 +218,24 @@ public class TrainTestSplitter {
 		    Path copied = Paths.get(outputDirectory.getAbsolutePath() + "/" + fileName);
 		    Path original = Paths.get(inputDirectory.getAbsolutePath() + "/" + fileName);
 		    Files.copy(original, copied, StandardCopyOption.REPLACE_EXISTING);
+		}
+	}
+	
+	
+	/**
+	 * 
+	 * @param range
+	 * @param numIndices
+	 * @param indices
+	 * @param randomGenerator
+	 */
+	private void sampleIndices(int range, int numIndices, ArrayList<Integer> indices, Random randomGenerator) {
+		for (int i = 0; i < numIndices; i++) {
+			int rand = randomGenerator.nextInt(range);
+			while (indices.contains(new Integer(rand))) {
+				rand = randomGenerator.nextInt(range);
+			}
+			indices.add(new Integer(rand));
 		}
 	}
 	
