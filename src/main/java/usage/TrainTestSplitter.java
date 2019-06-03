@@ -2,10 +2,8 @@ package usage;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.lang.reflect.Array;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -18,7 +16,6 @@ import java.util.Random;
 import org.apache.uima.UIMAFramework;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.cas.CAS;
-import org.apache.uima.cas.CASException;
 import org.apache.uima.cas.FSIterator;
 import org.apache.uima.cas.impl.XmiCasDeserializer;
 import org.apache.uima.jcas.JCas;
@@ -26,7 +23,6 @@ import org.apache.uima.jcas.tcas.Annotation;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceSpecifier;
 import org.apache.uima.util.XMLInputSource;
-import org.xml.sax.SAXException;
 
 import de.aitools.ie.uima.type.argumentation.ArgumentativeDiscourseUnit;
 
@@ -83,16 +79,14 @@ public class TrainTestSplitter {
 	
 	public TrainTestSplitter() throws ResourceInitializationException, IOException {
 		this.initialize(PROPERTIES_PATH);
-		this.split();
 	}
 	
 	public TrainTestSplitter(String propertiesPath) throws ResourceInitializationException, IOException {
 		this.initialize(propertiesPath);
-		this.split();
 	}
 	
 	
-	public void initialize(String propertiesPath) throws ResourceInitializationException {
+	private void initialize(String propertiesPath) throws ResourceInitializationException {
 		try {
 			InputStream input = new FileInputStream(propertiesPath);
             Properties configurationProps = new Properties();
@@ -232,7 +226,7 @@ public class TrainTestSplitter {
 	
 	
 	
-	public void getAllFiles() {
+	private void getAllFiles() {
 		this.files = new ArrayList<File>();
 		for (File file : this.inputDirectory.listFiles()) {
 			if (file.getAbsolutePath().indexOf(FILE_EXTENSION) == file.getAbsolutePath().length() - 4) {
@@ -241,12 +235,12 @@ public class TrainTestSplitter {
 		}
 	}
 	
-	public int computeTrainingSetSize(int fileCount) {
+	private int computeTrainingSetSize(int fileCount) {
 		int trainingSetSize = (int)(fileCount * percentTrainingSet);
 		return trainingSetSize;
 	}
 	
-	public int computeTestSetSize(int fileCount, int trainingSetSize) {
+	private int computeTestSetSize(int fileCount, int trainingSetSize) {
 		return fileCount - trainingSetSize;
 	}
 	
@@ -311,6 +305,7 @@ public class TrainTestSplitter {
 	public static void main(String[] args) throws ResourceInitializationException, IOException {
 	
 		TrainTestSplitter splitTester = new TrainTestSplitter();
+		splitTester.split();
 
 		
 	}

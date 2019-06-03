@@ -16,7 +16,6 @@ import org.apache.uima.util.XMLInputSource;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-//import com.github.javaparser.printer.Printable;
 
 import de.aitools.ie.uima.type.argumentation.ArgumentativeDiscourseUnit;
 
@@ -29,7 +28,7 @@ import de.aitools.ie.uima.type.argumentation.ArgumentativeDiscourseUnit;
  */
 public class DebatepediaProcessingPipeline {
 
-	private static final String INPUT_COLLECTION_DIR = "data/debatepedia/json";
+	private static final String INPUT_COLLECTION_DIR = "data/debatepedia/json/full";
 
 	private static final String ANALYSIS_ENGINE_PATH = "src/main/resources/uima/aggregates/PosTokenTagger.xml";
 
@@ -50,7 +49,7 @@ public class DebatepediaProcessingPipeline {
 		File inputDirectory;
 		String outputCollectionDir;
 
-		if (args[0].length() > 0) {
+		if (args.length > 0 && args[0].length() > 0) {
 			inputDirectory = new File(args[0]);
 			outputCollectionDir = args[0] + "/" + "xmi";
 		} else {
@@ -81,8 +80,9 @@ public class DebatepediaProcessingPipeline {
 					System.out.println("output directory: " + outputDirectory.getAbsolutePath());
 
 					int count = 0;
+					CAS cas = analysisEngine.newCAS();
 					for (int i = 0; i < argumentativeDiscourseUnits.length(); i++) {
-						CAS cas = analysisEngine.newCAS();
+						cas.reset();
 						JCas jcas = cas.getJCas();
 
 						JSONObject argumentativeDiscourseUnit = argumentativeDiscourseUnits.getJSONObject(i);
@@ -99,7 +99,6 @@ public class DebatepediaProcessingPipeline {
 
 						File outputFile = new File(
 								outputDirectory.getAbsolutePath() + "/debatepedia-adu-" + Integer.toString(i) + ".xmi");
-//						System.out.println(outputFile.getAbsolutePath());
 						FileOutputStream outputStream = new FileOutputStream(outputFile);
 						XmiCasSerializer.serialize(jcas.getCas(), outputStream);
 
