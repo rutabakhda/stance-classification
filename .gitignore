@@ -1,6 +1,5 @@
 /bin/
 /.gradle/
-xmi/
-data/**/*.xmi
+*.xmi
 notebooks/.ipynb_checkpoints/*
 .idea/*
