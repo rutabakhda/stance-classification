@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Array;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -55,9 +56,6 @@ public class TrainTestSplitter {
 	private static final String FILE_EXTENSION = ".xmi";
 	
 	
-	
-	
-	
 	private File inputDirectory;
 
 	private File outputDirectory;
@@ -68,8 +66,6 @@ public class TrainTestSplitter {
 	
 	private int trainingSetSize;
 	
-	private int testSetSize;
-	
 	private File trainingSetDirectory;
 	
 	private File testSetDirectory;
@@ -77,15 +73,33 @@ public class TrainTestSplitter {
 	private ArrayList<File> files;
 	
 	
+	
+	/**
+	 * 
+	 * @throws ResourceInitializationException
+	 * @throws IOException
+	 */
 	public TrainTestSplitter() throws ResourceInitializationException, IOException {
 		this.initialize(PROPERTIES_PATH);
 	}
+
 	
+	/**
+	 * 
+	 * @param propertiesPath
+	 * @throws ResourceInitializationException
+	 * @throws IOException
+	 */
 	public TrainTestSplitter(String propertiesPath) throws ResourceInitializationException, IOException {
 		this.initialize(propertiesPath);
 	}
 	
 	
+	/**
+	 * 
+	 * @param propertiesPath
+	 * @throws ResourceInitializationException
+	 */
 	private void initialize(String propertiesPath) throws ResourceInitializationException {
 		try {
 			InputStream input = new FileInputStream(propertiesPath);
@@ -103,7 +117,6 @@ public class TrainTestSplitter {
             this.getAllFiles();
             this.fullSetSize = this.files.size();
             this.trainingSetSize = computeTrainingSetSize(this.fullSetSize);
-            this.testSetSize = computeTestSetSize(this.fullSetSize, this.trainingSetSize);
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new ResourceInitializationException();
@@ -111,20 +124,24 @@ public class TrainTestSplitter {
 	}
 	
 	
-	
+	/**
+	 * 
+	 * @throws ResourceInitializationException
+	 * @throws IOException
+	 */
 	public void split() throws ResourceInitializationException, IOException {
 		AnalysisEngine analysisEngine = this.createAnalysisEngine();
 	
 		ArrayList<File> instancesConclusions = new ArrayList<File>();
 		ArrayList<File> instancesPremises = new ArrayList<File>();
 		CAS cas = analysisEngine.newCAS();
-		for (File file : files) {
+		for (File file : this.files) {
 	    	try (FileInputStream is = new FileInputStream(file);){
 	    		cas.reset();
 				XmiCasDeserializer.deserialize(is, cas);
 				JCas jcas = cas.getJCas();
-
 				Annotation span = new Annotation(jcas, 0, jcas.getDocumentText().length() + 1);
+				//TODO specify annotation and classes by property file
 				FSIterator<Annotation> iter = 
 						jcas.getAnnotationIndex(ArgumentativeDiscourseUnit.type).subiterator(span);
 				ArgumentativeDiscourseUnit unit = (ArgumentativeDiscourseUnit) iter.get();
@@ -142,90 +159,79 @@ public class TrainTestSplitter {
 			} 
 		}
 		
-		Random randomGenerator = new Random();
-		
+		Random randomGenerator = new Random(123456789);
 		ArrayList<Integer> indices = new ArrayList<Integer>();
+		int numTrainingConclusions = (int)(this.percentTrainingSet * instancesConclusions.size());
+		int numTrainingPremises = this.trainingSetSize - numTrainingConclusions;
 		
-		
-		
-		
-		
-		
-		
-		int trainingConclusions = (int)(this.percentTrainingSet * instancesConclusions.size());
-		int trainingPremises = this.trainingSetSize - trainingConclusions;
-		
-		for (int i = 0; i < trainingConclusions; i++) {
-			int rand = randomGenerator.nextInt(instancesConclusions.size());
-			while (indices.contains(new Integer(rand))) {
-				rand = randomGenerator.nextInt(instancesConclusions.size());
-			}
-			indices.add(new Integer(rand));
-		}
-		Collections.sort(indices, Collections.reverseOrder());
-		
-		for (int i : indices) {
-			File file = instancesConclusions.remove(i);
-			String fileName = file.getName();
-		    Path copied = Paths.get(this.trainingSetDirectory.getAbsolutePath() + "/" + fileName);
-		    Path originalPath = Paths.get(this.inputDirectory.getAbsolutePath() + "/" + fileName);
-		    Files.copy(originalPath, copied, StandardCopyOption.REPLACE_EXISTING);
-		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		this.sampleIndices(instancesConclusions.size(), numTrainingConclusions, indices, randomGenerator);
+		this.copy(indices, instancesConclusions, this.inputDirectory, this.trainingSetDirectory);
 		indices.clear();
-		for (int i = 0; i < trainingPremises; i++) {
-			int rand = randomGenerator.nextInt(instancesPremises.size());
-			while (indices.contains(new Integer(rand))) {
-				rand = randomGenerator.nextInt(instancesPremises.size());
-			}
-			indices.add(new Integer(rand));
-		}
-		Collections.sort(indices, Collections.reverseOrder());
-		
-		for (int i : indices) {
-			File file = instancesPremises.remove(i);
-			String fileName = file.getName();
-		    Path copied = Paths.get(this.trainingSetDirectory.getAbsolutePath() + "/" + fileName);
-		    Path originalPath = Paths.get(this.inputDirectory.getAbsolutePath() + "/" + fileName);
-		    Files.copy(originalPath, copied, StandardCopyOption.REPLACE_EXISTING);
-		}
-		
-		
-		
-		
-		
-		
-		
-		
-		for (File file : instancesConclusions) {
-			String fileName = file.getName();
-		    Path copied = Paths.get(this.testSetDirectory.getAbsolutePath() + "/" + fileName);
-		    Path originalPath = Paths.get(this.inputDirectory.getAbsolutePath() + "/" + fileName);
-		    Files.copy(originalPath, copied, StandardCopyOption.REPLACE_EXISTING);
-		}
-		
-		for (File file : instancesPremises) {
-			String fileName = file.getName();
-		    Path copied = Paths.get(this.testSetDirectory.getAbsolutePath() + "/" + fileName);
-		    Path originalPath = Paths.get(this.inputDirectory.getAbsolutePath() + "/" + fileName);
-		    Files.copy(originalPath, copied, StandardCopyOption.REPLACE_EXISTING);
-		}
-		
+		this.sampleIndices(instancesPremises.size(), numTrainingPremises, indices, randomGenerator);
+		this.copy(indices, instancesPremises, this.inputDirectory, this.trainingSetDirectory);
+		this.copy(instancesConclusions, this.inputDirectory, this.testSetDirectory);
+		this.copy(instancesPremises, this.inputDirectory, this.testSetDirectory);
 	}
 	
 	
+	/**
+	 * 
+	 * @param range
+	 * @param numIndices
+	 * @param indices
+	 * @param randomGenerator
+	 */
+	private void sampleIndices(int range, int numIndices, ArrayList<Integer> indices, Random randomGenerator) {
+		for (int i = 0; i < numIndices; i++) {
+			int rand = randomGenerator.nextInt(range);
+			while (indices.contains(new Integer(rand))) {
+				rand = randomGenerator.nextInt(range);
+			}
+			indices.add(new Integer(rand));
+		}
+	}
 	
 	
+	/**
+	 * 
+	 * @param indices
+	 * @param instances
+	 * @param inputDirectory
+	 * @param outputDirectory
+	 * @throws IOException
+	 */
+	private void copy(ArrayList<Integer> indices, ArrayList<File> instances, File inputDirectory, File outputDirectory) throws IOException {
+		Collections.sort(indices, Collections.reverseOrder());
+		for (int i : indices) {
+			File file = instances.remove(i);
+			String fileName = file.getName();
+		    Path copied = Paths.get(outputDirectory.getAbsolutePath() + "/" + fileName);
+		    Path original = Paths.get(inputDirectory.getAbsolutePath() + "/" + fileName);
+		    Files.copy(original, copied, StandardCopyOption.REPLACE_EXISTING);
+		}
+	}
 	
 	
+	/**
+	 * 
+	 * @param instances
+	 * @param inputDirectory
+	 * @param outputDirectory
+	 * @throws IOException
+	 */
+	private void copy(ArrayList<File> instances, File inputDirectory, File outputDirectory) throws IOException {
+		for (File file : instances) {
+			String fileName = file.getName();
+		    Path copied = Paths.get(outputDirectory.getAbsolutePath() + "/" + fileName);
+		    Path original = Paths.get(inputDirectory.getAbsolutePath() + "/" + fileName);
+		    Files.copy(original, copied, StandardCopyOption.REPLACE_EXISTING);
+		}
+	}
+	
+	
+	/**
+	 * 
+	 */
 	private void getAllFiles() {
 		this.files = new ArrayList<File>();
 		for (File file : this.inputDirectory.listFiles()) {
@@ -235,15 +241,22 @@ public class TrainTestSplitter {
 		}
 	}
 	
+	
+	/**
+	 * 
+	 * @param fileCount
+	 * @return
+	 */
 	private int computeTrainingSetSize(int fileCount) {
 		int trainingSetSize = (int)(fileCount * percentTrainingSet);
 		return trainingSetSize;
 	}
 	
-	private int computeTestSetSize(int fileCount, int trainingSetSize) {
-		return fileCount - trainingSetSize;
-	}
 	
+	/**
+	 * 
+	 * @throws IOException
+	 */
 	private void createDirectories() throws IOException {
 		File outputDirectory = this.outputDirectory;
 		File trainingDirectory = new File(outputDirectory.getAbsolutePath() + "/training");
@@ -267,6 +280,12 @@ public class TrainTestSplitter {
 		
 	}
 	
+	
+	/**
+	 * 
+	 * @param directory
+	 * @throws IOException
+	 */
 	private void emptyDirectory(File directory) throws IOException {
 		
 		for (File file : directory.listFiles()) {
@@ -279,6 +298,8 @@ public class TrainTestSplitter {
 			
 		}
 	}
+	
+	
 	
 	/*
 	 * Creates an analysis engine.
@@ -304,9 +325,7 @@ public class TrainTestSplitter {
 	
 	public static void main(String[] args) throws ResourceInitializationException, IOException {
 	
-		TrainTestSplitter splitTester = new TrainTestSplitter();
-		splitTester.split();
-
-		
+		TrainTestSplitter splitter = new TrainTestSplitter();
+		splitter.split();
 	}
 }
