@@ -5,3 +5,5 @@ notebooks/.ipynb_checkpoints/*
 data/debatepedia/xmi/debatepedia-preprocessed/
 data/webis-debate-16-processed/training/
 data/webis-debate-16-processed/test/
+data/debatepedia/split/training/
+data/debatepedia/split/test/
