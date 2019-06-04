@@ -53,7 +53,7 @@ public class DebatepediaExperimentRunner {
 			this.generator = new GenericFeatureFileGenerator(propertiesPath);
 			this.generator.generatorFeatureFiles();
 		}
-		//TODO run weka for each generated feature configuration + pipe output of weka to data/debatepedia/experiment-results/<name of input folder>.txt
+		//TODO run weka for each generated feature configuration + pipe output of weka to data/debatepedia/experiment-results/<name of input folder>.txt (e.g content-length.txt)
 		
 	}
 
