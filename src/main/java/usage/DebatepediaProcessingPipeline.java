@@ -41,7 +41,7 @@ public class DebatepediaProcessingPipeline {
 	 * 
 	 * @param args
 	 */
-	private void processCollection(String[] args) {
+	public void processCollection(String[] args) {
 
 		AnalysisEngine analysisEngine = this.createAnalysisEngine(ANALYSIS_ENGINE_PATH);
 
@@ -49,7 +49,7 @@ public class DebatepediaProcessingPipeline {
 		File inputDirectory;
 		String outputCollectionDir;
 
-		if (args.length > 0 && args[0].length() > 0) {
+		if (args != null && args.length > 0 && args[0].length() > 0) {
 			inputDirectory = new File(args[0]);
 			outputCollectionDir = args[0] + "/" + "xmi";
 		} else {

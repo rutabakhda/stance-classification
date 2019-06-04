@@ -35,7 +35,7 @@ import de.aitools.ie.uima.type.argumentation.ArgumentativeDiscourseUnit;
 public class TrainTestSplitter {
 	
 	
-	private static final String PROPERTIES_PATH = "src/main/resources/properties/split/split_debatepedia-test.properties";
+	private static final String PROPERTIES_PATH = "src/main/resources/properties/split/split-config_debatepedia-test.properties";
 	
 	
 	private static final String PARAM_INPUT_DIRECTORY = "input_directory";
