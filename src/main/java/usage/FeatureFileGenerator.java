@@ -12,7 +12,7 @@ import de.aitools.ie.uima.usage.GenericFeatureFileGenerator;
 public class FeatureFileGenerator {
 	
 	//public static final String PROPERTIES_PATH = "src/main/resources/properties/experiment/experiment-config_webis-debate-16.properties";
-	public static final String PROPERTIES_PATH = "src/main/resources/properties/experiment/experiment-config_debatepedia.properties";
+	public static final String PROPERTIES_PATH = "src/main/resources/properties/experiment/debatepedia/experiment-config_debatepedia_content-length.properties";
 	
 	
 	public static void main(String[] args) {
