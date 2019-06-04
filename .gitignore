@@ -1,5 +1,7 @@
 /bin/
 /.gradle/
-*.xmi
 notebooks/.ipynb_checkpoints/*
 .idea/*
+data/debatepedia/xmi/debatepedia-preprocessed/
+data/webis-debate-16-processed/training/
+data/webis-debate-16-processed/test/
