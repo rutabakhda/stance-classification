@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
 import org.apache.uima.UIMAFramework;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.cas.CAS;
@@ -16,7 +17,6 @@ import org.apache.uima.util.XMLInputSource;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-
 import de.aitools.ie.uima.type.argumentation.ArgumentativeDiscourseUnit;
 
 /**
@@ -26,7 +26,7 @@ import de.aitools.ie.uima.type.argumentation.ArgumentativeDiscourseUnit;
  * @author lukas.peter.trautner@uni-weimar.de
  * 
  */
-public class DebatepediaProcessingPipeline {
+public class DebatepediaProcessor {
 
 	private static final String INPUT_COLLECTION_DIR = "data/debatepedia/json/full";
 
@@ -177,7 +177,7 @@ public class DebatepediaProcessingPipeline {
 	}
 
 	public static void main(String[] args) {
-		DebatepediaProcessingPipeline pipeline = new DebatepediaProcessingPipeline();
+		DebatepediaProcessor pipeline = new DebatepediaProcessor();
 		pipeline.processCollection(args);
 		System.out.println("done");
 	}

@@ -26,7 +26,7 @@ public class DebatepediaExperimentRunner {
 	
 	private static final String SPLITTER_PROPERTIES_PATH = "src/main/resources/properties/split/split-config_debatepedia.properties";
 	
-	private DebatepediaProcessingPipeline pipeline;
+	private DebatepediaProcessor pipeline;
 	
 	private TrainTestSplitter splitter;
 	
@@ -38,7 +38,7 @@ public class DebatepediaExperimentRunner {
 	
 	public DebatepediaExperimentRunner() throws ResourceInitializationException, IOException {
 
-		this.pipeline = new DebatepediaProcessingPipeline();
+		this.pipeline = new DebatepediaProcessor();
 		this.splitter = new TrainTestSplitter(SPLITTER_PROPERTIES_PATH);
 		//TODO Weka Stuff
 		

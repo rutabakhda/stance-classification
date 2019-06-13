@@ -24,6 +24,7 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceSpecifier;
+import org.apache.uima.util.FileUtils;
 import org.apache.uima.util.XMLInputSource;
 
 import de.aitools.ie.uima.io.UIMAAnnotationFileWriter;
@@ -76,7 +77,7 @@ public class StudentEssaysProcessor {
 		// Output folder structure
 		// topic-index > essay-index
 		// adu-xmi-id
-
+		
 		// Initialize UIMA engines
 		CollectionReader cr = this.createCollectionReader(COLLECTION_READER_PATH, INPUT_COLLECTION_DIR);
 		AnalysisEngine ae = this.createAnalysisEngine(ANALYSIS_ENGINE_PATH);
@@ -89,6 +90,7 @@ public class StudentEssaysProcessor {
 		Integer claimAgainstCounter = 0;
 		Integer numberOfDocumentCounter = 0;
 		Integer numberOfTopicCounter = 0;
+		Integer numberOfInstanceCounter = 0;
 
 		// Iterate with collection reader over collection and process each text
 		// with analysis engine
@@ -142,8 +144,8 @@ public class StudentEssaysProcessor {
 						aduType = "conclusion";
 					}
 					// Some prints
-					System.out.println(sentence + ", " + aduType + ", " + numberOfDocumentCounter);
-					write2XMI(ae, xmiWriter, aduType, sentence, topicIndex, filename, numberOfDocumentCounter);
+					write2XMI(ae, xmiWriter, aduType, sentence, topicIndex, filename, ++numberOfInstanceCounter);
+					System.out.println(sentence + ", " + aduType + ", " + numberOfInstanceCounter);
 				}
 			}
 		} catch (Exception ex) {
@@ -204,10 +206,6 @@ public class StudentEssaysProcessor {
 		bufferedWriter.close();
 	}
 
-	private void printStats(JCas jcas) {
-		System.out.println(jcas.getDocumentText());
-	}
-
 	private void write2XMI(AnalysisEngine ae, UIMAAnnotationFileWriter xmiWriter, String aduType, String sentence,
 			Integer topicIndex, String fileName, Integer aduId)
 			throws ResourceInitializationException, CASException, AnalysisEngineProcessException {
@@ -228,7 +226,7 @@ public class StudentEssaysProcessor {
 		String outputDir = OUTPUT_COLLECTION_DIR + "topic" + "-" + String.format("%03d", topicIndex) + "/" + fileName
 				+ "/";
 		// Write sentence with ADU annotation to file
-		xmiWriter.write(cas, outputDir, "document-" + String.format("%03d", aduId) + ".txt");
+		xmiWriter.write(cas, outputDir, "document-" + String.format("%04d", aduId) + ".txt");
 	}
 
 	// -------------------------------------------------------------------------

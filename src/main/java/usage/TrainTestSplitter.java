@@ -9,10 +9,16 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.security.cert.Extension;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 import java.util.Properties;
 import java.util.Random;
+
+import javax.annotation.processing.RoundEnvironment;
 
 import org.apache.uima.UIMAFramework;
 import org.apache.uima.analysis_engine.AnalysisEngine;
@@ -23,7 +29,10 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceSpecifier;
+import org.apache.uima.util.FileUtils;
 import org.apache.uima.util.XMLInputSource;
+
+import com.github.javaparser.ast.expr.ThisExpr;
 
 import de.aitools.ie.uima.type.argumentation.ArgumentativeDiscourseUnit;
 
@@ -44,6 +53,8 @@ public class TrainTestSplitter {
 	
 	private static final String PARAM_PERCENT_TRAINING_SET = "percent_training_set";
 	
+	private static final String PARAM_BY_TOPIC_BOOLEAN = "by-topic";
+	
 	//private static final String PARAM_ANNOTATION_TYPE = "annotation_type";
 	
 	//private static final String PARAM_ANNOTATION_FEATURE_TYPE = "annotation_feature_type";
@@ -62,16 +73,16 @@ public class TrainTestSplitter {
 	
 	private double percentTrainingSet;
 	
-	private int fullSetSize;
-	
-	private int trainingSetSize;
-	
 	private File trainingSetDirectory;
 	
 	private File testSetDirectory;
 	
 	private ArrayList<File> files;
 	
+	private boolean byTopic;
+	
+	private ArrayList<File> trainingSet;
+	private ArrayList<File> testingSet;
 	
 	
 	/**
@@ -107,16 +118,19 @@ public class TrainTestSplitter {
             configurationProps.load(input);
             String inputPath = configurationProps.getProperty(PARAM_INPUT_DIRECTORY);
             String outputPath = configurationProps.getProperty(PARAM_OUTPUT_DIRECTORY);
+            this.byTopic = Boolean.parseBoolean(configurationProps.getProperty(PARAM_BY_TOPIC_BOOLEAN));
             this.percentTrainingSet = Double.parseDouble(configurationProps.getProperty(PARAM_PERCENT_TRAINING_SET));
             this.inputDirectory = new File(inputPath);
             this.outputDirectory = new File(outputPath);
+            this.trainingSet = new ArrayList<File>();
+            this.testingSet = new ArrayList<File>();
             this.createDirectories();
             if (!inputDirectory.exists() || !inputDirectory.isDirectory()) {
             	throw new ResourceInitializationException();
             }
             this.getAllFiles();
-            this.fullSetSize = this.files.size();
-            this.trainingSetSize = computeTrainingSetSize(this.fullSetSize);
+            //this.fullSetSize = this.files.size();
+            //this.trainingSetSize = computeTrainingSetSize(this.fullSetSize);
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new ResourceInitializationException();
@@ -130,12 +144,100 @@ public class TrainTestSplitter {
 	 * @throws IOException
 	 */
 	public void split() throws ResourceInitializationException, IOException {
+		
+		// By Topic Split
+		if (this.byTopic) {
+			System.out.println("Split by Topic");
+			int fileLength = this.files.size();
+			int trainLength = (int)Math.round(fileLength * this.percentTrainingSet);
+			int testLength = fileLength - trainLength;
+			File[] trainList = new File[trainLength];
+			File[] testList = new File[testLength];
+			File[] files = this.files.toArray(new File[fileLength]);
+			System.arraycopy(files, 0, trainList, 0, trainLength);
+			System.arraycopy(files, trainLength, testList, 0, testLength);
+			System.out.println("\ntrain " + String.valueOf(trainList.length));
+			for (File f : trainList) {
+				System.out.print("," + f.getName());
+			}
+			System.out.println("\ntest " + String.valueOf(testList.length));
+			for (File f : testList) {
+				System.out.print("," + f.getName());
+			}
+			System.out.println();
+			// Construct training set and test set
+			for (File file : trainList) {
+				if(file.isDirectory()) {
+					this.trainingSet.addAll(this.getAllFilesWithExtensions(file, FILE_EXTENSION));
+				}
+			}
+			for (File file : testList) {
+				if(file.isDirectory()) {
+					this.testingSet.addAll(this.getAllFilesWithExtensions(file, FILE_EXTENSION));
+				}
+			}
+		}
+		
+		// Random Split
+		else {
+			System.out.println("Split by Random");
+			ArrayList<File> files = this.getAllFilesWithExtensions(inputDirectory, FILE_EXTENSION);
+			int trainLength = (int)Math.round(files.size() * this.percentTrainingSet);
+			int testLength = files.size() - trainLength;
+			File[] trainList = new File[trainLength];
+			File[] testList = new File[testLength];
+			System.arraycopy(files.toArray(), 0, trainList, 0, trainLength);
+			System.arraycopy(files.toArray(), trainLength, testList, 0, testLength);
+			this.trainingSet = new ArrayList<File>(Arrays.asList(trainList));
+			this.testingSet = new ArrayList<File>(Arrays.asList(testList));
+		}
+
+		// Look at the statistics 
+		
 		AnalysisEngine analysisEngine = this.createAnalysisEngine();
-	
-		ArrayList<File> instancesConclusions = new ArrayList<File>();
-		ArrayList<File> instancesPremises = new ArrayList<File>();
 		CAS cas = analysisEngine.newCAS();
-		for (File file : this.files) {
+		System.out.print("\n\ntraining set: " + Integer.toString(this.countADUType(cas, trainingSet, "conclusion")) + " conclusion, " +
+				Integer.toString(this.countADUType(cas, trainingSet, "premise")) + " premise");
+		System.out.println("\ntesting set: " + Integer.toString(this.countADUType(cas, testingSet, "conclusion")) + " conclusion, " +
+				Integer.toString(this.countADUType(cas, testingSet, "premise")) + " premise");
+		
+		// Copying ... 
+		this.copyAll(trainingSet, this.trainingSetDirectory);
+		this.copyAll(testingSet, this.testSetDirectory);
+	
+	}
+	
+	public ArrayList<File> getAllFilesWithExtensions(File dir, String extension) {
+		ArrayList<File> allFiles = new ArrayList<File>();
+		File[] files = dir.listFiles();
+		for (File file : files) {
+			if (file.isDirectory()) {
+				allFiles.addAll(getAllFilesWithExtensions(file, extension));
+			} else {
+				if(this.checkExtension(file, extension)) {
+					allFiles.add(file);
+				}
+			}
+		}
+		return allFiles;
+	}
+
+	
+    private boolean checkExtension(File file, String matchingExtension) {
+        String extension = "";
+        if (file != null && file.exists()) {
+            String name = file.getName();
+            extension = name.substring(name.lastIndexOf("."));
+            if(extension.contentEquals(matchingExtension)) {
+            	return true;
+            }
+        }
+        return false;
+    }
+	
+	private int countADUType(CAS cas, List<File> files, String matchType) {
+		int count = 0;
+		for (File file : files) {
 	    	try (FileInputStream is = new FileInputStream(file);){
 	    		cas.reset();
 				XmiCasDeserializer.deserialize(is, cas);
@@ -146,42 +248,27 @@ public class TrainTestSplitter {
 						jcas.getAnnotationIndex(ArgumentativeDiscourseUnit.type).subiterator(span);
 				ArgumentativeDiscourseUnit unit = (ArgumentativeDiscourseUnit) iter.get();
 				String type = unit.getUnitType();
-				System.out.println(file.getName());
-				if (type.equals("conclusion")) {
-					instancesConclusions.add(file);
-				} else if (type.equals("premise")) {
-					instancesPremises.add(file);
-				} else {
-					System.out.println("No conclusion or premise at file " + file.getAbsolutePath());
+				if (type.equals(matchType)) {
+					count++;
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
 			} 
 		}
-		this.copyAll(instancesConclusions, instancesPremises);
+		return count;
 	}
-	
-	
 	/**
 	 * 
 	 * @param instancesConclusions
-	 * @param instancesPremises
+	 * @param destinationDirectory
 	 * @throws IOException
 	 */
-	private void copyAll(ArrayList<File> instancesConclusions, ArrayList<File> instancesPremises) throws IOException {
-		
-		Random randomGenerator = new Random(123456789);
-		ArrayList<Integer> indices = new ArrayList<Integer>();
-		int numTrainingConclusions = (int)(this.percentTrainingSet * instancesConclusions.size());
-		int numTrainingPremises = this.trainingSetSize - numTrainingConclusions;
-		
-		this.sampleIndices(instancesConclusions.size(), numTrainingConclusions, indices, randomGenerator);
-		this.copy(indices, instancesConclusions, this.inputDirectory, this.trainingSetDirectory);
-		indices.clear();
-		this.sampleIndices(instancesPremises.size(), numTrainingPremises, indices, randomGenerator);
-		this.copy(indices, instancesPremises, this.inputDirectory, this.trainingSetDirectory);
-		this.copy(instancesConclusions, this.inputDirectory, this.testSetDirectory);
-		this.copy(instancesPremises, this.inputDirectory, this.testSetDirectory);
+	private void copyAll(ArrayList<File> instances, File destinationDirectory) throws IOException {
+		// Clean the destination folder
+		FileUtils.deleteAllFiles(destinationDirectory); 
+		for (File instance : instances) {
+			this.copy(instance, destinationDirectory);
+		}
 	}
 	
 	
@@ -193,52 +280,13 @@ public class TrainTestSplitter {
 	 * @param outputDirectory
 	 * @throws IOException
 	 */
-	private void copy(ArrayList<Integer> indices, ArrayList<File> instances, File inputDirectory, File outputDirectory) throws IOException {
-		Collections.sort(indices, Collections.reverseOrder());
-		for (int i : indices) {
-			File file = instances.remove(i);
-			String fileName = file.getName();
-		    Path copied = Paths.get(outputDirectory.getAbsolutePath() + "/" + fileName);
-		    Path original = Paths.get(inputDirectory.getAbsolutePath() + "/" + fileName);
-		    Files.copy(original, copied, StandardCopyOption.REPLACE_EXISTING);
-		}
+	private void copy(File instance, File outputDirectory) throws IOException {
+		String fileName = instance.getName();
+		File inputDirectory = new File(instance.getParent());
+		Path copied = Paths.get(outputDirectory.getAbsolutePath() + "/" + fileName);
+		Path original = Paths.get(inputDirectory.getAbsolutePath() + "/" + fileName);
+		Files.copy(original, copied, StandardCopyOption.REPLACE_EXISTING);
 	}
-	
-	
-	/**
-	 * 
-	 * @param instances
-	 * @param inputDirectory
-	 * @param outputDirectory
-	 * @throws IOException
-	 */
-	private void copy(ArrayList<File> instances, File inputDirectory, File outputDirectory) throws IOException {
-		for (File file : instances) {
-			String fileName = file.getName();
-		    Path copied = Paths.get(outputDirectory.getAbsolutePath() + "/" + fileName);
-		    Path original = Paths.get(inputDirectory.getAbsolutePath() + "/" + fileName);
-		    Files.copy(original, copied, StandardCopyOption.REPLACE_EXISTING);
-		}
-	}
-	
-	
-	/**
-	 * 
-	 * @param range
-	 * @param numIndices
-	 * @param indices
-	 * @param randomGenerator
-	 */
-	private void sampleIndices(int range, int numIndices, ArrayList<Integer> indices, Random randomGenerator) {
-		for (int i = 0; i < numIndices; i++) {
-			int rand = randomGenerator.nextInt(range);
-			while (indices.contains(new Integer(rand))) {
-				rand = randomGenerator.nextInt(range);
-			}
-			indices.add(new Integer(rand));
-		}
-	}
-	
 	
 	/**
 	 * 
@@ -246,21 +294,9 @@ public class TrainTestSplitter {
 	private void getAllFiles() {
 		this.files = new ArrayList<File>();
 		for (File file : this.inputDirectory.listFiles()) {
-			if (file.getAbsolutePath().indexOf(FILE_EXTENSION) == file.getAbsolutePath().length() - 4) {
-				files.add(file);
-			}
+//			System.out.println(file.getName());
+			this.files.add(file);
 		}
-	}
-	
-	
-	/**
-	 * 
-	 * @param fileCount
-	 * @return
-	 */
-	private int computeTrainingSetSize(int fileCount) {
-		int trainingSetSize = (int)(fileCount * percentTrainingSet);
-		return trainingSetSize;
 	}
 	
 	
