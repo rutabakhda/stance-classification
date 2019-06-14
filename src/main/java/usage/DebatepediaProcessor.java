@@ -25,6 +25,8 @@ import org.apache.uima.util.XMLInputSource;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import com.github.javaparser.ast.expr.ThisExpr;
+
 import de.aitools.ie.uima.io.UIMAAnnotationFileWriter;
 import de.aitools.ie.uima.type.argumentation.ArgumentativeDiscourseUnit;
 
@@ -48,6 +50,9 @@ public class DebatepediaProcessor {
 	private static final String STATISTIC_PATH = "output/debatepedia/statistics.txt";
 	private static final String TOPICS_PATH = "output/debatepedia/topics.txt";
 
+	private File inputDirectory;
+	private File outputDirectory;
+
 	/**
 	 * TODO java documentation
 	 * 
@@ -60,7 +65,6 @@ public class DebatepediaProcessor {
 		AnalysisEngine analysisEngine = this.createAnalysisEngine(ANALYSIS_ENGINE_PATH);
 		
 		// Create input and output directory from arguments
-		File inputDirectory;
 		List<String> allTopics = new ArrayList<String>();
 		Integer numberOfDocumentCounter = 0;
 		Integer numberOfTopicCounter = 0;
@@ -69,16 +73,27 @@ public class DebatepediaProcessor {
 		Integer conclusionCounter = 0; 
 		
 		if (args != null && args.length > 0 && args[0].length() > 0) {
-			inputDirectory = new File(args[0]);
+			this.inputDirectory = new File(args[0]);
 		} else {
-			inputDirectory = new File(INPUT_COLLECTION_DIR);
+			this.inputDirectory = new File(INPUT_COLLECTION_DIR);
 		}
-		if (!inputDirectory.isDirectory()) {
+		if (!this.inputDirectory.isDirectory()) {
 			throw new RuntimeException();
 		}
-		System.out.println("input directory: " + inputDirectory.getAbsolutePath());
+		System.out.println("input directory: " + this.inputDirectory.getAbsolutePath());
+		
+		if (args != null && args.length > 1 && args[1].length() > 0) {
+			this.outputDirectory= new File(args[1]);
+		} else {
+			this.outputDirectory = new File(OUTPUT_COLLECTION_DIR);
+		}
+		if (!this.outputDirectory.isDirectory()) {
+			throw new RuntimeException();
+		}
+		System.out.println("output directory: " + this.outputDirectory.getAbsolutePath());
+		
 
-		for (File inputFile : inputDirectory.listFiles()) {
+		for (File inputFile : this.inputDirectory.listFiles()) {
 
 			String fileName = inputFile.getName();
 			System.out.println("filename: " + fileName);
@@ -208,7 +223,7 @@ public class DebatepediaProcessor {
 		au.addToIndexes();
 		ae.process(cas);
 
-		String outputDir = OUTPUT_COLLECTION_DIR + "topic" + "-" + String.format("%03d", topicIndex) + "/" 
+		String outputDir = this.outputDirectory.getAbsolutePath() + "/" + "topic" + "-" + String.format("%03d", topicIndex) + "/" 
 				+ "/";
 		// Write sentence with ADU annotation to file
 		xmiWriter.write(cas, outputDir, "document-" + String.format("%04d", aduId) + ".txt");
