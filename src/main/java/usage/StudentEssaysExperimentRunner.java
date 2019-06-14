@@ -70,31 +70,30 @@ public class StudentEssaysExperimentRunner {
 			}
 		}
 		
-//		this.pipeline = new StudentEssaysProcessor();
-//		this.splitter = new TrainTestSplitter(SPLITTER_PROPERTIES_PATH);
+		this.pipeline = new StudentEssaysProcessor();
 		
 	}
 	
 	
 	public void run() throws ResourceInitializationException, IOException {
 		
-//		this.pipeline.processCollection();
+		this.pipeline.processCollection();
 		
 		// Splitting files
-		/*
+		
 		for (String splitPropertiesPath : this.splitPropertiesPaths) {
 			splitter = new TrainTestSplitter(splitPropertiesPath);
 			splitter.split();
 		}
-		*/
+		
 		
 		// Generating feature files
-		/*
+		
 		for (String propertiesPath : featureGeneratorPropertiesPaths) {
 			generator = new GenericFeatureFileGenerator(propertiesPath);
 			generator.generatorFeatureFiles();
 		} 
-		*/
+		
 		
 		
 		// Run Weka for each pair of feature files

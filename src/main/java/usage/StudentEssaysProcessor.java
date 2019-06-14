@@ -136,12 +136,15 @@ public class StudentEssaysProcessor {
 					} else {
 						if (aduType.contentEquals("majorclaim")) {
 							majorClaimCounter++;
+							aduType = "conclusion";
 						} else if (aduType.contentEquals("claim-for")) {
 							claimForCounter++;
+							aduType = "premise";
 						} else if (aduType.contentEquals("claim-against")) {
 							claimAgainstCounter++;
+							aduType = "premise";
 						}
-						aduType = "conclusion";
+						
 					}
 					// Some prints
 					write2XMI(ae, xmiWriter, aduType, sentence, topicIndex, filename, ++numberOfInstanceCounter);
