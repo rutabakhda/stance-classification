@@ -1,24 +1,15 @@
 package usage;
 
-import java.awt.desktop.AboutHandler;
 import java.io.File;
 import java.io.FilenameFilter;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
-import java.util.List;
-import java.util.regex.Pattern;
 
 import org.apache.uima.resource.ResourceInitializationException;
 
-import com.strobel.decompiler.languages.java.ast.ForEachStatement;
-import com.strobel.decompiler.languages.java.ast.ReturnStatement;
-
 import de.aitools.ie.uima.usage.GenericFeatureFileGenerator;
-import de.aitools.ie.uima.usage.WekaFeatureFileClassifier;
-import weka.classifiers.Classifier;
 
 /**
  * 
@@ -115,7 +106,7 @@ public class DebatepediaExperimentRunner {
 				System.out.println(testingFeaturesPath);
 				
 				try {
-					WekaClassifier.classify(trainingFeaturesPath, testingFeaturesPath);
+					WekaClassifierManager.classify(trainingFeaturesPath, testingFeaturesPath);
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

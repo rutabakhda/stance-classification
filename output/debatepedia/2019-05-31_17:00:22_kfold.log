@@ -1,0 +1,378 @@
+/home/ciso0478/wstud-visit-the-dome-ss19
+
+Use Weka to train classifier for cross validation
+Use Weka to train classifier
+arff_folder: /home/ciso0478/wstud-visit-the-dome-ss19/data/debatepedia/2019-05-31_16:00:59/set1/arff
+train_path: /home/ciso0478/wstud-visit-the-dome-ss19/data/debatepedia/2019-05-31_16:00:59/set1/arff/debatepedia-pos-token-content-length_2019-05-31_-home-ciso0478-wstud-visit-the-dome-ss19-data-debatepedia-2019-05-31_16:00:59-set1-train.arff
+test_path: /home/ciso0478/wstud-visit-the-dome-ss19/data/debatepedia/2019-05-31_16:00:59/set1/arff/debatepedia-pos-token-content-length_2019-05-31_-home-ciso0478-wstud-visit-the-dome-ss19-data-debatepedia-2019-05-31_16:00:59-set1-test.arff
+
+Options: -P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities 
+
+=== Classifier model (full training set) ===
+
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+
+Time taken to build model: 344.18 seconds
+
+Time taken to test model on training data: 19.42 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances       56858               99.9789 %
+Incorrectly Classified Instances        12                0.0211 %
+Kappa statistic                          0.9996
+Mean absolute error                      0.0326
+Root mean squared error                  0.0669
+Relative absolute error                  6.5249 %
+Root relative squared error             13.3782 %
+Total Number of Instances            56870     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     Conclusion
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     Premise
+Weighted Avg.    1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     
+
+
+=== Confusion Matrix ===
+
+     a     b   <-- classified as
+ 28434     1 |     a = Conclusion
+    11 28424 |     b = Premise
+
+Time taken to test model on test data: 2.83 seconds
+
+=== Error on test data ===
+
+Correctly Classified Instances        7782               90.5621 %
+Incorrectly Classified Instances       811                9.4379 %
+Kappa statistic                          0.7479
+Mean absolute error                      0.1673
+Root mean squared error                  0.269 
+Relative absolute error                 33.4573 %
+Root relative squared error             53.8082 %
+Total Number of Instances             8593     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.833    0.071    0.790      0.833    0.811      0.748    0.951     0.881     Conclusion
+                 0.929    0.167    0.945      0.929    0.937      0.748    0.951     0.981     Premise
+Weighted Avg.    0.906    0.144    0.908      0.906    0.906      0.748    0.951     0.956     
+
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 1736  349 |    a = Conclusion
+  462 6046 |    b = Premise
+
+....ok
+
+Use Weka to train classifier
+arff_folder: /home/ciso0478/wstud-visit-the-dome-ss19/data/debatepedia/2019-05-31_16:00:59/set2/arff
+train_path: /home/ciso0478/wstud-visit-the-dome-ss19/data/debatepedia/2019-05-31_16:00:59/set2/arff/debatepedia-pos-token-content-length_2019-05-31_-home-ciso0478-wstud-visit-the-dome-ss19-data-debatepedia-2019-05-31_16:00:59-set2-train.arff
+test_path: /home/ciso0478/wstud-visit-the-dome-ss19/data/debatepedia/2019-05-31_16:00:59/set2/arff/debatepedia-pos-token-content-length_2019-05-31_-home-ciso0478-wstud-visit-the-dome-ss19-data-debatepedia-2019-05-31_16:00:59-set2-test.arff
+
+Options: -P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities 
+
+=== Classifier model (full training set) ===
+
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+
+Time taken to build model: 326.86 seconds
+
+Time taken to test model on training data: 18.78 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances       55189               99.9765 %
+Incorrectly Classified Instances        13                0.0235 %
+Kappa statistic                          0.9995
+Mean absolute error                      0.0328
+Root mean squared error                  0.0672
+Relative absolute error                  6.559  %
+Root relative squared error             13.432  %
+Total Number of Instances            55202     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     Conclusion
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     Premise
+Weighted Avg.    1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     
+
+
+=== Confusion Matrix ===
+
+     a     b   <-- classified as
+ 27600     1 |     a = Conclusion
+    12 27589 |     b = Premise
+
+Time taken to test model on test data: 3.26 seconds
+
+=== Error on test data ===
+
+Correctly Classified Instances        8991               91.4556 %
+Incorrectly Classified Instances       840                8.5444 %
+Kappa statistic                          0.7783
+Mean absolute error                      0.1673
+Root mean squared error                  0.2626
+Relative absolute error                 33.4593 %
+Root relative squared error             52.5221 %
+Total Number of Instances             9831     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.861    0.067    0.813      0.861    0.836      0.779    0.958     0.897     Conclusion
+                 0.933    0.139    0.952      0.933    0.942      0.779    0.958     0.983     Premise
+Weighted Avg.    0.915    0.121    0.917      0.915    0.915      0.779    0.958     0.961     
+
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 2142  347 |    a = Conclusion
+  493 6849 |    b = Premise
+
+....ok
+
+Use Weka to train classifier
+arff_folder: /home/ciso0478/wstud-visit-the-dome-ss19/data/debatepedia/2019-05-31_16:00:59/set3/arff
+train_path: /home/ciso0478/wstud-visit-the-dome-ss19/data/debatepedia/2019-05-31_16:00:59/set3/arff/debatepedia-pos-token-content-length_2019-05-31_-home-ciso0478-wstud-visit-the-dome-ss19-data-debatepedia-2019-05-31_16:00:59-set3-train.arff
+test_path: /home/ciso0478/wstud-visit-the-dome-ss19/data/debatepedia/2019-05-31_16:00:59/set3/arff/debatepedia-pos-token-content-length_2019-05-31_-home-ciso0478-wstud-visit-the-dome-ss19-data-debatepedia-2019-05-31_16:00:59-set3-test.arff
+
+Options: -P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities 
+
+=== Classifier model (full training set) ===
+
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+
+Time taken to build model: 349.23 seconds
+
+Time taken to test model on training data: 19.03 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances       57883               99.9741 %
+Incorrectly Classified Instances        15                0.0259 %
+Kappa statistic                          0.9995
+Mean absolute error                      0.0324
+Root mean squared error                  0.067 
+Relative absolute error                  6.4701 %
+Root relative squared error             13.4026 %
+Total Number of Instances            57898     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      0.999    1.000     1.000     Conclusion
+                 1.000    0.000    1.000      1.000    1.000      0.999    1.000     1.000     Premise
+Weighted Avg.    1.000    0.000    1.000      1.000    1.000      0.999    1.000     1.000     
+
+
+=== Confusion Matrix ===
+
+     a     b   <-- classified as
+ 28948     1 |     a = Conclusion
+    14 28935 |     b = Premise
+
+Time taken to test model on test data: 2.7 seconds
+
+=== Error on test data ===
+
+Correctly Classified Instances        7283               90.6409 %
+Incorrectly Classified Instances       752                9.3591 %
+Kappa statistic                          0.7536
+Mean absolute error                      0.1676
+Root mean squared error                  0.2715
+Relative absolute error                 33.5222 %
+Root relative squared error             54.2968 %
+Total Number of Instances             8035     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.819    0.064    0.814      0.819    0.816      0.754    0.947     0.880     Conclusion
+                 0.936    0.181    0.938      0.936    0.937      0.754    0.947     0.977     Premise
+Weighted Avg.    0.906    0.151    0.907      0.906    0.907      0.754    0.947     0.953     
+
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 1672  369 |    a = Conclusion
+  383 5611 |    b = Premise
+
+....ok
+
+Use Weka to train classifier
+arff_folder: /home/ciso0478/wstud-visit-the-dome-ss19/data/debatepedia/2019-05-31_16:00:59/set4/arff
+train_path: /home/ciso0478/wstud-visit-the-dome-ss19/data/debatepedia/2019-05-31_16:00:59/set4/arff/debatepedia-pos-token-content-length_2019-05-31_-home-ciso0478-wstud-visit-the-dome-ss19-data-debatepedia-2019-05-31_16:00:59-set4-train.arff
+test_path: /home/ciso0478/wstud-visit-the-dome-ss19/data/debatepedia/2019-05-31_16:00:59/set4/arff/debatepedia-pos-token-content-length_2019-05-31_-home-ciso0478-wstud-visit-the-dome-ss19-data-debatepedia-2019-05-31_16:00:59-set4-test.arff
+
+Options: -P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities 
+
+=== Classifier model (full training set) ===
+
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+
+Time taken to build model: 306.51 seconds
+
+Time taken to test model on training data: 17.02 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances       54155               99.976  %
+Incorrectly Classified Instances        13                0.024  %
+Kappa statistic                          0.9995
+Mean absolute error                      0.0323
+Root mean squared error                  0.0666
+Relative absolute error                  6.4654 %
+Root relative squared error             13.3251 %
+Total Number of Instances            54168     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     Conclusion
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     Premise
+Weighted Avg.    1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     
+
+
+=== Confusion Matrix ===
+
+     a     b   <-- classified as
+ 27083     1 |     a = Conclusion
+    12 27072 |     b = Premise
+
+Time taken to test model on test data: 3.33 seconds
+
+=== Error on test data ===
+
+Correctly Classified Instances        9498               90.5261 %
+Incorrectly Classified Instances       994                9.4739 %
+Kappa statistic                          0.7489
+Mean absolute error                      0.1717
+Root mean squared error                  0.2736
+Relative absolute error                 34.3455 %
+Root relative squared error             54.7127 %
+Total Number of Instances            10492     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.817    0.065    0.808      0.817    0.812      0.749    0.947     0.872     Conclusion
+                 0.935    0.183    0.938      0.935    0.937      0.749    0.947     0.979     Premise
+Weighted Avg.    0.905    0.154    0.906      0.905    0.905      0.749    0.947     0.952     
+
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 2150  483 |    a = Conclusion
+  511 7348 |    b = Premise
+
+....ok
+
+Use Weka to train classifier
+arff_folder: /home/ciso0478/wstud-visit-the-dome-ss19/data/debatepedia/2019-05-31_16:00:59/set5/arff
+train_path: /home/ciso0478/wstud-visit-the-dome-ss19/data/debatepedia/2019-05-31_16:00:59/set5/arff/debatepedia-pos-token-content-length_2019-05-31_-home-ciso0478-wstud-visit-the-dome-ss19-data-debatepedia-2019-05-31_16:00:59-set5-train.arff
+test_path: /home/ciso0478/wstud-visit-the-dome-ss19/data/debatepedia/2019-05-31_16:00:59/set5/arff/debatepedia-pos-token-content-length_2019-05-31_-home-ciso0478-wstud-visit-the-dome-ss19-data-debatepedia-2019-05-31_16:00:59-set5-test.arff
+
+Options: -P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities 
+
+=== Classifier model (full training set) ===
+
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+
+Time taken to build model: 317.11 seconds
+
+Time taken to test model on training data: 18.68 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances       55393               99.9765 %
+Incorrectly Classified Instances        13                0.0235 %
+Kappa statistic                          0.9995
+Mean absolute error                      0.0327
+Root mean squared error                  0.0673
+Relative absolute error                  6.5371 %
+Root relative squared error             13.4598 %
+Total Number of Instances            55406     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     Conclusion
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     Premise
+Weighted Avg.    1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     
+
+
+=== Confusion Matrix ===
+
+     a     b   <-- classified as
+ 27702     1 |     a = Conclusion
+    12 27691 |     b = Premise
+
+Time taken to test model on test data: 3.54 seconds
+
+=== Error on test data ===
+
+Correctly Classified Instances        8675               90.8758 %
+Incorrectly Classified Instances       871                9.1242 %
+Kappa statistic                          0.7546
+Mean absolute error                      0.1668
+Root mean squared error                  0.2682
+Relative absolute error                 33.3667 %
+Root relative squared error             53.6322 %
+Total Number of Instances             9546     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.833    0.067    0.798      0.833    0.815      0.755    0.950     0.869     Conclusion
+                 0.933    0.167    0.946      0.933    0.939      0.755    0.950     0.980     Premise
+Weighted Avg.    0.909    0.143    0.910      0.909    0.909      0.755    0.950     0.953     
+
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 1920  386 |    a = Conclusion
+  485 6755 |    b = Premise
+
+....ok
+
