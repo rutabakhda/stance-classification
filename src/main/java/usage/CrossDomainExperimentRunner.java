@@ -11,19 +11,24 @@ import de.aitools.ie.uima.usage.GenericFeatureFileGenerator;
 
 public class CrossDomainExperimentRunner {
 	
-	String[] FEATURE_TYPES = {
-			"content-length_pos-ngrams_token-ngrams",
-//			"content-length_pos-ngrams",
-//			"content-length_token-ngrams",
-//			"pos-ngrams_token-ngrams",
-//			"content-length",
-//			"pos-ngrams",
-//			"token-ngrams"
+	private static final String[] FEATURE_TYPES = { "content-length_pos-ngrams_token-ngrams",
+													//"content-length_pos-ngrams",
+													//"content-length_token-ngrams",
+													//"pos-ngrams_token-ngrams",
+													//"content-length",
+													//"pos-ngrams",
+													//"token-ngrams"
 	};
-	String PROPERTIES_FEATURE_GENERATOR_PATH = "src/main/resources/properties/feature_file_generator/cross-domain/";
-	String FEATURE_FILE_PATH = "data/cross-domain/debatepedia_sample-sbm/arff/";
-	String CORPUS1 = "debatepedia";
-	String CORPUS2 = "sample-sbm";
+	
+	private static final String PROPERTIES_FEATURE_GENERATOR_PATH = "src/main/resources/properties/feature_file_generator/cross-domain/";
+	
+	private static final String FEATURE_FILE_PATH = "data/cross-domain/debatepedia_sample-sbm/arff/";
+	
+	private static final String CORPUS1 = "debatepedia";
+	
+	private static final String CORPUS2 = "sample-sbm";
+	
+	
 	private ArrayList<String> featureGeneratorPropertiesPaths;
 	private DebatepediaProcessor processor1;
 	private DebatepediaProcessor processor2;

@@ -45,9 +45,10 @@ public class StudentEssaysProcessor {
 
 	private static final String OUTPUT_COLLECTION_DIR = "data/student-essays/processed/";
 
-	private static final String COLLECTION_READER_PATH = "../aitools4-ie-uima/conf/uima-descriptors/collection-readers/"
-			+ "UIMAAnnotationFileReader.xml";
+	private static final String COLLECTION_READER_PATH = "../aitools4-ie-uima/conf/uima-descriptors/collection-readers/" + "UIMAAnnotationFileReader.xml";
+	
 	private static final String STATISTIC_PATH = "output/student-essays/statistics.txt";
+	
 	private static final String TOPICS_PATH = "output/student-essays/topics.txt";
 
 	// -------------------------------------------------------------------------

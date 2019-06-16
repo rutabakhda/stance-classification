@@ -18,22 +18,24 @@ import de.aitools.ie.uima.usage.GenericFeatureFileGenerator;
  */
 public class DebatepediaExperimentRunner {
 	
-	String CORPUS_NAME = "debatepedia";
-	String[] SPLIT_TYPES = {"random", "by-topic"};
-	String[] FEATURE_TYPES = {
-			"content-length_pos-ngrams_token-ngrams",
-			"content-length_pos-ngrams",
-			"content-length_token-ngrams",
-			"pos-ngrams_token-ngrams",
-			"content-length",
-			"pos-ngrams",
-			"token-ngrams"
-	};
+	private static final String CORPUS_NAME = "debatepedia";
 	
-	String PROPERTIES_SPLIT_PATH = "src/main/resources/properties/split";
-	String PROPERTIES_FEATURE_GENERATOR_PATH = "src/main/resources/properties/feature_file_generator";
+	private static final String[] SPLIT_TYPES = {"random", "by_topic"};
 	
-	private DebatepediaProcessor pipeline;
+	private static final String[] FEATURE_TYPES = { "content-length_pos-ngrams_token-ngrams",
+													"content-length_pos-ngrams",
+													"content-length_token-ngrams",
+													"pos-ngrams_token-ngrams",
+													"content-length",
+													"pos-ngrams",
+													"token-ngrams"};
+	
+	private static final String PROPERTIES_SPLIT_PATH = "src/main/resources/properties/split";
+	
+	private static final String PROPERTIES_FEATURE_GENERATOR_PATH = "src/main/resources/properties/feature_file_generator";
+	
+	
+	private DebatepediaProcessor processor;
 	
 	private TrainTestSplitter splitter;
 	
@@ -61,14 +63,14 @@ public class DebatepediaExperimentRunner {
 			}
 		}
 		
-		this.pipeline = new DebatepediaProcessor();
+		this.processor = new DebatepediaProcessor();
 		
 	}
 	
 	
 	public void run() throws ResourceInitializationException, IOException {
 		
-//		this.pipeline.processCollection();
+//		this.processor.processCollection();
 		
 		// Splitting files
 		

@@ -16,15 +16,23 @@ import de.aitools.ie.uima.usage.GenericFeatureFileGenerator;
  */
 public class StudentEssaysExperimentRunner {
 
-	String CORPUS_NAME = "student-essays";
-	String[] SPLIT_TYPES = { "random", "by-topic" };
-	String[] FEATURE_TYPES = { "content-length_pos-ngrams_token-ngrams", "content-length_pos-ngrams",
-			"content-length_token-ngrams", "pos-ngrams_token-ngrams", "content-length", "pos-ngrams", "token-ngrams" };
+	private static final String CORPUS_NAME = "student-essays";
+	
+	private static final String[] SPLIT_TYPES = { "random", "by-topic" };
+	
+	private static final String[] FEATURE_TYPES = { "content-length_pos-ngrams_token-ngrams", 
+													"content-length_pos-ngrams",
+													"content-length_token-ngrams",
+													"pos-ngrams_token-ngrams",
+													"content-length",
+													"pos-ngrams",
+													"token-ngrams" };
 
-	String PROPERTIES_SPLIT_PATH = "src/main/resources/properties/split";
-	String PROPERTIES_FEATURE_GENERATOR_PATH = "src/main/resources/properties/feature_file_generator";
+	private static final String PROPERTIES_SPLIT_PATH = "src/main/resources/properties/split";
+	
+	private static final String PROPERTIES_FEATURE_GENERATOR_PATH = "src/main/resources/properties/feature_file_generator";
 
-	private StudentEssaysProcessor pipeline;
+	private StudentEssaysProcessor processor;
 
 	private TrainTestSplitter splitter;
 
@@ -54,13 +62,13 @@ public class StudentEssaysExperimentRunner {
 			}
 		}
 
-		this.pipeline = new StudentEssaysProcessor();
+		this.processor = new StudentEssaysProcessor();
 
 	}
 
 	public void run() throws ResourceInitializationException, IOException {
 
-		this.pipeline.processCollection();
+		this.processor.processCollection();
 
 		// Splitting files
 
