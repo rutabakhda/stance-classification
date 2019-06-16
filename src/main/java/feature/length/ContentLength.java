@@ -22,7 +22,6 @@ import de.aitools.ie.uima.type.core.Token;
  *   <LI>The number of characters</LI> 
  *   <LI>The number of tokens</LI> 
  * </UL>
- * @author lukas.peter.trautner@uni-weimar.de
  *
  */
 public class ContentLength implements IFeatureType {
