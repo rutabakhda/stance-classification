@@ -14,17 +14,18 @@ public class FeatureFileGenerator {
 	
 	public static final String[] PROPERTY_PATHS = {
 			
-			/**"src/main/resources/properties/experiment/experiment-config_debatepedia_.properties",
-			"src/main/resources/properties/experiment/experiment-config_debatepedia_.properties",
-			"src/main/resources/properties/experiment/experiment-config_debatepedia_.properties",
-			"src/main/resources/properties/experiment/experiment-config_debatepedia_.properties",
-			"src/main/resources/properties/experiment/experiment-config_debatepedia_.properties",
-			"src/main/resources/properties/experiment/experiment-config_debatepedia_.properties",
-			"src/main/resources/properties/experiment/experiment-config_debatepedia_.properties",
-			"src/main/resources/properties/experiment/experiment-config_debatepedia_.properties",
-			"src/main/resources/properties/experiment/experiment-config_debatepedia_.properties",
-			"src/main/resources/properties/experiment/experiment-config_debatepedia_.properties",*/
+			"src/main/resources/properties/experiment/experiment-config_debatepedia_statistics.properties",
+			//"src/main/resources/properties/experiment/experiment-config_debatepedia_.properties",
+			//"src/main/resources/properties/experiment/experiment-config_debatepedia_.properties",
+			//"src/main/resources/properties/experiment/experiment-config_debatepedia_.properties",
+			//"src/main/resources/properties/experiment/experiment-config_debatepedia_.properties",
+			//"src/main/resources/properties/experiment/experiment-config_debatepedia_.properties",
+			//"src/main/resources/properties/experiment/experiment-config_debatepedia_.properties",
+			//"src/main/resources/properties/experiment/experiment-config_debatepedia_.properties",
+			//"src/main/resources/properties/experiment/experiment-config_debatepedia_.properties",
+			//"src/main/resources/properties/experiment/experiment-config_debatepedia_.properties",
 			
+			/**
 			"src/main/resources/properties/experiment/experiment-config_student-essays_statistics.properties",
 			"src/main/resources/properties/experiment/experiment-config_student-essays_position.properties",
 			"src/main/resources/properties/experiment/experiment-config_student-essays_lemma-ngrams.properties",
@@ -35,6 +36,7 @@ public class FeatureFileGenerator {
 			"src/main/resources/properties/experiment/experiment-config_student-essays_pos-lemma-ngrams.properties",
 			"src/main/resources/properties/experiment/experiment-config_student-essays_position-pos-lemma-ngrams.properties",
 			"src/main/resources/properties/experiment/experiment-config_student-essays_position-length-pos-lemma-ngrams.properties",
+			*/
 	};
 	
 	

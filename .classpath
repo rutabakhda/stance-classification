@@ -12,58 +12,8 @@
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.buildship.core.gradleclasspathcontainer"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8/"/>
-	<classpathentry kind="lib" path="/home/weci2587/.gradle/caches/modules-2/files-2.1/org.apache.uima/uimaj-tools/2.7.0/a59d128b03ff9a0bc5016c1faecd6799b12632f5/uimaj-tools-2.7.0.jar" sourcepath="/home/weci2587/.gradle/caches/modules-2/files-2.1/org.apache.uima/uimaj-tools/2.7.0/ac2da22450bf9ea73fcc6dd5b57d0208c340b02b/uimaj-tools-2.7.0-sources.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main,test"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="/home/weci2587/.gradle/caches/modules-2/files-2.1/org.apache.uima/uimaj-document-annotation/2.7.0/44243011b32316cf4d44183936a78c968e640d9e/uimaj-document-annotation-2.7.0.jar" sourcepath="/home/weci2587/.gradle/caches/modules-2/files-2.1/org.apache.uima/uimaj-document-annotation/2.7.0/50b077bc67a5d52882c17ceadb1a1cfd4f49e02d/uimaj-document-annotation-2.7.0-sources.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main,test"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="/home/weci2587/.gradle/caches/modules-2/files-2.1/org.apache.uima/uimaj-cpe/2.7.0/726ac0cfc5c4e8f582abd08d177245d0b61424d2/uimaj-cpe-2.7.0.jar" sourcepath="/home/weci2587/.gradle/caches/modules-2/files-2.1/org.apache.uima/uimaj-cpe/2.7.0/198e915095f2ced999a65040009ec56ff2480855/uimaj-cpe-2.7.0-sources.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main,test"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="/home/weci2587/.gradle/caches/modules-2/files-2.1/org.apache.uima/uimaj-adapter-vinci/2.7.0/ec72c997e1496b54e3fd4c72f03389476cc8ccae/uimaj-adapter-vinci-2.7.0.jar" sourcepath="/home/weci2587/.gradle/caches/modules-2/files-2.1/org.apache.uima/uimaj-adapter-vinci/2.7.0/ddf1830d49dcaf0a91e47cd386f47f6721eae579/uimaj-adapter-vinci-2.7.0-sources.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main,test"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="/home/weci2587/.gradle/caches/modules-2/files-2.1/org.apache.uima/uimaj-core/2.7.0/8432471d972f344c317698ef05ce0433aeb91f76/uimaj-core-2.7.0.jar" sourcepath="/home/weci2587/.gradle/caches/modules-2/files-2.1/org.apache.uima/uimaj-core/2.7.0/702bf89df24d178ba605f0605dab7150de34e99b/uimaj-core-2.7.0-sources.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main,test"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="/home/weci2587/.gradle/caches/modules-2/files-2.1/org.json/json/20180813/8566b2b0391d9d4479ea225645c6ed47ef17fe41/json-20180813.jar" sourcepath="/home/weci2587/.gradle/caches/modules-2/files-2.1/org.json/json/20180813/60753006d96d5fc85b61b0897f3326b5c4e1c4f0/json-20180813-sources.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main,test"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="/home/weci2587/.gradle/caches/modules-2/files-2.1/nz.ac.waikato.cms.weka/weka/3.7.4/c2e901c2de92df6ea16c7a5cd18d51b5ea528e8e/weka-3.7.4.jar" sourcepath="/home/weci2587/.gradle/caches/modules-2/files-2.1/nz.ac.waikato.cms.weka/weka/3.7.4/123f49f848516837b3d39152eb1f3b0f706f5f4/weka-3.7.4-sources.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main,test"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="/home/weci2587/.gradle/caches/modules-2/files-2.1/net.sf.squirrel-sql.thirdparty-non-maven/java-cup/0.11a/1de46cc85d147d9f91af59d4a0107091c8b112d6/java-cup-0.11a.jar" sourcepath="/home/weci2587/.gradle/caches/modules-2/files-2.1/net.sf.squirrel-sql.thirdparty-non-maven/java-cup/0.11a/70aeeb122a93d6c72b13384f50acc2d85334caae/java-cup-0.11a-sources.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main,test"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="/home/weci2587/.gradle/caches/modules-2/files-2.1/org.pentaho.pentaho-commons/pentaho-package-manager/0.9.9/b4a92864320847a170b549b1864185d5305fd359/pentaho-package-manager-0.9.9.jar" sourcepath="/home/weci2587/.gradle/caches/modules-2/files-2.1/org.pentaho.pentaho-commons/pentaho-package-manager/0.9.9/bb4a2c79d998c1934fa7c25fa8f313261b9719aa/pentaho-package-manager-0.9.9-sources.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main,test"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="/home/weci2587/.gradle/caches/modules-2/files-2.1/org.apache.uima/jVinci/2.7.0/a1ae863231ceb2c2463eeaa7d4aa254aa1dccec6/jVinci-2.7.0.jar" sourcepath="/home/weci2587/.gradle/caches/modules-2/files-2.1/org.apache.uima/jVinci/2.7.0/da8615baed10c6b28014fe16346a68c87448a8b2/jVinci-2.7.0-sources.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main,test"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.buildship.core.gradleclasspathcontainer"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/aitools4-ie-uima"/>
 	<classpathentry kind="output" path="bin/default"/>
 </classpath>
