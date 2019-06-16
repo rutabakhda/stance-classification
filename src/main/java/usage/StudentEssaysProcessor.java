@@ -2,34 +2,27 @@ package usage;
 
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Pattern;
-
 import org.apache.uima.UIMAFramework;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.cas.CAS;
 import org.apache.uima.cas.CASException;
 import org.apache.uima.cas.FSIterator;
-import org.apache.uima.cas.Feature;
-import org.apache.uima.cas.Type;
 import org.apache.uima.cas.text.AnnotationIndex;
 import org.apache.uima.collection.CollectionReader;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceSpecifier;
-import org.apache.uima.util.FileUtils;
 import org.apache.uima.util.XMLInputSource;
 
 import de.aitools.ie.uima.io.UIMAAnnotationFileWriter;
 import de.aitools.ie.uima.type.argumentation.ArgumentativeDiscourseUnit;
-import de.aitools.ie.uima.type.argumentation.ArgumentativeDiscourseUnit_Type;
 import de.aitools.ie.uima.type.argumentation.MetadataAAE;
 
 /**

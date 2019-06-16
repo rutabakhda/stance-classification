@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import org.apache.uima.resource.ResourceInitializationException;
-import de.aitools.ie.uima.usage.GenericFeatureFileGenerator;
 
 public class CrossDomainExperimentRunner {
 	
