@@ -11,18 +11,38 @@ import de.aitools.ie.uima.usage.GenericFeatureFileGenerator;
  */
 public class FeatureFileGenerator {
 	
-	//public static final String PROPERTIES_PATH = "src/main/resources/properties/experiment/experiment-config_webis-debate-16.properties";
-	public static final String PROPERTIES_PATH = "src/main/resources/properties/experiment/debatepedia/experiment-config_debatepedia_content-length.properties";
+	public static final String[] PROPERTY_PATHS = {
+			
+			"src/main/resources/properties/experiment/experiment-config_debatepedia_.properties",
+			"src/main/resources/properties/experiment/experiment-config_debatepedia_.properties",
+			"src/main/resources/properties/experiment/experiment-config_debatepedia_.properties",
+			"src/main/resources/properties/experiment/experiment-config_debatepedia_.properties",
+			"src/main/resources/properties/experiment/experiment-config_debatepedia_.properties",
+			"src/main/resources/properties/experiment/experiment-config_debatepedia_.properties",
+			"src/main/resources/properties/experiment/experiment-config_debatepedia_.properties",
+			"src/main/resources/properties/experiment/experiment-config_debatepedia_.properties",
+			"src/main/resources/properties/experiment/experiment-config_debatepedia_.properties",
+			"src/main/resources/properties/experiment/experiment-config_debatepedia_.properties",
+			
+			"src/main/resources/properties/experiment/experiment-config_student-essays_.properties",
+			"src/main/resources/properties/experiment/experiment-config_student-essays_.properties",
+			"src/main/resources/properties/experiment/experiment-config_student-essays_.properties",
+			"src/main/resources/properties/experiment/experiment-config_student-essays_.properties",
+			"src/main/resources/properties/experiment/experiment-config_student-essays_.properties",
+			"src/main/resources/properties/experiment/experiment-config_student-essays_.properties",
+			"src/main/resources/properties/experiment/experiment-config_student-essays_.properties",
+			"src/main/resources/properties/experiment/experiment-config_student-essays_.properties",
+			"src/main/resources/properties/experiment/experiment-config_student-essays_.properties",
+			"src/main/resources/properties/experiment/experiment-config_student-essays_.properties",
+			
+			
+	};
 	
 	
 	public static void main(String[] args) {
-		String propertiesPath;
-		if (args.length>=1 && args[0].length()>10) {//TODO: bugs in the length comparison, put 10 at the moment
-			propertiesPath = args[0];
-		} else {
-			propertiesPath = PROPERTIES_PATH;
-		}
-		new GenericFeatureFileGenerator(propertiesPath).generatorFeatureFiles();
+		
+		for (String path : PROPERTY_PATHS)
+			new GenericFeatureFileGenerator(path).generatorFeatureFiles();
 	}
 	
 }
