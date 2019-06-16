@@ -19,7 +19,7 @@ import feature.content.LemmaNGrams;
 public class LemmaPosNGrams implements IFeatureType {
 	
 	
-	private IFeatureType tokenNgrams;
+	private IFeatureType posNgrams;
 	
 	private IFeatureType lemmaNGrams;
 	
@@ -28,33 +28,33 @@ public class LemmaPosNGrams implements IFeatureType {
 
 	@Override
 	public void initializeFeatureDetermination(Properties configurationProps) {
-		this.tokenNgrams = new TokenNGrams();
+		this.posNgrams = new POSNGrams();
 		this.lemmaNGrams = new LemmaNGrams();
 		
-		this.tokenNgrams.initializeFeatureDetermination(configurationProps);
+		this.posNgrams.initializeFeatureDetermination(configurationProps);
 		this.lemmaNGrams.initializeFeatureDetermination(configurationProps);
 	}
 
 	@Override
 	public void updateCandidateFeatures(JCas jcas, int start, int end) {
-		this.tokenNgrams.updateCandidateFeatures(jcas, start, end);
+		this.posNgrams.updateCandidateFeatures(jcas, start, end);
 		this.lemmaNGrams.updateCandidateFeatures(jcas, start, end);
 	}
 
 	@Override
 	public List<String> determineFeatures(Properties configurationProps, Properties normalizationProps) {
 		List<String> featureNames = new ArrayList<String>();
-		featureNames.addAll(this.tokenNgrams.determineFeatures(configurationProps, normalizationProps));
+		featureNames.addAll(this.posNgrams.determineFeatures(configurationProps, normalizationProps));
 		featureNames.addAll(this.lemmaNGrams.determineFeatures(configurationProps, normalizationProps));
 		return featureNames;
 	}
 
 	@Override
 	public void initializeFeatureComputation(List<String> allFeatureNames, Properties configurationProps, Properties normalizationProps) {
-		this.tokenNgrams = new TokenNGrams();
+		this.posNgrams = new POSNGrams();
 		this.lemmaNGrams = new LemmaNGrams();
 		
-		this.tokenNgrams.initializeFeatureComputation(allFeatureNames, configurationProps, normalizationProps);
+		this.posNgrams.initializeFeatureComputation(allFeatureNames, configurationProps, normalizationProps);
 		this.lemmaNGrams.initializeFeatureComputation(allFeatureNames, configurationProps, normalizationProps);
 	}
 
@@ -62,7 +62,7 @@ public class LemmaPosNGrams implements IFeatureType {
 	public List<Double> computeNormalizedFeatureValues(JCas jcas, int start, int end) {
 		List<Double> featureValues = new ArrayList<Double>();
 		
-		featureValues.addAll(this.tokenNgrams.computeNormalizedFeatureValues(jcas, start, end));
+		featureValues.addAll(this.posNgrams.computeNormalizedFeatureValues(jcas, start, end));
 		featureValues.addAll(this.lemmaNGrams.computeNormalizedFeatureValues(jcas, start, end));
 
 		return featureValues;
