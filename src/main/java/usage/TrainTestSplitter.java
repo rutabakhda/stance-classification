@@ -32,7 +32,6 @@ import org.apache.uima.resource.ResourceSpecifier;
 import org.apache.uima.util.FileUtils;
 import org.apache.uima.util.XMLInputSource;
 
-import com.github.javaparser.ast.expr.ThisExpr;
 
 import de.aitools.ie.uima.type.argumentation.ArgumentativeDiscourseUnit;
 

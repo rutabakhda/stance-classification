@@ -25,7 +25,6 @@ import org.apache.uima.util.XMLInputSource;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import com.github.javaparser.ast.expr.ThisExpr;
 
 import de.aitools.ie.uima.io.UIMAAnnotationFileWriter;
 import de.aitools.ie.uima.type.argumentation.ArgumentativeDiscourseUnit;

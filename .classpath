@@ -44,6 +44,21 @@
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="/home/weci2587/.gradle/caches/modules-2/files-2.1/nz.ac.waikato.cms.weka/weka/3.7.4/c2e901c2de92df6ea16c7a5cd18d51b5ea528e8e/weka-3.7.4.jar" sourcepath="/home/weci2587/.gradle/caches/modules-2/files-2.1/nz.ac.waikato.cms.weka/weka/3.7.4/123f49f848516837b3d39152eb1f3b0f706f5f4/weka-3.7.4-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/weci2587/.gradle/caches/modules-2/files-2.1/net.sf.squirrel-sql.thirdparty-non-maven/java-cup/0.11a/1de46cc85d147d9f91af59d4a0107091c8b112d6/java-cup-0.11a.jar" sourcepath="/home/weci2587/.gradle/caches/modules-2/files-2.1/net.sf.squirrel-sql.thirdparty-non-maven/java-cup/0.11a/70aeeb122a93d6c72b13384f50acc2d85334caae/java-cup-0.11a-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/weci2587/.gradle/caches/modules-2/files-2.1/org.pentaho.pentaho-commons/pentaho-package-manager/0.9.9/b4a92864320847a170b549b1864185d5305fd359/pentaho-package-manager-0.9.9.jar" sourcepath="/home/weci2587/.gradle/caches/modules-2/files-2.1/org.pentaho.pentaho-commons/pentaho-package-manager/0.9.9/bb4a2c79d998c1934fa7c25fa8f313261b9719aa/pentaho-package-manager-0.9.9-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="lib" path="/home/weci2587/.gradle/caches/modules-2/files-2.1/org.apache.uima/jVinci/2.7.0/a1ae863231ceb2c2463eeaa7d4aa254aa1dccec6/jVinci-2.7.0.jar" sourcepath="/home/weci2587/.gradle/caches/modules-2/files-2.1/org.apache.uima/jVinci/2.7.0/da8615baed10c6b28014fe16346a68c87448a8b2/jVinci-2.7.0-sources.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
