@@ -14,16 +14,16 @@ public class FeatureFileGenerator {
 	
 	public static final String[] PROPERTY_PATHS = {
 			
-			"src/main/resources/properties/experiment/experiment-config_debatepedia_statistics.properties",
-			//"src/main/resources/properties/experiment/experiment-config_debatepedia_.properties",
-			//"src/main/resources/properties/experiment/experiment-config_debatepedia_.properties",
-			//"src/main/resources/properties/experiment/experiment-config_debatepedia_.properties",
-			//"src/main/resources/properties/experiment/experiment-config_debatepedia_.properties",
-			//"src/main/resources/properties/experiment/experiment-config_debatepedia_.properties",
-			//"src/main/resources/properties/experiment/experiment-config_debatepedia_.properties",
-			//"src/main/resources/properties/experiment/experiment-config_debatepedia_.properties",
-			//"src/main/resources/properties/experiment/experiment-config_debatepedia_.properties",
-			//"src/main/resources/properties/experiment/experiment-config_debatepedia_.properties",
+			//"src/main/resources/properties/experiment/experiment-config_debatepedia_statistics.properties",
+			//"src/main/resources/properties/experiment/experiment-config_debatepedia_lemma-ngrams.properties",
+			//"src/main/resources/properties/experiment/experiment-config_debatepedia_length.properties",
+			//"src/main/resources/properties/experiment/experiment-config_debatepedia_token-ngrams.properties",
+			//"src/main/resources/properties/experiment/experiment-config_debatepedia_pos-ngrams.properties",
+			//"src/main/resources/properties/experiment/experiment-config_debatepedia_pos-token-ngrams.properties",
+			//"src/main/resources/properties/experiment/experiment-config_debatepedia_pos-lemma-ngrams.properties",
+			//"src/main/resources/properties/experiment/experiment-config_debatepedia_length-pos-lemma-ngrams.properties",
+			//"src/main/resources/properties/experiment/experiment-config_debatepedia_length-pos-token-ngrams.properties",
+			"src/main/resources/properties/experiment/experiment-config_cross-domain_length-pos-token-ngrams.properties",
 			
 			/**
 			"src/main/resources/properties/experiment/experiment-config_student-essays_statistics.properties",
