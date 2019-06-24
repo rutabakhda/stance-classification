@@ -68,22 +68,22 @@ public class StudentEssaysExperimentRunner {
 
 	public void run() throws ResourceInitializationException, IOException {
 
-		this.processor.processCollection();
+//		this.processor.processCollection();
 
 		// Splitting files
-
+/*
 		for (String splitPropertiesPath : this.splitPropertiesPaths) {
 			splitter = new TrainTestSplitter(splitPropertiesPath);
 			splitter.split();
 		}
-
+*/
 		// Generating feature files
-
+/*
 		for (String propertiesPath : featureGeneratorPropertiesPaths) {
 			generator = new GenericFeatureFileGenerator(propertiesPath);
 			generator.generatorFeatureFiles();
 		}
-
+*/
 		// Run Weka for each pair of feature files
 		for (String splitType : SPLIT_TYPES) {
 			for (String featureType : FEATURE_TYPES) {
@@ -95,11 +95,9 @@ public class StudentEssaysExperimentRunner {
 				String extension = ".arff";
 
 				// Search for training file
-				trainingFeaturesPath = this.listFilesMatchingPatternNewest(this.featuresfilePath, trainingFilePatterns,
-						extension)[0].getAbsolutePath();
-				testingFeaturesPath = this.listFilesMatchingPatternNewest(this.featuresfilePath, testingFilePatterns,
-						extension)[0].getAbsolutePath();
-
+				trainingFeaturesPath = this.listFilesMatchingPatternNewest(this.featuresfilePath, featureType, splitType, CORPUS_NAME, "train", extension)[0].getAbsolutePath();
+				testingFeaturesPath = this.listFilesMatchingPatternNewest(this.featuresfilePath, featureType, splitType, CORPUS_NAME, "test", extension)[0].getAbsolutePath();
+				
 				System.out.println("\n\n\nNew Experiment....");
 				System.out.println(trainingFeaturesPath);
 				System.out.println(testingFeaturesPath);
@@ -115,35 +113,40 @@ public class StudentEssaysExperimentRunner {
 	}
 
 	// Get the list of files (newest to oldest) that satisfies the patterns
-	private File[] listFilesMatchingPatternNewest(File folder, String[] patterns, String extension) {
-		File[] files = folder.listFiles(new FilenameFilter() {
-			@Override
-			public boolean accept(File dir, String name) {
-				boolean shouldAccept = false;
-				if (name.endsWith(extension)) {
-					for (String pattern : patterns) {
-						if (!name.contains(pattern)) {
-							shouldAccept = false;
-							break;
-						} else {
-							shouldAccept = true;
-							continue;
-						}
-					}
-
-				}
-				return shouldAccept;
-			}
-		});
-
+	private File[] listFilesMatchingPatternNewest(File folder, String featureType, String splitType,
+			String corpusName, String trainOrTest, String extension) {
+		File[] files = folder.listFiles(new FilenameFilter(){
+	        @Override
+	        public boolean accept(File dir, String name) {
+	        	boolean shouldAccept = false;
+	        	if(name.endsWith(extension)) {
+	        		if(name.startsWith(featureType+"_2019")) {
+	        			shouldAccept = true;
+	        			for(String pattern: new String[]{splitType, corpusName, trainOrTest}) {
+	        				if (!name.contains(pattern)) {
+	        					shouldAccept = false;
+	        					break;
+	        				}
+	        				else {
+	        					continue;
+	        				}
+	        			}
+	        		}
+	        		
+	        	}
+	            return shouldAccept; 
+	        }}
+		);
+		
+	
 		Arrays.sort(files, new Comparator<File>() {
-			public int compare(File f1, File f2) {
-				return Long.compare(f1.lastModified(), f2.lastModified());
-			}
+		    public int compare(File f1, File f2) {
+		        return Long.compare(f1.lastModified(), f2.lastModified());
+		    }
 		});
 		return files;
 	}
-
+	
 	public static void main(String[] args) throws ResourceInitializationException, IOException {
 		StudentEssaysExperimentRunner runner = new StudentEssaysExperimentRunner();
 		runner.run();

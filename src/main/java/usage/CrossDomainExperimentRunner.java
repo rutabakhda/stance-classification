@@ -3,31 +3,32 @@ package usage;
 import java.io.File;
 import java.io.FilenameFilter;
 import java.io.IOException;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.Date;
+
 import org.apache.uima.resource.ResourceInitializationException;
+import de.aitools.ie.uima.usage.GenericFeatureFileGenerator;
 
 public class CrossDomainExperimentRunner {
 	
-	private static final String[] FEATURE_TYPES = { "content-length_pos-ngrams_token-ngrams",
-													//"content-length_pos-ngrams",
-													//"content-length_token-ngrams",
-													//"pos-ngrams_token-ngrams",
-													//"content-length",
-													//"pos-ngrams",
-													//"token-ngrams"
+	String[] FEATURE_TYPES = {
+			"content-length_pos-ngrams_token-ngrams",
+			"content-length_pos-ngrams",
+			"content-length_pos-ngrams",
+			"content-length_token-ngrams",
+			"pos-ngrams_token-ngrams",
+			"content-length",
+			"pos-ngrams",
+			"token-ngrams"
 	};
-	
-	private static final String PROPERTIES_FEATURE_GENERATOR_PATH = "src/main/resources/properties/feature_file_generator/cross-domain/";
-	
-	private static final String FEATURE_FILE_PATH = "data/cross-domain/debatepedia_sample-sbm/arff/";
-	
-	private static final String CORPUS1 = "debatepedia";
-	
-	private static final String CORPUS2 = "sample-sbm";
-	
-	
+	String PROPERTIES_FEATURE_GENERATOR_PATH = "src/main/resources/properties/feature_file_generator/cross-domain/";
+	String FEATURE_FILE_PATH = "data/cross-domain/debatepedia_sample-sbm/arff/";
+	String CORPUS1 = "debatepedia";
+	String CORPUS2 = "sample-sbm";
 	private ArrayList<String> featureGeneratorPropertiesPaths;
 	private DebatepediaProcessor processor1;
 	private DebatepediaProcessor processor2;
@@ -44,7 +45,7 @@ public class CrossDomainExperimentRunner {
 	}
 	
 	
-	public void run(){
+	public void run() throws Exception{
 		
 		// Process sample statement by member data
 		String inputPath1 = "data/debatepedia/json/full";
@@ -61,62 +62,67 @@ public class CrossDomainExperimentRunner {
 //		this.processor2.processCollection(args);
 		
 		// Generate feature files
-//		for (String propertiesPath : this.featureGeneratorPropertiesPaths) {
-//			generator = new GenericFeatureFileGenerator(propertiesPath);
-//			generator.generatorFeatureFiles();
-//		} 
+		for (String propertiesPath : this.featureGeneratorPropertiesPaths) {
+			GenericFeatureFileGenerator generator = new GenericFeatureFileGenerator(propertiesPath);
+			generator.generatorFeatureFiles();
+		} 
 		
-		// Search for training file
 		String extension = ".arff";
 		File featureFileFolder = new File(FEATURE_FILE_PATH);
-		String[] trainingFilePatterns = {FEATURE_TYPES[0], CORPUS1};
-		String trainingFeaturesPath = this.listFilesMatchingPatternNewest(featureFileFolder, trainingFilePatterns, extension)[0].getAbsolutePath();
-		String[] testingFilePatterns = {FEATURE_TYPES[0], CORPUS2};
-		String testingFeaturesPath = this.listFilesMatchingPatternNewest(featureFileFolder, testingFilePatterns, extension)[0].getAbsolutePath();
-		
-		
-		try {
+		for (String featureType: FEATURE_TYPES) {
+			String trainingFeaturesPath = this.listFilesMatchingPatternNewest(featureFileFolder, featureType, CORPUS1, extension)[0].getAbsolutePath();
+			String testingFeaturesPath = this.listFilesMatchingPatternNewest(featureFileFolder, featureType, CORPUS2, extension)[0].getAbsolutePath();
+			
+			System.out.println("\n\n\nTRAINING ON "+ featureType);
 			WekaClassifierManager.classify(trainingFeaturesPath, testingFeaturesPath);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("===================\n\n\n");
 		}
+		
+		
 	}
 	
-	// Get the list of files (newest to oldest) that satisfies the patterns
-		private File[] listFilesMatchingPatternNewest(File folder, String[] patterns, String extension) {
-			File[] files = folder.listFiles(new FilenameFilter(){
-		        @Override
-		        public boolean accept(File dir, String name) {
-		        	System.out.println(name);
-		        	boolean shouldAccept = false;
-		        	if(name.endsWith(extension)) {
-		        		for(String pattern : patterns) {
-		        			if(!name.contains(pattern)) {
-		        				shouldAccept = false;
-		        				break;
-		        			}
-		        			else {
-		        				shouldAccept = true;
-		        				continue;
-		        			}
-		        		}
-		        		
-		        	}
-		            return shouldAccept; 
-		        }}
-			);
-			
-		
-			Arrays.sort(files, new Comparator<File>() {
-			    public int compare(File f1, File f2) {
-			        return Long.compare(f1.lastModified(), f2.lastModified());
-			    }
-			});
-			return files;
-		}
+	private static String getDate() {
+		Date date = new Date();
+		Timestamp ts = new Timestamp(date.getTime());
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		return formatter.format(ts);
+	}
 	
-	public static void main(String[] args) throws ResourceInitializationException, IOException{
+	private File[] listFilesMatchingPatternNewest(File folder, String featureType,
+			String corpusName, String extension) {
+		File[] files = folder.listFiles(new FilenameFilter(){
+	        @Override
+	        public boolean accept(File dir, String name) {
+	        	boolean shouldAccept = false;
+	        	if(name.endsWith(extension)) {
+	        		if(name.startsWith(featureType+"_2019")) {
+	        			shouldAccept = true;
+	        			for(String pattern: new String[]{corpusName}) {
+	        				if (!name.contains(pattern)) {
+	        					shouldAccept = false;
+	        					break;
+	        				}
+	        				else {
+	        					continue;
+	        				}
+	        			}
+	        		}
+	        		
+	        	}
+	            return shouldAccept; 
+	        }}
+		);
+		
+	
+		Arrays.sort(files, new Comparator<File>() {
+		    public int compare(File f1, File f2) {
+		        return Long.compare(f1.lastModified(), f2.lastModified());
+		    }
+		});
+		return files;
+	}
+	
+	public static void main(String[] args) throws Exception{
 		CrossDomainExperimentRunner runner = new CrossDomainExperimentRunner();
 		runner.run();
 		

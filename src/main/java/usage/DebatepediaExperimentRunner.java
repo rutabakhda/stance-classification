@@ -20,7 +20,7 @@ public class DebatepediaExperimentRunner {
 	
 	private static final String CORPUS_NAME = "debatepedia";
 	
-	private static final String[] SPLIT_TYPES = {"random", "by_topic"};
+	private static final String[] SPLIT_TYPES = {"random", "by-topic"};
 	
 	private static final String[] FEATURE_TYPES = { "content-length_pos-ngrams_token-ngrams",
 													"content-length_pos-ngrams",
@@ -73,20 +73,20 @@ public class DebatepediaExperimentRunner {
 //		this.processor.processCollection();
 		
 		// Splitting files
-		
+/*		
 		for (String splitPropertiesPath : this.splitPropertiesPaths) {
 			splitter = new TrainTestSplitter(splitPropertiesPath);
 			splitter.split();
 		}
-		
+*/		
 		
 		// Generating feature files
-		
+/*	
 		for (String propertiesPath : featureGeneratorPropertiesPaths) {
 			generator = new GenericFeatureFileGenerator(propertiesPath);
 			generator.generatorFeatureFiles();
 		} 
-		
+*/		
 		
 		
 		// Run Weka for each pair of feature files
@@ -98,12 +98,16 @@ public class DebatepediaExperimentRunner {
 				String[] trainingFilePatterns = new String[] {CORPUS_NAME, splitType, featureType, "train"};
 				String[] testingFilePatterns = new String[] {CORPUS_NAME, splitType, featureType, "test"};
 				String extension = ".arff";
-			
-				// Search for training file
-				trainingFeaturesPath = this.listFilesMatchingPatternNewest(this.featuresfilePath, trainingFilePatterns, extension)[0].getAbsolutePath();
-				testingFeaturesPath = this.listFilesMatchingPatternNewest(this.featuresfilePath, testingFilePatterns, extension)[0].getAbsolutePath();
 				
 				System.out.println("\n\n\nNew Experiment....");
+				// Search for training file
+				System.out.println(featureType);
+				trainingFeaturesPath = this.listFilesMatchingPatternNewest(this.featuresfilePath, featureType, splitType, CORPUS_NAME, "train", extension)[0].getAbsolutePath();
+				testingFeaturesPath = this.listFilesMatchingPatternNewest(this.featuresfilePath, featureType, splitType, CORPUS_NAME, "test", extension)[0].getAbsolutePath();
+				
+				
+				
+				
 				System.out.println(trainingFeaturesPath);
 				System.out.println(testingFeaturesPath);
 				
@@ -117,21 +121,23 @@ public class DebatepediaExperimentRunner {
 		}
 	}
 
-	// Get the list of files (newest to oldest) that satisfies the patterns
-	private File[] listFilesMatchingPatternNewest(File folder, String[] patterns, String extension) {
+	private File[] listFilesMatchingPatternNewest(File folder, String featureType, String splitType,
+			String corpusName, String trainOrTest, String extension) {
 		File[] files = folder.listFiles(new FilenameFilter(){
 	        @Override
 	        public boolean accept(File dir, String name) {
 	        	boolean shouldAccept = false;
 	        	if(name.endsWith(extension)) {
-	        		for(String pattern : patterns) {
-	        			if(!name.contains(pattern)) {
-	        				shouldAccept = false;
-	        				break;
-	        			}
-	        			else {
-	        				shouldAccept = true;
-	        				continue;
+	        		if(name.startsWith(featureType+"_2019")) {
+	        			shouldAccept = true;
+	        			for(String pattern: new String[]{splitType, corpusName, trainOrTest}) {
+	        				if (!name.contains(pattern)) {
+	        					shouldAccept = false;
+	        					break;
+	        				}
+	        				else {
+	        					continue;
+	        				}
 	        			}
 	        		}
 	        		
@@ -148,6 +154,7 @@ public class DebatepediaExperimentRunner {
 		});
 		return files;
 	}
+	
 	public static void main(String[] args) throws ResourceInitializationException, IOException {
 		DebatepediaExperimentRunner runner = new DebatepediaExperimentRunner();
 		runner.run();
