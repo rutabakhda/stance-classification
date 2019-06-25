@@ -1,4 +1,0 @@
-documents:106
-topics:8
-premise:85
-conclusion:21

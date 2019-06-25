@@ -1,4 +1,0 @@
-documents:47427
-topics:460
-premise:35871
-conclusion:11556
