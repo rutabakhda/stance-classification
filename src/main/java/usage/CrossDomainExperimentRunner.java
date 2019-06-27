@@ -16,14 +16,8 @@ import de.aitools.ie.uima.usage.GenericFeatureFileGenerator;
 public class CrossDomainExperimentRunner {
 	
 	String[] FEATURE_TYPES = {
-			"content-length_pos-ngrams_token-ngrams",
-			"content-length_pos-ngrams",
-			"content-length_pos-ngrams",
-			"content-length_token-ngrams",
-			"pos-ngrams_token-ngrams",
-			"content-length",
-			"pos-ngrams",
-			"token-ngrams"
+		"content-length_pos-ngrams_token-ngrams",
+			
 	};
 	String PROPERTIES_FEATURE_GENERATOR_PATH = "src/main/resources/properties/feature_file_generator/cross-domain/";
 	String FEATURE_FILE_PATH = "data/cross-domain/debatepedia_sample-sbm/arff/";
@@ -47,25 +41,27 @@ public class CrossDomainExperimentRunner {
 	
 	public void run() throws Exception{
 		
-		// Process sample statement by member data
+		// Process debatepedia to xmi
 		String inputPath1 = "data/debatepedia/json/full";
 		String outputPath1 = "data/debatepedia/processed/";
 		String[] args1 = {inputPath1, outputPath1};
 		this.processor1 = new DebatepediaProcessor();
-//        this.processor1.processCollection(args1);
+        //this.processor1.processCollection(args1);
 				
-		// Process sample statement by member data
+		// Process sample statement by member to xmi
 		String inputPath2 = "data/sample-sbm/json/";
 		String outputPath2 = "data/sample-sbm/processed/";
 		String[] args2 = {inputPath2, outputPath2};
 		this.processor2 = new DebatepediaProcessor();
-//		this.processor2.processCollection(args);
+		//this.processor2.processCollection(args2);
 		
-		// Generate feature files
-		for (String propertiesPath : this.featureGeneratorPropertiesPaths) {
+		// Generate feature files for training and testing
+		/*for (String propertiesPath : this.featureGeneratorPropertiesPaths) {
+			System.out.println(propertiesPath);
 			GenericFeatureFileGenerator generator = new GenericFeatureFileGenerator(propertiesPath);
 			generator.generatorFeatureFiles();
-		} 
+		} */
+		
 		
 		String extension = ".arff";
 		File featureFileFolder = new File(FEATURE_FILE_PATH);
@@ -74,9 +70,12 @@ public class CrossDomainExperimentRunner {
 			String testingFeaturesPath = this.listFilesMatchingPatternNewest(featureFileFolder, featureType, CORPUS2, extension)[0].getAbsolutePath();
 			
 			System.out.println("\n\n\nTRAINING ON "+ featureType);
+			System.out.println("training file: " + trainingFeaturesPath);
+			System.out.println("testing file: "+ testingFeaturesPath);
 			WekaClassifierManager.classify(trainingFeaturesPath, testingFeaturesPath);
 			System.out.println("===================\n\n\n");
 		}
+		
 		
 		
 	}
