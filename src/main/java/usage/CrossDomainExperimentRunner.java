@@ -17,7 +17,12 @@ public class CrossDomainExperimentRunner {
 	
 	String[] FEATURE_TYPES = {
 		"content-length_pos-ngrams_token-ngrams",
-			
+		"content-length_pos-ngrams",
+		"content-length_token-ngrams",
+		"pos-ngrams_token-ngrams",
+		"content-length",
+		"pos-ngrams",
+		"token-ngrams"
 	};
 	String PROPERTIES_FEATURE_GENERATOR_PATH = "src/main/resources/properties/feature_file_generator/cross-domain/";
 	String FEATURE_FILE_PATH = "data/cross-domain/debatepedia_sample-sbm/arff/";
@@ -60,7 +65,7 @@ public class CrossDomainExperimentRunner {
 			System.out.println(propertiesPath);
 			GenericFeatureFileGenerator generator = new GenericFeatureFileGenerator(propertiesPath);
 			generator.generatorFeatureFiles();
-		} */
+		}*/ 
 		
 		
 		String extension = ".arff";

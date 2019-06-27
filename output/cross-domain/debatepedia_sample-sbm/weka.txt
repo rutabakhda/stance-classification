@@ -44,3 +44,383 @@ Weighted Avg.    0.755    0.742    0.689      0.755    0.714      0.018    0.345
   a  b   <-- classified as
   2 19 |  a = conclusion
   7 78 |  b = premise
+
+
+=============================================
+=============================================
+=============================================
+Newest Experiment on Sample Statement by Member 
+Train on Debatepedia 
+All annotation
+=============================================
+=============================================
+=============================================
+
+
+
+TRAINING ON content-length_pos-ngrams_token-ngrams
+training file: /home/ciso0478/wstud-visit-the-dome-ss19/data/cross-domain/debatepedia_sample-sbm/arff/content-length_pos-ngrams_token-ngrams_2019-06-27_data-debatepedia-processed.arff
+testing file: /home/ciso0478/wstud-visit-the-dome-ss19/data/cross-domain/debatepedia_sample-sbm/arff/content-length_pos-ngrams_token-ngrams_2019-06-27_data-sample-sbm-processed.arff
+=== Start ===
+Building RandomForest on 71742 instances with 928 attributes.
+Built: Random forest of 10 trees, each constructed while considering 10 random features.
+Out of bag error: 0.0929
+
+
+Evaluate on 108 instances
+
+=== Summary ===
+
+Correctly Classified Instances          77               71.2963 %
+Incorrectly Classified Instances        31               28.7037 %
+Kappa statistic                         -0.0786
+Mean absolute error                      0.3182
+Root mean squared error                  0.4788
+Relative absolute error                 63.642  %
+Root relative squared error             95.7513 %
+Coverage of cases (0.95 level)          91.6667 %
+Mean rel. region size (0.95 level)      79.1667 %
+Total Number of Instances              108     
+
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.043     0.106      0.1       0.043     0.061      0.484    conclusion
+                 0.894     0.957      0.776     0.894     0.831      0.484    premise
+Weighted Avg.    0.713     0.775      0.632     0.713     0.667      0.484
+
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+  1 22 |  a = conclusion
+  9 76 |  b = premise
+
+===================
+
+
+
+
+
+
+TRAINING ON content-length_pos-ngrams
+training file: /home/ciso0478/wstud-visit-the-dome-ss19/data/cross-domain/debatepedia_sample-sbm/arff/content-length_pos-ngrams_2019-06-27_data-debatepedia-processed.arff
+testing file: /home/ciso0478/wstud-visit-the-dome-ss19/data/cross-domain/debatepedia_sample-sbm/arff/content-length_pos-ngrams_2019-06-27_data-sample-sbm-processed.arff
+=== Start ===
+Building RandomForest on 71742 instances with 667 attributes.
+Built: Random forest of 10 trees, each constructed while considering 10 random features.
+Out of bag error: 0.094
+
+
+Evaluate on 108 instances
+
+=== Summary ===
+
+Correctly Classified Instances          78               72.2222 %
+Incorrectly Classified Instances        30               27.7778 %
+Kappa statistic                          0.0152
+Mean absolute error                      0.3185
+Root mean squared error                  0.4782
+Relative absolute error                 63.7037 %
+Root relative squared error             95.646  %
+Coverage of cases (0.95 level)          90.7407 %
+Mean rel. region size (0.95 level)      77.3148 %
+Total Number of Instances              108     
+
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.13      0.118      0.231     0.13      0.167      0.501    conclusion
+                 0.882     0.87       0.789     0.882     0.833      0.501    premise
+Weighted Avg.    0.722     0.709      0.67      0.722     0.691      0.501
+
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+  3 20 |  a = conclusion
+ 10 75 |  b = premise
+
+===================
+
+
+
+
+
+
+TRAINING ON content-length_pos-ngrams
+training file: /home/ciso0478/wstud-visit-the-dome-ss19/data/cross-domain/debatepedia_sample-sbm/arff/content-length_pos-ngrams_2019-06-27_data-debatepedia-processed.arff
+testing file: /home/ciso0478/wstud-visit-the-dome-ss19/data/cross-domain/debatepedia_sample-sbm/arff/content-length_pos-ngrams_2019-06-27_data-sample-sbm-processed.arff
+=== Start ===
+Building RandomForest on 71742 instances with 667 attributes.
+Built: Random forest of 10 trees, each constructed while considering 10 random features.
+Out of bag error: 0.094
+
+
+Evaluate on 108 instances
+
+=== Summary ===
+
+Correctly Classified Instances          78               72.2222 %
+Incorrectly Classified Instances        30               27.7778 %
+Kappa statistic                          0.0152
+Mean absolute error                      0.3185
+Root mean squared error                  0.4782
+Relative absolute error                 63.7037 %
+Root relative squared error             95.646  %
+Coverage of cases (0.95 level)          90.7407 %
+Mean rel. region size (0.95 level)      77.3148 %
+Total Number of Instances              108     
+
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.13      0.118      0.231     0.13      0.167      0.501    conclusion
+                 0.882     0.87       0.789     0.882     0.833      0.501    premise
+Weighted Avg.    0.722     0.709      0.67      0.722     0.691      0.501
+
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+  3 20 |  a = conclusion
+ 10 75 |  b = premise
+
+===================
+
+
+
+
+
+
+TRAINING ON content-length_token-ngrams
+training file: /home/ciso0478/wstud-visit-the-dome-ss19/data/cross-domain/debatepedia_sample-sbm/arff/content-length_token-ngrams_2019-06-27_data-debatepedia-processed.arff
+testing file: /home/ciso0478/wstud-visit-the-dome-ss19/data/cross-domain/debatepedia_sample-sbm/arff/content-length_token-ngrams_2019-06-27_data-sample-sbm-processed.arff
+=== Start ===
+Building RandomForest on 71742 instances with 264 attributes.
+Built: Random forest of 10 trees, each constructed while considering 9 random features.
+Out of bag error: 0.0888
+
+
+Evaluate on 108 instances
+
+=== Summary ===
+
+Correctly Classified Instances          76               70.3704 %
+Incorrectly Classified Instances        32               29.6296 %
+Kappa statistic                         -0.0916
+Mean absolute error                      0.2964
+Root mean squared error                  0.4728
+Relative absolute error                 59.2824 %
+Root relative squared error             94.5668 %
+Coverage of cases (0.95 level)          87.963  %
+Mean rel. region size (0.95 level)      73.6111 %
+Total Number of Instances              108     
+
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.043     0.118      0.091     0.043     0.059      0.527    conclusion
+                 0.882     0.957      0.773     0.882     0.824      0.527    premise
+Weighted Avg.    0.704     0.778      0.628     0.704     0.661      0.527
+
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+  1 22 |  a = conclusion
+ 10 75 |  b = premise
+
+===================
+
+
+
+
+
+
+TRAINING ON pos-ngrams_token-ngrams
+training file: /home/ciso0478/wstud-visit-the-dome-ss19/data/cross-domain/debatepedia_sample-sbm/arff/pos-ngrams_token-ngrams_2019-06-27_data-debatepedia-processed.arff
+testing file: /home/ciso0478/wstud-visit-the-dome-ss19/data/cross-domain/debatepedia_sample-sbm/arff/pos-ngrams_token-ngrams_2019-06-27_data-sample-sbm-processed.arff
+=== Start ===
+Building RandomForest on 71742 instances with 926 attributes.
+Built: Random forest of 10 trees, each constructed while considering 10 random features.
+Out of bag error: 0.0979
+
+
+Evaluate on 108 instances
+
+=== Summary ===
+
+Correctly Classified Instances          76               70.3704 %
+Incorrectly Classified Instances        32               29.6296 %
+Kappa statistic                          0.0232
+Mean absolute error                      0.3198
+Root mean squared error                  0.4695
+Relative absolute error                 63.9506 %
+Root relative squared error             93.9092 %
+Coverage of cases (0.95 level)          90.7407 %
+Mean rel. region size (0.95 level)      80.5556 %
+Total Number of Instances              108     
+
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.174     0.153      0.235     0.174     0.2        0.523    conclusion
+                 0.847     0.826      0.791     0.847     0.818      0.523    premise
+Weighted Avg.    0.704     0.683      0.673     0.704     0.687      0.523
+
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+  4 19 |  a = conclusion
+ 13 72 |  b = premise
+
+===================
+
+
+
+
+
+
+TRAINING ON content-length
+training file: /home/ciso0478/wstud-visit-the-dome-ss19/data/cross-domain/debatepedia_sample-sbm/arff/content-length_2019-06-27_data-debatepedia-processed.arff
+testing file: /home/ciso0478/wstud-visit-the-dome-ss19/data/cross-domain/debatepedia_sample-sbm/arff/content-length_2019-06-27_data-sample-sbm-processed.arff
+=== Start ===
+Building RandomForest on 71742 instances with 3 attributes.
+Built: Random forest of 10 trees, each constructed while considering 2 random features.
+Out of bag error: 0.1626
+
+
+Evaluate on 108 instances
+
+=== Summary ===
+
+Correctly Classified Instances          71               65.7407 %
+Incorrectly Classified Instances        37               34.2593 %
+Kappa statistic                          0.0801
+Mean absolute error                      0.3569
+Root mean squared error                  0.4919
+Relative absolute error                 71.3829 %
+Root relative squared error             98.3747 %
+Coverage of cases (0.95 level)          94.4444 %
+Mean rel. region size (0.95 level)      82.4074 %
+Total Number of Instances              108     
+
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.348     0.259      0.267     0.348     0.302      0.573    conclusion
+                 0.741     0.652      0.808     0.741     0.773      0.573    premise
+Weighted Avg.    0.657     0.568      0.692     0.657     0.673      0.573
+
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+  8 15 |  a = conclusion
+ 22 63 |  b = premise
+
+===================
+
+
+
+
+
+
+TRAINING ON pos-ngrams
+training file: /home/ciso0478/wstud-visit-the-dome-ss19/data/cross-domain/debatepedia_sample-sbm/arff/pos-ngrams_2019-06-27_data-debatepedia-processed.arff
+testing file: /home/ciso0478/wstud-visit-the-dome-ss19/data/cross-domain/debatepedia_sample-sbm/arff/pos-ngrams_2019-06-27_data-sample-sbm-processed.arff
+=== Start ===
+Building RandomForest on 71742 instances with 665 attributes.
+Built: Random forest of 10 trees, each constructed while considering 10 random features.
+Out of bag error: 0.0983
+
+
+Evaluate on 108 instances
+
+=== Summary ===
+
+Correctly Classified Instances          74               68.5185 %
+Incorrectly Classified Instances        34               31.4815 %
+Kappa statistic                         -0.1598
+Mean absolute error                      0.3279
+Root mean squared error                  0.4857
+Relative absolute error                 65.5713 %
+Root relative squared error             97.1416 %
+Coverage of cases (0.95 level)          90.7407 %
+Mean rel. region size (0.95 level)      79.1667 %
+Total Number of Instances              108     
+
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0         0.129      0         0         0          0.481    conclusion
+                 0.871     1          0.763     0.871     0.813      0.481    premise
+Weighted Avg.    0.685     0.815      0.6       0.685     0.64       0.481
+
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+  0 23 |  a = conclusion
+ 11 74 |  b = premise
+
+===================
+
+
+
+
+
+
+TRAINING ON token-ngrams
+training file: /home/ciso0478/wstud-visit-the-dome-ss19/data/cross-domain/debatepedia_sample-sbm/arff/token-ngrams_2019-06-27_data-debatepedia-processed.arff
+testing file: /home/ciso0478/wstud-visit-the-dome-ss19/data/cross-domain/debatepedia_sample-sbm/arff/token-ngrams_2019-06-27_data-sample-sbm-processed.arff
+=== Start ===
+Building RandomForest on 71742 instances with 262 attributes.
+Built: Random forest of 10 trees, each constructed while considering 9 random features.
+Out of bag error: 0.0993
+
+
+Evaluate on 108 instances
+
+=== Summary ===
+
+Correctly Classified Instances          75               69.4444 %
+Incorrectly Classified Instances        33               30.5556 %
+Kappa statistic                         -0.0632
+Mean absolute error                      0.326 
+Root mean squared error                  0.5057
+Relative absolute error                 65.1985 %
+Root relative squared error            101.1497 %
+Coverage of cases (0.95 level)          87.037  %
+Mean rel. region size (0.95 level)      74.537  %
+Total Number of Instances              108     
+
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.087     0.141      0.143     0.087     0.108      0.498    conclusion
+                 0.859     0.913      0.777     0.859     0.816      0.498    premise
+Weighted Avg.    0.694     0.749      0.642     0.694     0.665      0.498
+
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+  2 21 |  a = conclusion
+ 12 73 |  b = premise
+
+===================
+
+
+
+
