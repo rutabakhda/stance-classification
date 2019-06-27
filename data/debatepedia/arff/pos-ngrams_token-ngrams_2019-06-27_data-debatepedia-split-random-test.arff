@@ -1,0 +1,16 @@
+% 1. Title: pos-ngrams_token-ngrams
+%
+% 2. Sources:
+%      (a) Creator: visit-the-dome
+%      (b) Date:    2019-06-27
+%      (c) Corpus:  data/debatepedia/split/random/test
+%
+
+@RELATION  ArgumentativeDiscourseUnit-unitType
+
+@ATTRIBUTE class  {conclusion,premise}
+
+@DATA
+%
+%
+%

@@ -1,0 +1,16 @@
+% 1. Title: pos-ngrams
+%
+% 2. Sources:
+%      (a) Creator: visit-the-dome
+%      (b) Date:    2019-06-24
+%      (c) Corpus:  data/debatepedia/split/random/training
+%
+
+@RELATION  ArgumentativeDiscourseUnit-unitType
+
+@ATTRIBUTE class  {conclusion,premise}
+
+@DATA
+%
+%
+%
