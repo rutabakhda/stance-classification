@@ -24,7 +24,6 @@ public class WekaClassifierManager {
 	 * testing the classifier.
 	 */
 	private static final String TEST_SET_PATH = "data/cross-domain/debatepedia_sample-sbm/arff/content-length_pos-ngrams_token-ngrams_2019-06-14_data-sample-sbm-processed.arff";
-	private String modelFilePath = "data/cross-domain/debatepedia_sample-sbm/models/debatepedia.model";
 	// -------------------------------------------------------------------------
 	// REFERENCES
 	// -------------------------------------------------------------------------
