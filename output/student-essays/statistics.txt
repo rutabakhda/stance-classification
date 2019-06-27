@@ -1,0 +1,6 @@
+documents:402
+topics:372
+premise:3832
+majorclaims:751
+claim-for:1228
+claim-against:278

@@ -1,0 +1,22 @@
+Split by Random
+training set: 1812 conclusion, 3059 premise
+testing set: 445 conclusion, 773 premise
+
+Split by Topic
+training set: 1797 conclusion, 3041 premise
+testing set: 460 conclusion, 791 premise
+
+-------------------------------------------
+All premises, only major-claim is conclusion
+-------------------------------------------
+
+Split by Random
+
+training set: 598 conclusion, 4273 premise
+testing set: 153 conclusion, 1065 premise
+
+
+Split by Topic
+
+training set: 594 conclusion, 4244 premise
+testing set: 157 conclusion, 1094 premise
