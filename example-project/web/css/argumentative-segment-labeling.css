@@ -1,9 +1,0 @@
-#segment-labeling-body .continued {
-  background-color: #dddddd !important;
-}
-#segment-labeling-body .commonground, #segment-labeling-body .assumption, #segment-labeling-body .testimony, #segment-labeling-body .statistics, #segment-labeling-body .anecdote, #segment-labeling-body .other {
-  background-color: #dff0d8 !important;
-}
-#segment-labeling-body .nounit {
-  background-color: #dfdff0 !important;
-}
