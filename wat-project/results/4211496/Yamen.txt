@@ -1,0 +1,10 @@
+segment-labeling.0 = pro
+segment-labeling.1 = premise
+segment-labeling.2 = conclusion
+segment-labeling.3 = premise
+segment-labeling.4 = conclusion
+segment-labeling.5 = premise
+segment-labeling.6 = conclusion
+segment-labeling.7 = conclusion
+segment-labeling.8 = conclusion
+segment-labeling.9 = conclusion

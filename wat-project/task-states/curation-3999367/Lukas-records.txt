@@ -1,0 +1,5 @@
+2019-07-11-09-31-04.790	-120	ANNOTATOR	INFO	action	open
+2019-07-11-09-31-54.646	-120	ANNOTATOR	segment-labeling	8	premise
+2019-07-11-09-31-58.083	-120	ANNOTATOR	segment-labeling	9	premise
+2019-07-11-09-32-00.958	-120	ANNOTATOR	segment-labeling	0	con
+2019-07-11-09-35-00.994	-120	ANNOTATOR	INFO	action	open

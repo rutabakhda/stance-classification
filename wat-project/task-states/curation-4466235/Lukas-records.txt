@@ -1,0 +1,4 @@
+2019-07-11-09-53-46.313	-120	ANNOTATOR	INFO	action	open
+2019-07-11-09-54-01.643	-120	ANNOTATOR	segment-labeling	7	premise
+2019-07-11-09-54-06.784	-120	ANNOTATOR	segment-labeling	8	conclusion
+2019-07-11-09-54-08.909	-120	ANNOTATOR	segment-labeling	0	pro

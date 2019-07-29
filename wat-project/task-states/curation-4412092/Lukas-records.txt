@@ -1,0 +1,2 @@
+2019-07-11-09-52-26.882	-120	ANNOTATOR	INFO	action	open
+2019-07-11-09-53-01.823	-120	ANNOTATOR	segment-labeling	0	pro

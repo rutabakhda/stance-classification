@@ -1,0 +1,11 @@
+2019-07-10-19-57-22.795	-120	ANNOTATOR	INFO	action	open
+2019-07-10-19-57-40.418	-120	ANNOTATOR	segment-labeling	1	premise
+2019-07-10-19-57-55.156	-120	ANNOTATOR	segment-labeling	2	conclusion
+2019-07-10-19-58-19.379	-120	ANNOTATOR	segment-labeling	3	conclusion
+2019-07-10-19-58-31.390	-120	ANNOTATOR	segment-labeling	4	premise
+2019-07-10-19-58-46.766	-120	ANNOTATOR	segment-labeling	5	conclusion
+2019-07-10-19-58-55.792	-120	ANNOTATOR	segment-labeling	6	premise
+2019-07-10-19-59-03.459	-120	ANNOTATOR	segment-labeling	7	conclusion
+2019-07-10-19-59-07.722	-120	ANNOTATOR	segment-labeling	8	conclusion
+2019-07-10-19-59-17.807	-120	ANNOTATOR	segment-labeling	0	con
+2019-07-10-20-18-58.173	-120	ANNOTATOR	segment-labeling	0	con
