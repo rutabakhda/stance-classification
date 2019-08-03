@@ -3,6 +3,13 @@ import os
 import pandas as pd
 import json
 
+"""
+Calculate fleiss kappa score.
+Print all sentences and its annotation details if high conflict
+__author__ = "Anh Phuong Le"
+__date__ = "2019.08.02"
+"""
+
 # some intialization
 argumentative_keys = ['conclusion','premise','non-argumentative'] # categories of sentence
 results_path = os.getcwd() + "/" + "annotation_results" # get current path
