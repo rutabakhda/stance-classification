@@ -2,7 +2,6 @@ from statsmodels.stats.inter_rater import fleiss_kappa
 import os
 import pandas as pd
 import json
-from tabulate import tabulate
 
 # some intialization
 argumentative_keys = ['conclusion','premise','non-argumentative'] # categories of sentence
