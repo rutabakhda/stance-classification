@@ -1,4 +1,4 @@
-documents:108
-topics:7
-premise:85
-conclusion:23
+documents:418
+topics:15
+premise:329
+conclusion:89

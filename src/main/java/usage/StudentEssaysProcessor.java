@@ -104,9 +104,7 @@ public class StudentEssaysProcessor {
 				// Iterate over sentences
 				FSIterator<Annotation> iter = jcas.getAnnotationIndex(ArgumentativeDiscourseUnit.type).iterator();
 				AnnotationIndex<Annotation> annotationIndex = jcas.getAnnotationIndex(MetadataAAE.type);
-				
-				System.out.println(annotationIndex.getType().toString());
-				
+
 				MetadataAAE metadataAAE = (MetadataAAE) annotationIndex.iterator().next();
 				String topic = metadataAAE.getTopic();
 				Integer topicIndex;

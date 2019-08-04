@@ -15,7 +15,7 @@
     <delegateAnalysisEngine key="DummyAnalysisEngine">
                   
       
-      <import name="uima-descriptors.primitive-AEs.template.DummyAnalysisEngine"/>
+      <import location="../../../../../../aitools4-ie-uima/conf/uima-descriptors/primitive-AEs/template/DummyAnalysisEngine.xml"/>
                 
     
     </delegateAnalysisEngine>
@@ -24,14 +24,14 @@
     <delegateAnalysisEngine key="UIMATokenAndSentenceSplitter">
                   
       
-      <import name="uima-descriptors.primitive-AEs.segmentation.UIMATokenAndSentenceSplitter"/>
+      <import location="../../../../../../aitools4-ie-uima/conf/uima-descriptors/primitive-AEs/segmentation/UIMATokenAndSentenceSplitter.xml"/>
                 
     
     </delegateAnalysisEngine>
           
   
     <delegateAnalysisEngine key="TT4jLemmaAndPartOfSpeechTagger">
-      <import name="uima-descriptors.primitive-AEs.tagging.TT4jLemmaAndPartOfSpeechTagger"/>
+      <import location="../../../../../../aitools4-ie-uima/conf/uima-descriptors/primitive-AEs/tagging/TT4jLemmaAndPartOfSpeechTagger.xml"/>
                 
     
     

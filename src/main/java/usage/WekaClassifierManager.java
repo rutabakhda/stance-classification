@@ -3,13 +3,16 @@ package usage;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FilenameFilter;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Date;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import weka.classifiers.Classifier;
@@ -28,20 +31,30 @@ public class WekaClassifierManager {
 	static String TRAINING_SET_PATH = "data/cross-domain/debatepedia_sample-sbm/arff/content-length_pos-ngrams_token-ngrams_2019-06-14_data-debatepedia-processed.arff";
 	static String TEST_SET_PATH = "data/cross-domain/debatepedia_sample-sbm/arff/content-length_pos-ngrams_token-ngrams_2019-06-14_data-sample-sbm-processed.arff";
 
-	private static final String INPUT_FILE = "data/sample-sbm/json/original.json";
-	private JSONArray originalData;
+	private static final String INPUT_FILE = "data/sample-sbm/json/";
+	private ArrayList<JSONObject> originalData;
 
-	private JSONArray getOriginalData() {
+	private ArrayList<JSONObject> getOriginalData() throws JSONException {
 
-		File inputFile = new File(INPUT_FILE);
-		System.out.println("original file: " + inputFile.getAbsolutePath());
-		JSONArray originalInstances = new JSONArray();
-		String json = this.readJsonFile(inputFile);
+		File inputFolder = new File(INPUT_FILE);
+		ArrayList<JSONObject> originalInstances = new ArrayList<JSONObject>();
 
-		if (!json.equals("")) {
-			originalInstances = new JSONArray(json);
+		File[] files = inputFolder.listFiles(new FilenameFilter() {
+			@Override
+			public boolean accept(File dir, String name) {
+				return name.endsWith(".json");
+			}
+		});
+
+		for (File file : files){
+			String json = this.readJsonFile(file);
+			if (!json.equals("")) {
+				JSONArray array = new JSONArray(json);
+				for (int i=0; i < array.length(); i++) {
+					originalInstances.add(array.getJSONObject(i));
+				}
+			}
 		}
-
 		return originalInstances;
 	}
 
@@ -131,7 +144,7 @@ public class WekaClassifierManager {
 		System.out.println("Built: " + this.classifier);
 
 		// Save model
-		weka.core.SerializationHelper.write(modelFilePath, classifier);
+//		weka.core.SerializationHelper.write(modelFilePath, classifier);
 	}
 
 	private Evaluation test(File testSetFeatureFile) throws Exception {
@@ -152,7 +165,7 @@ public class WekaClassifierManager {
 			String predictedString = instance.classAttribute().value((int) prediction);
 
 			if (!actualString.contentEquals(predictedString)) {
-				JSONObject originalJsonObject = this.originalData.getJSONObject(i);
+				JSONObject originalJsonObject = this.originalData.get(i);
 				System.out.println(originalJsonObject.getString("content") + "\n"
 						+ originalJsonObject.getString("unitType") + " , " + predictedString + "\n");
 				if (actualString.contentEquals("premise")) {
