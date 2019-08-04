@@ -1,0 +1,13 @@
+segment-labeling.0 = pro
+segment-labeling.1 = non-argumentative
+segment-labeling.10 = premise
+segment-labeling.11 = conclusion
+segment-labeling.12 = conclusion
+segment-labeling.2 = non-argumentative
+segment-labeling.3 = premise
+segment-labeling.4 = premise
+segment-labeling.5 = premise
+segment-labeling.6 = premise
+segment-labeling.7 = non-argumentative
+segment-labeling.8 = non-argumentative
+segment-labeling.9 = premise
