@@ -20,13 +20,16 @@ public class StudentEssaysExperimentRunner {
 	
 	private static final String[] SPLIT_TYPES = { "random", "by-topic" };
 	
-	private static final String[] FEATURE_TYPES = { "content-length_pos-ngrams_token-ngrams", 
-													"content-length_pos-ngrams",
-													"content-length_token-ngrams",
-													"pos-ngrams_token-ngrams",
-													"content-length",
-													"pos-ngrams",
-													"token-ngrams" };
+	private static final String[] FEATURE_TYPES = {
+			"content-length_pos-ngrams_token-ngrams",
+			"content-length_pos-ngrams",
+			"content-length_token-ngrams",
+			"pos-ngrams_token-ngrams",
+			"content-length",
+			"pos-ngrams",
+			"token-ngrams",
+			"position"
+	};
 
 	private static final String PROPERTIES_SPLIT_PATH = "src/main/resources/properties/split";
 	

@@ -1,0 +1,81 @@
+New Experiment....
+/Users/aphuongle95/wstud-visit-the-dome-ss19/data/student-essays/arff/pos-ngrams_token-ngrams_2019-06-13_data-student-essays-split-by-topic-training.arff
+/Users/aphuongle95/wstud-visit-the-dome-ss19/data/student-essays/arff/pos-ngrams_token-ngrams_2019-06-13_data-student-essays-split-by-topic-test.arff
+=== Start ===
+Building RandomForest on 8488 instances with 812 attributes.
+Built: Random forest of 10 trees, each constructed while considering 10 random features.
+Out of bag error: 0.0951
+
+
+Evaluate on 1251 instances
+
+
+=== Summary ===
+
+Correctly Classified Instances        1087               86.8905 %
+Incorrectly Classified Instances       164               13.1095 %
+Kappa statistic                          0.2084
+Mean absolute error                      0.209
+Root mean squared error                  0.3284
+Relative absolute error                 41.8014 %
+Root relative squared error             65.6824 %
+Coverage of cases (0.95 level)          98.1615 %
+Mean rel. region size (0.95 level)      84.3725 %
+Total Number of Instances             1251
+
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.191     0.034      0.448     0.191     0.268      0.679    conclusion
+                 0.966     0.809      0.893     0.966     0.928      0.679    premise
+Weighted Avg.    0.869     0.712      0.837     0.869     0.845      0.679
+
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+   30  127 |    a = conclusion
+   37 1057 |    b = premise
+
+
+
+   New Experiment....
+   /Users/aphuongle95/wstud-visit-the-dome-ss19/data/student-essays/arff/pos-ngrams_token-ngrams_2019-08-08_data-student-essays-split-by-topic-training.arff
+   /Users/aphuongle95/wstud-visit-the-dome-ss19/data/student-essays/arff/pos-ngrams_token-ngrams_2019-08-08_data-student-essays-split-by-topic-test.arff
+   === Start ===
+   Building RandomForest on 8580 instances with 810 attributes.
+   Built: Random forest of 10 trees, each constructed while considering 10 random features.
+   Out of bag error: 0.0924
+
+
+   Evaluate on 1198 instances
+
+
+   === Summary ===
+
+   Correctly Classified Instances        1023               85.3923 %
+   Incorrectly Classified Instances       175               14.6077 %
+   Kappa statistic                          0.099
+   Mean absolute error                      0.2166
+   Root mean squared error                  0.3342
+   Relative absolute error                 43.3139 %
+   Root relative squared error             66.8447 %
+   Coverage of cases (0.95 level)          98.3306 %
+   Mean rel. region size (0.95 level)      85.3088 %
+   Total Number of Instances             1198
+
+
+   === Detailed Accuracy By Class ===
+
+                  TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                    0.113     0.04       0.288     0.113     0.163      0.665    conclusion
+                    0.96      0.887      0.883     0.96      0.92       0.665    premise
+   Weighted Avg.    0.854     0.781      0.809     0.854     0.825      0.665
+
+
+   === Confusion Matrix ===
+
+       a    b   <-- classified as
+      17  133 |    a = conclusion
+      42 1006 |    b = premise

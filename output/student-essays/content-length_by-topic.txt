@@ -1,0 +1,81 @@
+New Experiment....
+/Users/aphuongle95/wstud-visit-the-dome-ss19/data/student-essays/arff/content-length_2019-06-13_data-student-essays-split-by-topic-training.arff
+/Users/aphuongle95/wstud-visit-the-dome-ss19/data/student-essays/arff/content-length_2019-06-13_data-student-essays-split-by-topic-test.arff
+=== Start ===
+Building RandomForest on 8488 instances with 3 attributes.
+Built: Random forest of 10 trees, each constructed while considering 2 random features.
+Out of bag error: 0.264
+
+
+Evaluate on 1251 instances
+
+
+=== Summary ===
+
+Correctly Classified Instances         772               61.7106 %
+Incorrectly Classified Instances       479               38.2894 %
+Kappa statistic                          0.059
+Mean absolute error                      0.3433
+Root mean squared error                  0.4843
+Relative absolute error                 68.6612 %
+Root relative squared error             96.8546 %
+Coverage of cases (0.95 level)          94.8042 %
+Mean rel. region size (0.95 level)      76.5787 %
+Total Number of Instances             1251
+
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.471     0.362      0.157     0.471     0.236      0.571    conclusion
+                 0.638     0.529      0.894     0.638     0.745      0.571    premise
+Weighted Avg.    0.617     0.508      0.801     0.617     0.681      0.571
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+  74  83 |   a = conclusion
+ 396 698 |   b = premise
+
+
+
+ New Experiment....
+ /Users/aphuongle95/wstud-visit-the-dome-ss19/data/student-essays/arff/content-length_2019-08-08_data-student-essays-split-by-topic-training.arff
+ /Users/aphuongle95/wstud-visit-the-dome-ss19/data/student-essays/arff/content-length_2019-08-08_data-student-essays-split-by-topic-test.arff
+ === Start ===
+ Building RandomForest on 8580 instances with 3 attributes.
+ Built: Random forest of 10 trees, each constructed while considering 2 random features.
+ Out of bag error: 0.2677
+
+
+ Evaluate on 1198 instances
+
+
+ === Summary ===
+
+ Correctly Classified Instances         732               61.1018 %
+ Incorrectly Classified Instances       466               38.8982 %
+ Kappa statistic                          0.0288
+ Mean absolute error                      0.3537
+ Root mean squared error                  0.5035
+ Relative absolute error                 70.737  %
+ Root relative squared error            100.7002 %
+ Coverage of cases (0.95 level)          92.571  %
+ Mean rel. region size (0.95 level)      75.2087 %
+ Total Number of Instances             1198
+
+
+ === Detailed Accuracy By Class ===
+
+                TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                  0.413     0.361      0.141     0.413     0.21       0.518    conclusion
+                  0.639     0.587      0.884     0.639     0.742      0.518    premise
+ Weighted Avg.    0.611     0.558      0.791     0.611     0.675      0.518
+
+
+ === Confusion Matrix ===
+
+    a   b   <-- classified as
+   62  88 |   a = conclusion
+  378 670 |   b = premise

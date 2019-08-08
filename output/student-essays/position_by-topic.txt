@@ -1,0 +1,39 @@
+New Experiment....
+/Users/aphuongle95/wstud-visit-the-dome-ss19/data/student-essays/arff/position_2019-08-08_data-student-essays-split-by-topic-training.arff
+/Users/aphuongle95/wstud-visit-the-dome-ss19/data/student-essays/arff/position_2019-08-08_data-student-essays-split-by-topic-test.arff
+=== Start ===
+Building RandomForest on 8580 instances with 5 attributes.
+Built: Random forest of 10 trees, each constructed while considering 3 random features.
+Out of bag error: 0.5093
+
+
+Evaluate on 1198 instances
+
+
+=== Summary ===
+
+Correctly Classified Instances         150               12.5209 %
+Incorrectly Classified Instances      1048               87.4791 %
+Kappa statistic                          0
+Mean absolute error                      0.5007
+Root mean squared error                  0.5007
+Relative absolute error                100.145  %
+Root relative squared error            100.1451 %
+Coverage of cases (0.95 level)         100      %
+Mean rel. region size (0.95 level)     100      %
+Total Number of Instances             1198
+
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 1         1          0.125     1         0.223      0.5      conclusion
+                 0         0          0         0         0          0.5      premise
+Weighted Avg.    0.125     0.125      0.016     0.125     0.028      0.5
+
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+  150    0 |    a = conclusion
+ 1048    0 |    b = premise
