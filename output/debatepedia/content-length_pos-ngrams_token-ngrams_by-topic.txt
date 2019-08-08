@@ -1,0 +1,40 @@
+New Experiment....
+content-length_pos-ngrams_token-ngrams
+/Users/aphuongle95/wstud-visit-the-dome-ss19/data/debatepedia/arff/content-length_pos-ngrams_token-ngrams_2019-08-08_data-debatepedia-split-by-topic-training.arff
+/Users/aphuongle95/wstud-visit-the-dome-ss19/data/debatepedia/arff/content-length_pos-ngrams_token-ngrams_2019-08-08_data-debatepedia-split-by-topic-test.arff
+=== Start ===
+Building RandomForest on 58358 instances with 919 attributes.
+Built: Random forest of 10 trees, each constructed while considering 10 random features.
+Out of bag error: 0.0957
+
+
+Evaluate on 8918 instances
+
+
+=== Summary ===
+
+Correctly Classified Instances        7982               89.5044 %
+Incorrectly Classified Instances       936               10.4956 %
+Kappa statistic                          0.7214
+Mean absolute error                      0.1607
+Root mean squared error                  0.2811
+Relative absolute error                 32.1338 %
+Root relative squared error             56.2199 %
+Coverage of cases (0.95 level)          98.688  %
+Mean rel. region size (0.95 level)      75.5382 %
+Total Number of Instances             8918
+
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.798     0.073      0.785     0.798     0.792      0.929    conclusion
+                 0.927     0.202      0.933     0.927     0.93       0.929    premise
+Weighted Avg.    0.895     0.17       0.896     0.895     0.895      0.929
+
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 1777  449 |    a = conclusion
+  487 6205 |    b = premise

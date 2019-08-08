@@ -20,15 +20,20 @@ public class DebatepediaExperimentRunner {
 	
 	private static final String CORPUS_NAME = "debatepedia";
 	
-	private static final String[] SPLIT_TYPES = {"random", "by-topic"};
+	private static final String[] SPLIT_TYPES = {
+			"random",
+			"by-topic"
+	};
 	
-	private static final String[] FEATURE_TYPES = { "content-length_pos-ngrams_token-ngrams",
-													"content-length_pos-ngrams",
-													"content-length_token-ngrams",
-													"pos-ngrams_token-ngrams",
-													"content-length",
-													"pos-ngrams",
-													"token-ngrams"};
+	private static final String[] FEATURE_TYPES = {
+			"content-length_pos-ngrams_token-ngrams",
+			"content-length_pos-ngrams",
+			"content-length_token-ngrams",
+			"pos-ngrams_token-ngrams",
+			"content-length",
+			"pos-ngrams",
+			"token-ngrams"
+	};
 	
 	private static final String PROPERTIES_SPLIT_PATH = "src/main/resources/properties/split";
 	
@@ -70,24 +75,21 @@ public class DebatepediaExperimentRunner {
 	
 	public void run() throws ResourceInitializationException, IOException {
 		
-//		this.processor.processCollection();
+//		this.processor.processCollection(new String[]{""});
 		
 		// Splitting files
-/*		
 		for (String splitPropertiesPath : this.splitPropertiesPaths) {
 			splitter = new TrainTestSplitter(splitPropertiesPath);
 			splitter.split();
 		}
-*/		
 		
 		// Generating feature files
-/*	
+
 		for (String propertiesPath : featureGeneratorPropertiesPaths) {
 			generator = new GenericFeatureFileGenerator(propertiesPath);
 			generator.generatorFeatureFiles();
-		} 
-*/		
-		
+		}
+
 		
 		// Run Weka for each pair of feature files
 		for (String splitType : SPLIT_TYPES) {
@@ -102,26 +104,26 @@ public class DebatepediaExperimentRunner {
 				System.out.println("\n\n\nNew Experiment....");
 				// Search for training file
 				System.out.println(featureType);
-				trainingFeaturesPath = this.listFilesMatchingPatternNewest(this.featuresfilePath, featureType, splitType, CORPUS_NAME, "train", extension)[0].getAbsolutePath();
-				testingFeaturesPath = this.listFilesMatchingPatternNewest(this.featuresfilePath, featureType, splitType, CORPUS_NAME, "test", extension)[0].getAbsolutePath();
-				
-				
-				
+				trainingFeaturesPath = this.getFeaturesFilePath(this.featuresfilePath, featureType, splitType, CORPUS_NAME, "train", extension)[0].getAbsolutePath();
+				testingFeaturesPath = this.getFeaturesFilePath(this.featuresfilePath, featureType, splitType, CORPUS_NAME, "test", extension)[0].getAbsolutePath();
 				
 				System.out.println(trainingFeaturesPath);
 				System.out.println(testingFeaturesPath);
 				
 				try {
-					WekaClassifierManager.classify(trainingFeaturesPath, testingFeaturesPath);
+					WekaClassifierManager.classify(trainingFeaturesPath, testingFeaturesPath, false);
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
 		}
+		 
 	}
 
-	private File[] listFilesMatchingPatternNewest(File folder, String featureType, String splitType,
+	// get the feature file path that matching the pattern
+	// this could be the oldest file in the list (not newest)
+	private File[] getFeaturesFilePath(File folder, String featureType, String splitType,
 			String corpusName, String trainOrTest, String extension) {
 		File[] files = folder.listFiles(new FilenameFilter(){
 	        @Override

@@ -103,7 +103,7 @@ public class StudentEssaysExperimentRunner {
 				System.out.println(testingFeaturesPath);
 
 				try {
-					WekaClassifierManager.classify(trainingFeaturesPath, testingFeaturesPath);
+					WekaClassifierManager.classify(trainingFeaturesPath, testingFeaturesPath, false);
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

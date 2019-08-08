@@ -100,10 +100,10 @@ public class WekaClassifierManager {
 			testSetPath = args[1];
 		}
 
-		classify(trainingSetPath, testSetPath);
+		classify(trainingSetPath, testSetPath, false);
 	}
 
-	public static void classify(String trainingFeaturesFilePath, String testFeaturesFilePath) throws Exception {
+	public static void classify(String trainingFeaturesFilePath, String testFeaturesFilePath, boolean traceback) throws Exception {
 		boolean needTrain = true;
 
 		String modelFilePath = "";
@@ -131,7 +131,7 @@ public class WekaClassifierManager {
 
 		// manager.classifier = (Classifier) SerializationHelper.read(modelFilePath);
 		File testSetFeatureFile = new File(testFeaturesFilePath);
-		manager.testAndPrint(testSetFeatureFile);
+		manager.testAndPrint(testSetFeatureFile, traceback);
 	}
 
 	private void buildClassifier(File trainingSetFeatureFile, String modelFilePath) throws Exception {
@@ -147,45 +147,46 @@ public class WekaClassifierManager {
 //		weka.core.SerializationHelper.write(modelFilePath, classifier);
 	}
 
-	private Evaluation test(File testSetFeatureFile) throws Exception {
+	private Evaluation test(File testSetFeatureFile, boolean traceback) throws Exception {
 		System.out.println("Evaluate on " + this.testingInstances.size() + " instances");
 		System.out.println();
 		Evaluation evaluation = new Evaluation(this.trainingInstances);
 		evaluation.evaluateModel(this.classifier, this.testingInstances);
 
-		System.out.println("Tracing back to original data ...");
-		System.out.println("Format: sentence" + "\n" + "actual unit type, predicted unit type \n");
-		int countIncorrectPremise = 0;
-		int countIncorrectConclusion = 0;
+		if(traceback) {
+			System.out.println("Tracing back to original data ...");
+			System.out.println("Format: sentence" + "\n" + "actual unit type, predicted unit type \n");
+			int countIncorrectPremise = 0;
+			int countIncorrectConclusion = 0;
 
-		for (int i = 0; i < this.testingInstances.size(); i++) {
-			Instance instance = this.testingInstances.get(i);
-			double prediction = this.classifier.classifyInstance(instance);
-			String actualString = instance.classAttribute().value((int) instance.classValue());
-			String predictedString = instance.classAttribute().value((int) prediction);
+			for (int i = 0; i < this.testingInstances.size(); i++) {
+				Instance instance = this.testingInstances.get(i);
+				double prediction = this.classifier.classifyInstance(instance);
+				String actualString = instance.classAttribute().value((int) instance.classValue());
+				String predictedString = instance.classAttribute().value((int) prediction);
 
-			if (!actualString.contentEquals(predictedString)) {
-				JSONObject originalJsonObject = this.originalData.get(i);
-				System.out.println(originalJsonObject.getString("content") + "\n"
-						+ originalJsonObject.getString("unitType") + " , " + predictedString + "\n");
-				if (actualString.contentEquals("premise")) {
-					countIncorrectPremise++;
-				} else if (actualString.contentEquals("conclusion")) {
-					countIncorrectConclusion++;
+				if (!actualString.contentEquals(predictedString)) {
+					JSONObject originalJsonObject = this.originalData.get(i);
+					System.out.println(originalJsonObject.getString("content") + "\n"
+							+ originalJsonObject.getString("unitType") + " , " + predictedString + "\n");
+					if (actualString.contentEquals("premise")) {
+						countIncorrectPremise++;
+					} else if (actualString.contentEquals("conclusion")) {
+						countIncorrectConclusion++;
+					}
 				}
 			}
+
+			System.out.println("===SUMMARY===");
+			System.out.println("Number of incorrected labeled premise   : " + String.valueOf(countIncorrectPremise));
+			System.out.println("Number of incorrected labeled conclusion: " + String.valueOf(countIncorrectConclusion));
+			System.out.println("=============");
 		}
-
-		System.out.println("===SUMMARY===");
-		System.out.println("Number of incorrected labeled premise   : " + String.valueOf(countIncorrectPremise));
-		System.out.println("Number of incorrected labeled conclusion: " + String.valueOf(countIncorrectConclusion));
-		System.out.println("=============");
-
 		return evaluation;
 	}
 
-	public void testAndPrint(File testSetFeatureFile) throws Exception {
-		Evaluation evaluation = this.test(testSetFeatureFile);
+	public void testAndPrint(File testSetFeatureFile, boolean traceback) throws Exception {
+		Evaluation evaluation = this.test(testSetFeatureFile, traceback);
 		System.out.println();
 		System.out.println("=== Summary ===");
 		System.out.println(evaluation.toSummaryString());

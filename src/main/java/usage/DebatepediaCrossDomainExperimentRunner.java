@@ -16,13 +16,16 @@ import de.aitools.ie.uima.usage.GenericFeatureFileGenerator;
 public class DebatepediaCrossDomainExperimentRunner {
 	
 	String[] FEATURE_TYPES = {
-		"content-length_pos-ngrams_token-ngrams",
-		"content-length_pos-ngrams",
-		"content-length_token-ngrams",
-		"pos-ngrams_token-ngrams",
-		"content-length",
-		"pos-ngrams",
-		"token-ngrams"
+        "content-length_pos-ngrams_token-ngrams",
+        "content-length_pos-ngrams",
+        "content-length_token-ngrams",
+        "pos-ngrams_token-ngrams",
+        "pos-ngrams",
+        "token-ngrams",
+        "content-length",
+        "position",
+
+
 	};
 	String PROPERTIES_FEATURE_GENERATOR_PATH = "src/main/resources/properties/feature_file_generator/cross-domain/debatepedia_sample-sbm/";
 	String FEATURE_FILE_PATH = "data/cross-domain/debatepedia_sample-sbm/arff/";
@@ -51,14 +54,14 @@ public class DebatepediaCrossDomainExperimentRunner {
 		String outputPath1 = "data/debatepedia/processed/";
 		String[] args1 = {inputPath1, outputPath1};
 		this.processor1 = new DebatepediaProcessor();
-        //this.processor1.processCollection(args1);
+        this.processor1.processCollection(args1);
 				
 		// Process sample statement by member to xmi
 		String inputPath2 = "data/sample-sbm/json/";
 		String outputPath2 = "data/sample-sbm/processed/";
 		String[] args2 = {inputPath2, outputPath2};
 		this.processor2 = new DebatepediaProcessor();
-		//this.processor2.processCollection(args2);
+		this.processor2.processCollection(args2);
 		
 		// Generate feature files for training and testing
 		for (String propertiesPath : this.featureGeneratorPropertiesPaths) {
@@ -67,7 +70,7 @@ public class DebatepediaCrossDomainExperimentRunner {
 			generator.generatorFeatureFiles();
 		} 
 		
-		/*
+
 		String extension = ".arff";
 		File featureFileFolder = new File(FEATURE_FILE_PATH);
 		for (String featureType: FEATURE_TYPES) {
@@ -77,10 +80,10 @@ public class DebatepediaCrossDomainExperimentRunner {
 			System.out.println("\n\n\nTRAINING ON "+ featureType);
 			System.out.println("training file: " + trainingFeaturesPath);
 			System.out.println("testing file: "+ testingFeaturesPath);
-			WekaClassifierManager.classify(trainingFeaturesPath, testingFeaturesPath);
+			WekaClassifierManager.classify(trainingFeaturesPath, testingFeaturesPath, true);
 			System.out.println("===================\n\n\n");
 		}
-		*/
+
 		
 		
 	}

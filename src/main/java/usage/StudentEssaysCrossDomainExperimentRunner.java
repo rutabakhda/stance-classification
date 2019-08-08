@@ -16,14 +16,14 @@ import de.aitools.ie.uima.usage.GenericFeatureFileGenerator;
 public class StudentEssaysCrossDomainExperimentRunner {
 	
 	String[] FEATURE_TYPES = {
-//		"content-length_pos-ngrams_token-ngrams",
-//		"content-length_pos-ngrams",
-//		"content-length_token-ngrams",
+		"content-length_pos-ngrams_token-ngrams",
+		"content-length_pos-ngrams",
+		"content-length_token-ngrams",
 		"pos-ngrams_token-ngrams",
-//		"pos-ngrams",
-//		"token-ngrams",
-			//		"content-length",
-		//			"position"
+		"pos-ngrams",
+		"token-ngrams",
+ 		"content-length",
+ 		"position"
 	};
 	String PROPERTIES_FEATURE_GENERATOR_PATH = "src/main/resources/properties/feature_file_generator/cross-domain/student-essays_sample-sbm/";
 	String FEATURE_FILE_PATH = "data/cross-domain/student-essays_sample-sbm/arff/";
@@ -48,18 +48,18 @@ public class StudentEssaysCrossDomainExperimentRunner {
 	public void run() throws Exception{
 		
 		// Process debatepedia to xmi
-		String inputPath1 = "path/to/student-essays/original/files";
-		String outputPath1 = "path/to/student-essays/original/processed";
-		String[] args1 = {inputPath1, outputPath1};
-		 this.processor1 = new StudentEssaysProcessor();
-        this.processor1.processCollection();
+//		String inputPath1 = "path/to/student-essays/original/files";
+//		String outputPath1 = "path/to/student-essays/original/processed";
+//		String[] args1 = {inputPath1, outputPath1};
+//		 this.processor1 = new StudentEssaysProcessor();
+//        this.processor1.processCollection();
 				
 		// Process sample statement by member to xmi
-		String inputPath2 = "data/sample-sbm/json/";
-		String outputPath2 = "data/sample-sbm/processed/";
-		String[] args2 = {inputPath2, outputPath2};
-		this.processor2 = new SampledSBMProcessor();
-		this.processor2.processCollection(args2);
+//		String inputPath2 = "data/sample-sbm/json/";
+//		String outputPath2 = "data/sample-sbm/processed/";
+//		String[] args2 = {inputPath2, outputPath2};
+//		this.processor2 = new SampledSBMProcessor();
+//		this.processor2.processCollection(args2);
 		
 		// Generate feature files for training and testing
 		for (String propertiesPath : this.featureGeneratorPropertiesPaths) {
@@ -78,7 +78,7 @@ public class StudentEssaysCrossDomainExperimentRunner {
 			System.out.println("\n\n\nTRAINING ON "+ featureType);
 			System.out.println("training file: " + trainingFeaturesPath);
 			System.out.println("testing file: "+ testingFeaturesPath);
-			WekaClassifierManager.classify(trainingFeaturesPath, testingFeaturesPath);
+			WekaClassifierManager.classify(trainingFeaturesPath, testingFeaturesPath, true);
 			System.out.println("===================\n\n\n");
 		}
 		
