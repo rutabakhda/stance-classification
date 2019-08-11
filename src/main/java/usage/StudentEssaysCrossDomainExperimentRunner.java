@@ -72,8 +72,8 @@ public class StudentEssaysCrossDomainExperimentRunner {
 		String extension = ".arff";
 		File featureFileFolder = new File(FEATURE_FILE_PATH);
 		for (String featureType: FEATURE_TYPES) {
-			String trainingFeaturesPath = this.listFilesMatchingPatternNewest(featureFileFolder, featureType, CORPUS1, extension)[0].getAbsolutePath();
-			String testingFeaturesPath = this.listFilesMatchingPatternNewest(featureFileFolder, featureType, CORPUS2, extension)[0].getAbsolutePath();
+			String trainingFeaturesPath = this.getFeaturesFilePath(featureFileFolder, featureType, CORPUS1, extension)[0].getAbsolutePath();
+			String testingFeaturesPath = this.getFeaturesFilePath(featureFileFolder, featureType, CORPUS2, extension)[0].getAbsolutePath();
 			
 			System.out.println("\n\n\nTRAINING ON "+ featureType);
 			System.out.println("training file: " + trainingFeaturesPath);
@@ -93,7 +93,7 @@ public class StudentEssaysCrossDomainExperimentRunner {
 		return formatter.format(ts);
 	}
 	
-	private File[] listFilesMatchingPatternNewest(File folder, String featureType,
+	private File[] getFeaturesFilePath(File folder, String featureType,
 			String corpusName, String extension) {
 		File[] files = folder.listFiles(new FilenameFilter(){
 	        @Override

@@ -98,8 +98,8 @@ public class StudentEssaysExperimentRunner {
 				String extension = ".arff";
 
 				// Search for training file
-				trainingFeaturesPath = this.listFilesMatchingPatternNewest(this.featuresfilePath, featureType, splitType, CORPUS_NAME, "train", extension)[0].getAbsolutePath();
-				testingFeaturesPath = this.listFilesMatchingPatternNewest(this.featuresfilePath, featureType, splitType, CORPUS_NAME, "test", extension)[0].getAbsolutePath();
+				trainingFeaturesPath = this.getFeaturesFilePath(this.featuresfilePath, featureType, splitType, CORPUS_NAME, "train", extension)[0].getAbsolutePath();
+				testingFeaturesPath = this.getFeaturesFilePath(this.featuresfilePath, featureType, splitType, CORPUS_NAME, "test", extension)[0].getAbsolutePath();
 				
 				System.out.println("\n\n\nNew Experiment....");
 				System.out.println(trainingFeaturesPath);
@@ -116,7 +116,7 @@ public class StudentEssaysExperimentRunner {
 	}
 
 	// Get the list of files (newest to oldest) that satisfies the patterns
-	private File[] listFilesMatchingPatternNewest(File folder, String featureType, String splitType,
+	private File[] getFeaturesFilePath(File folder, String featureType, String splitType,
 			String corpusName, String trainOrTest, String extension) {
 		File[] files = folder.listFiles(new FilenameFilter(){
 	        @Override

@@ -1,0 +1,373 @@
+TRAINING ON content-length_pos-ngrams_token-ngrams
+training file: /Users/aphuongle95/wstud-visit-the-dome-ss19/data/cross-domain/debatepedia_sample-sbm/arff/content-length_pos-ngrams_token-ngrams_2019-08-09_data-debatepedia-processed.arff
+testing file: /Users/aphuongle95/wstud-visit-the-dome-ss19/data/cross-domain/debatepedia_sample-sbm/arff/content-length_pos-ngrams_token-ngrams_2019-08-09_data-sample-sbm-processed.arff
+=== Start ===
+Building RandomForest on 71742 instances with 924 attributes.
+Built: Random forest of 10 trees, each constructed while considering 10 random features.
+Out of bag error: 0.0949
+
+
+Evaluate on 418 instances
+
+Tracing back to original data ...
+Format: sentence
+actual unit type, predicted unit type
+
+QUOTE_START "The leadership, vision and commitment of the Government of Saudi Arabia and its people have created a society where education, economic development and diversification have become priorities.
+conclusion , premise
+
+It is a country where Nathalie Morin, a Quebecker, is stuck and being held prisoner, along with her children.
+conclusion , premise
+
+if equality is the ultimate goal that a civil society aspires to, then racism is its implacable foe.
+conclusion , premise
+
+On this international day of elimination of racial discrimination I would like to thank Canada for the opportunity that Canada has given to me to be judged not on the colour of my skin but on my abilities.
+conclusion , premise
+
+Prevention is better than repression.
+premise , conclusion
+
+We have to address the problem at its source.
+conclusion , premise
+
+The community organization Dopamine, which works in addictions services, wants to relocate to a neighbourhood where the need for its services is greatest.
+conclusion , premise
+
+The sex trade creates many victims.
+premise , conclusion
+
+People are fed up with seeing drug and prostitution paraphernalia littered through their neighbourhoods and have taken matters into their own hands by creating a group called Residents Against Street Solicitation.
+conclusion , premise
+
+It is known as RASS, Residents against Street Prostitution and Solicitation.
+conclusion , premise
+
+If it is not right for our daughters, mothers or our wives, it is not right for any woman.
+conclusion , premise
+
+I find the continued existence of and the increase in poverty in Canada extremely worrisome.
+conclusion , premise
+
+These factors obviously affect the need for food aid.
+premise , conclusion
+
+Those opposing this cancer are to be commended for their courage and endeavours in these days.
+conclusion , premise
+
+The recent throne speech said that the government would work with Canadians to ensure that our communities continue to be safe.
+conclusion , premise
+
+In response, the justice minister accuses Reform members of being scaremongers.
+conclusion , premise
+
+Children are the most vulnerable members of society and they deserve the fullest protection of the law.
+conclusion , premise
+
+Psychological pressure to use marijuana is increasing.
+premise , conclusion
+
+Drug induced crime creates more tension and problems.
+premise , conclusion
+
+Our youth deserve better.
+premise , conclusion
+
+Being free to grow and develop should be their right.
+conclusion , premise
+
+Instead, the damaging influence of drug use pollutes their environment.
+conclusion , premise
+
+Protecting Canada's youth should be our number one priority.
+premise , conclusion
+
+Quebeckers are aware of them.
+premise , conclusion
+
+Things are off to a bad start.
+premise , conclusion
+
+For Canadians incidents of this nature are horrifying and incomprehensible.
+premise , conclusion
+
+I implore all my colleagues to work toward more effective gun control and crime prevention measures.
+conclusion , premise
+
+We must make shootings of this nature a thing of the past.
+conclusion , premise
+
+I know I am joined by all members of this House in wishing him a full and speedy recovery.
+conclusion , premise
+
+As the federal representative for Vancouver South, I will continue to advocate initiatives that will make our streets and homes safer.
+conclusion , premise
+
+Today it is conservatives who believe that the political currency of human rights is devalued when political demands are inflated into fundamental rights claims.
+conclusion , premise
+
+Today, as always, Conservatives stand without compromise for the dignity of the human person.
+conclusion , premise
+
+The government is failing ordinary women in Canada by not ensuring equal and accessible abortion services.
+conclusion , premise
+
+This is an equality issue and another example of the government's disregard for the welfare and rights of women.
+conclusion , premise
+
+Conservative member for EdmontonSherwood Park opens the door to criminalizing abortion.
+premise , conclusion
+
+We are against taking any steps backward.
+conclusion , premise
+
+Abortion is a vested right ensuring the well-being and equality of women.
+conclusion , premise
+
+We demand action, and we demand it now.
+conclusion , premise
+
+We will ensure a strong Alberta, and in doing so, a strong Canada.
+conclusion , premise
+
+His current job is restocking vending machines.
+premise , conclusion
+
+A PhD student from China talked about other examples of wasted immigrant talent.
+premise , conclusion
+
+Immigrants and our wonderful country deserve so much better from this government.
+conclusion , premise
+
+Here is what makes the Conservatives uncomfortable: the NDP is in favour of women's right to choose and we do not like white supremacists.
+conclusion , premise
+
+Today I call on all Canadians to study our history, understand the consequences of discrimination and avoid repeating historic blunders so that thousands of people like Fred Couchie did not suffer in vain.
+conclusion , premise
+
+It was this teaching of contempt, this demonizing of the other, this is where it all began.
+conclusion , premise
+
+What is needed at this point is a strategy of prevention, a culture of human rights in place of a culture of hate; a culture of respect in place of a culture of contempt, of respect for the inherent dignity of the human person, and the equal dignity of all persons everywhere.
+conclusion , premise
+
+I invite the House to join me in condemning these Israel Apartheid Week activities and in encouraging university administrations to take steps to stop anti-Semitism and the dissemination of hatred.
+conclusion , premise
+
+In particular, however, I would like to extend an invitation to more of the members of the Reform Party so that they too may benefit from these lessons.
+conclusion , premise
+
+In conclusion, I would like to extend an invitation to all Canadians to visit Trinity-Spadina to discover these well kept secrets of the success of multiculturalism.
+conclusion , premise
+
+Nigeria is a signatory to the UN convention against cruel or inhumane punishment.
+premise , conclusion
+
+I call upon the Government of Canada to intervene in the matter and make it clear to the government of Nigeria that such barbarity will not be condoned by the civilized world.
+conclusion , premise
+
+One must wonder why Agriculture Canada's concern for the health of Canadian animals is greater than the concern of Immigration Canada for the health and welfare of Canadian people.
+conclusion , premise
+
+Every year thousands of immigrants enter Canada without being screened for HIV.
+premise , conclusion
+
+The transmission vectors of this virus are well known.
+conclusion , premise
+
+Women's reproductive rights are fundamental to the struggle for the full equality of women here in Canada and abroad.
+conclusion , premise
+
+Today, as we celebrate this important anniversary, we must commit ourselves to ensuring that future generations of Canadian women have reproductive choice, for all of us.
+conclusion , premise
+
+The NDP is proud to defend a woman's right to choose.
+premise , conclusion
+
+Fundamental rights cannot be called into question, either directly or indirectly.
+conclusion , premise
+
+We need laws that reinforce our commitment to stopping these sexual predators before they strike.
+conclusion , premise
+
+This starts with the prohibition of adults engaging in sexual contact with persons under the age of 16.
+conclusion , premise
+
+The federal government is responsible for ensuring compliance with the Canada Health Act.
+premise , conclusion
+
+The government must do its duty and embrace a recommendation to use the Canada Health Act as a mechanism to ensure safe and equal access to abortion for all.
+conclusion , premise
+
+It is not up to the church or the state to decide, and it is certainly not up to the Conservatives.
+conclusion , premise
+
+What makes is different makes us unique and beautiful.
+premise , conclusion
+
+I will continue to rock these braids for three reasons.
+premise , conclusion
+
+I want them to know that their braids, their dreads, their super curly Afro puffs, their weaves, their hijabs, and their head scarves, and all other variety of hairstyles, belong in schools, in the workplace, in the boardroom, and yes, even here on Parliament Hill.
+conclusion , premise
+
+
+conclusion , premise
+
+This culture of hate must end.
+premise , conclusion
+
+This incitement must stop.
+conclusion , premise
+
+For it is this Hamas sanctioned hate and incitement that leads to Hamas rockets targeting Jews in Sderot and Ashqelon and terrorist attacks in Jerusalem.
+conclusion , premise
+
+It is important now that we reaffirm the founding principles of the UN, of the equality of all states, large and small, so that no states are singled out for discriminatory treatment while major human rights violators enjoy exculpatory immunity; of the universality of human rights so that economic, social and cultural rights, the rights of the disadvantaged are seen as authoritative norms; of the guarding against undue politicization of the UN wherein the UN becomes an arena for the waging of conflict rather than for conflict resolution; of gender mainstreaming within the decision making of the UN; and of the protection against mass atrocity organized around a culture of prevention rather than belated intervention.
+conclusion , premise
+
+I rise here today to denounce certain government MPs' attempts to criminalize abortion.
+premise , conclusion
+
+We must close it immediately.
+conclusion , premise
+
+a survey released yesterday by the Quebec minister responsible for relations with the public shows that Quebecers are increasingly tolerant and open to ethnic and cultural diversity.
+conclusion , premise
+
+A majority of people believe that immigration promotes economic development, with 72 per cent regarding it as contributing to the province's cultural richness.
+conclusion , premise
+
+Comparisons with the rest of Canada are striking.
+premise , conclusion
+
+Newcomers who choose Quebec as their new home can expect a warm welcome.
+conclusion , premise
+
+I call on the government of Sudan to intervene in this case and abide by its human rights obligations to its own people and to the international community.
+conclusion , premise
+
+
+conclusion , premise
+
+Last year there were over 110,000 abortions in Canada with a cost to our health care system of over $10 million.
+conclusion , premise
+
+These declarations include universal access to HIV/AIDS prevention and treatment, and care and support for women with HIV or AIDS, a condition that must also be part of every new peace accord.
+conclusion , premise
+
+That is sad, but the NDP will always be proud to stand up for women.
+conclusion , premise
+
+The Conservatives do not care.
+premise , conclusion
+
+We are calling on the Conservative government to move on and do something tangible to ensure women's equality.
+conclusion , premise
+
+member for Kitchener Centre may want to live in the past, but we know that today, every woman decides for herself what to do with her body.
+conclusion , premise
+
+The Conservative government must stop tampering with the hard-won rights of women once and for all.
+conclusion , premise
+
+It is these women and many others who, despite the hardships of those early years, have contributed to making Canada a more welcoming and inclusive place to live.
+conclusion , premise
+
+But today I think it has gone too far, especially when we see taxpayer funded abortions on demand, increased diagnoses of post-abortion trauma, indication of medical linkages to breast cancer, minors given abortion without parental consent and approximately $50 million spent annually on abortion.
+conclusion , premise
+
+In my opinion, women have a right to know about the risks of abortion and taxpayers should know the cost.
+conclusion , premise
+
+For me, if it is about choice, let us give women better choices.
+conclusion , premise
+
+I urge every member who feels strongly about saving the lives of tens of thousands of helpless infants to support this motion and to help me convince the House to make it votable.
+conclusion , premise
+
+Is parliament horrified?
+premise , conclusion
+
+Parliamentarians have a responsibility to make it our first priority to raise our voice in support of every person's fundamental human rights.
+conclusion , premise
+
+Accountability and real reconciliation need to occur there.
+premise , conclusion
+
+Reports that Falun Gong practitioners are arbitrarily detained in China are disconcerting.
+premise , conclusion
+
+People in Sudan and the Ogaden region, among others, still face violence.
+premise , conclusion
+
+There are many, many examples.
+premise , conclusion
+
+Women must fight against a number of issues together, but they must also fight as individuals, as is the case with breast cancer.
+conclusion , premise
+
+Research is essential if we want this disease to be history eventually.
+conclusion , premise
+
+We hope that one day, these devastating scourges, like breast cancer will be things of the past.
+conclusion , premise
+
+It seems they were well aware of the government's let them all in immigration policy and the minister's generosity.
+conclusion , premise
+
+Threatening women who have opted for this procedure with imprisonment because they can do as they choose with their bodies and labelling them as murderers when they are already in emotional turmoil is irresponsible, dangerous, unworthy of a member of Parliament and downright disgusting.
+conclusion , premise
+
+If the Prime Minister is telling the truth and does not want to reopen this debate, he needs to break his complicit silence and clearly tell these backward-thinking members that this type of action is unacceptable.
+conclusion , premise
+
+Otherwise, the weight of their offensive actions will also rest on his shoulders.
+conclusion , premise
+
+It was not about protecting rights.
+conclusion , premise
+
+It was about unelected and unaccountable justices taking upon themselves the position of elected legislators and legislating from the bench.
+conclusion , premise
+
+We remember those arrested and outed, sometimes with tragic consequences, and those inspired to work for full human rights.
+conclusion , premise
+
+
+conclusion , premise
+
+===SUMMARY===
+Number of incorrected labeled premise   : 28
+Number of incorrected labeled conclusion: 80
+=============
+
+=== Summary ===
+
+Correctly Classified Instances         310               74.1627 %
+Incorrectly Classified Instances       108               25.8373 %
+Kappa statistic                          0.0204
+Mean absolute error                      0.2889
+Root mean squared error                  0.4602
+Relative absolute error                 57.7831 %
+Root relative squared error             92.0376 %
+Coverage of cases (0.95 level)          89.9522 %
+Mean rel. region size (0.95 level)      75.3589 %
+Total Number of Instances              418
+
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.101     0.085      0.243     0.101     0.143      0.509    conclusion
+                 0.915     0.899      0.79      0.915     0.848      0.509    premise
+Weighted Avg.    0.742     0.726      0.674     0.742     0.698      0.509
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+   9  80 |   a = conclusion
+  28 301 |   b = premise
+
+===================

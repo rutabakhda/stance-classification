@@ -23,9 +23,6 @@ public class DebatepediaCrossDomainExperimentRunner {
         "pos-ngrams",
         "token-ngrams",
         "content-length",
-        "position",
-
-
 	};
 	String PROPERTIES_FEATURE_GENERATOR_PATH = "src/main/resources/properties/feature_file_generator/cross-domain/debatepedia_sample-sbm/";
 	String FEATURE_FILE_PATH = "data/cross-domain/debatepedia_sample-sbm/arff/";
@@ -50,32 +47,35 @@ public class DebatepediaCrossDomainExperimentRunner {
 	public void run() throws Exception{
 		
 		// Process debatepedia to xmi
+		/*
 		String inputPath1 = "data/debatepedia/json/full";
 		String outputPath1 = "data/debatepedia/processed/";
 		String[] args1 = {inputPath1, outputPath1};
 		this.processor1 = new DebatepediaProcessor();
         this.processor1.processCollection(args1);
-				
+		*/
 		// Process sample statement by member to xmi
+		/*
 		String inputPath2 = "data/sample-sbm/json/";
 		String outputPath2 = "data/sample-sbm/processed/";
 		String[] args2 = {inputPath2, outputPath2};
 		this.processor2 = new DebatepediaProcessor();
 		this.processor2.processCollection(args2);
-		
+		*/
 		// Generate feature files for training and testing
+
 		for (String propertiesPath : this.featureGeneratorPropertiesPaths) {
 			System.out.println(propertiesPath);
 			GenericFeatureFileGenerator generator = new GenericFeatureFileGenerator(propertiesPath);
 			generator.generatorFeatureFiles();
-		} 
-		
+		}
+
 
 		String extension = ".arff";
 		File featureFileFolder = new File(FEATURE_FILE_PATH);
 		for (String featureType: FEATURE_TYPES) {
-			String trainingFeaturesPath = this.listFilesMatchingPatternNewest(featureFileFolder, featureType, CORPUS1, extension)[0].getAbsolutePath();
-			String testingFeaturesPath = this.listFilesMatchingPatternNewest(featureFileFolder, featureType, CORPUS2, extension)[0].getAbsolutePath();
+			String trainingFeaturesPath = this.getFeaturesFilePath(featureFileFolder, featureType, CORPUS1, extension)[0].getAbsolutePath();
+			String testingFeaturesPath = this.getFeaturesFilePath(featureFileFolder, featureType, CORPUS2, extension)[0].getAbsolutePath();
 			
 			System.out.println("\n\n\nTRAINING ON "+ featureType);
 			System.out.println("training file: " + trainingFeaturesPath);
@@ -95,7 +95,7 @@ public class DebatepediaCrossDomainExperimentRunner {
 		return formatter.format(ts);
 	}
 	
-	private File[] listFilesMatchingPatternNewest(File folder, String featureType,
+	private File[] getFeaturesFilePath(File folder, String featureType,
 			String corpusName, String extension) {
 		File[] files = folder.listFiles(new FilenameFilter(){
 	        @Override
