@@ -8,9 +8,12 @@ import glob
 import errno
 import os
 import natsort
+import sys
 
 """
-Process data of same period and topic based on the political party
+4th step for getting pairs of speeches.
+Process data of same period and topic based on the political stance (government vs non-government)
+__author__ = "Anh Phuong Le"
 """
 
 def nCr(n,r):
@@ -18,7 +21,7 @@ def nCr(n,r):
     return f(n) // f(r) // f(n-r)
 
 # read the folders with csv files
-path = 'dataset_by-period_by-topic/*.csv'
+path = sys.argv[1] + "/*.csv" # 'dataset_by-period_by-topic'
 files = glob.glob(path)
 # sort file from old to new speeches
 files = natsort.natsorted(files)

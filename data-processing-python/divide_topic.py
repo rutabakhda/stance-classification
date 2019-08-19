@@ -6,10 +6,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 import glob
 import errno
-
+import sys
 
 """
+3rd step for getting pairs of speeches.
 Divide data in same periods to different topics
+Get 10 most frequent topics
+__author__ = "Anh Phuong Le"
 """
 
 """
@@ -45,8 +48,8 @@ def plot_chart(results):
     plt.show()
 
 # read the folders with csv files
-path = 'dataset_by-period/*.csv'
-files = glob.glob(path)
+path = sys.argv[1] # path to dataset by period folder 'dataset_by-period'
+files = glob.glob(path+"/*.csv") # get all csv files in folder
 # data statistics
 statistics_each_period = []
 for name in files:
@@ -62,7 +65,7 @@ for name in files:
         if exc.errno != errno.EISDIR:
             raise
 
-# plot_chart(statistics_each_period)
+plot_chart(statistics_each_period)
 
 """
 Results:

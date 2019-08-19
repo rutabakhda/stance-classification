@@ -3,13 +3,16 @@ import json
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+import sys
 
 """
+1st step for getting pairs of speeches.
 Statistics about frequencies parties giving speeches
+__author__ = "Anh Phuong Le"
 """
 
 def read_data():
-    with open("dataset/labelled-statement-by-members.csv") as f:
+    with open(sys.argv[1]) as f: # input path to dataset: e.g dataset/labelled-statement-by-members.csv
         reader = csv.DictReader(f)
         data = [r for r in reader]
     # print(json.dumps(data[-1], indent=4, sort_keys=True))
@@ -39,7 +42,7 @@ ax.bar(range(n), df1["basepk"], width=1, align='center')
 ax.set(xticks=range(n), xlim=[-1, n])
 ax.set_xticklabels(df1["speakerparty"])
 plt.xticks(rotation=90)
-# plt.show()
+plt.show()
 
 """
 Remarks:

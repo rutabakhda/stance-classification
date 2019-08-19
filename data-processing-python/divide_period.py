@@ -3,11 +3,13 @@ import json
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-from test import read_data
+from speech_distribution_parties import read_data
 from datetime import *
 
 """
+2nd step for getting pairs of speeches.
 Divide dataset into different periods and save into files
+__author__ = "Anh Phuong Le"
 """
 
 parliament_terms = [
@@ -324,7 +326,6 @@ while (ind<len(parliament_terms) and row_ind<df.shape[0]):
         rows = period_data["data"]
         period_data["data"] = rows.append(row)
         row_ind = row_ind + 1
-        print(row_ind)
         sum_data = sum_data+1
     # or other period
     # new period, new begin and end
