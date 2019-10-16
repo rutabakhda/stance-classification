@@ -1,6 +1,0 @@
-2019-07-07-20-31-55.077	-120	ANNOTATOR	INFO	action	open
-2019-07-07-20-38-37.218	-120	ANNOTATOR	segment-labeling	4	conclusion
-2019-07-07-20-38-39.375	-120	ANNOTATOR	segment-labeling	0	pro
-2019-07-07-20-39-43.265	-120	ANNOTATOR	segment-labeling	3	premise
-2019-07-07-20-39-45.308	-120	ANNOTATOR	segment-labeling	2	premise
-2019-07-07-20-39-50.225	-120	ANNOTATOR	segment-labeling	1	premise

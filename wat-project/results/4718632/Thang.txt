@@ -1,8 +1,0 @@
-segment-labeling.0 = pro
-segment-labeling.1 = non-argumentative
-segment-labeling.2 = premise
-segment-labeling.3 = non-argumentative
-segment-labeling.4 = premise
-segment-labeling.5 = premise
-segment-labeling.6 = non-argumentative
-segment-labeling.7 = non-argumentative

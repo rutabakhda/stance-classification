@@ -1,2 +1,0 @@
-2019-07-11-09-42-47.023	-120	ANNOTATOR	INFO	action	open
-2019-07-11-09-43-03.103	-120	ANNOTATOR	segment-labeling	0	pro

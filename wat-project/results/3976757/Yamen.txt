@@ -1,8 +1,0 @@
-segment-labeling.0 = con
-segment-labeling.1 = premise
-segment-labeling.2 = premise
-segment-labeling.3 = premise
-segment-labeling.4 = premise
-segment-labeling.5 = conclusion
-segment-labeling.6 = premise
-segment-labeling.7 = conclusion

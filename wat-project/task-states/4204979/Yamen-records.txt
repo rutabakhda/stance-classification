@@ -1,7 +1,0 @@
-2019-07-10-20-23-17.613	-120	ANNOTATOR	INFO	action	open
-2019-07-10-20-24-24.167	-120	ANNOTATOR	segment-labeling	1	non-argumentative
-2019-07-10-20-24-33.170	-120	ANNOTATOR	segment-labeling	2	premise
-2019-07-10-20-24-48.622	-120	ANNOTATOR	segment-labeling	3	premise
-2019-07-10-20-24-55.510	-120	ANNOTATOR	segment-labeling	4	conclusion
-2019-07-10-20-24-58.712	-120	ANNOTATOR	segment-labeling	5	conclusion
-2019-07-10-20-25-02.231	-120	ANNOTATOR	segment-labeling	0	pro

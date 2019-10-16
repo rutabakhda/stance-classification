@@ -1,4 +1,0 @@
-2019-07-11-10-01-50.844	-120	ANNOTATOR	INFO	action	open
-2019-07-11-10-02-01.408	-120	ANNOTATOR	segment-labeling	1	premise
-2019-07-11-10-02-14.300	-120	ANNOTATOR	INFO	action	open
-2019-07-11-10-02-25.208	-120	ANNOTATOR	segment-labeling	0	pro
