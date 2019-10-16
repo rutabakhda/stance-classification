@@ -46,26 +46,43 @@ All Projects need to be on the same level in Eclipse, otherwise the project will
 
 * Import the [aitools4-ie-uima](https://git.webis.de/aitools/aitools4-ie-uima) project as a gradle project.
 
-* Import the [wstud-visit-the-dome-ss19](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19) project as a gradle project. 
+* Import the [wstud-visit-the-dome-ss19](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19) project as a gradle project.
 
 
 ## Project Structure
 
-### Corpora
+### Python
 
-In the [data](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/tree/master/data) directory exists a subdirectory for every corpus we were working on.
+All the tasks that are run using Python. The input data is stored in webis 20.
 
-In the directories of the different corpora there exist an "arff" directory (e.g. [debatepedia](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/tree/master/data/debatepedia/arff)), which contains the arff feature files for the corpora.
+*[Data Preprocessing](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19) - Preprocess the parliament dataset.
+
+*[Agreement Processing](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19) - Get the results from wat-sl annotation and process.
+
+*[Generate Pairs  Speeches](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19) - Generate pairs of statements based on political position, topic and period.
+
+*[Same side classification](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19) - Classify whether the statements are in the same side of the topic.
 
 ### Notebooks
 
 The [notebook](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/tree/master/notebooks) directory contains jupyter notebooks, which contain the preprocessing steps and data analysis for the different corpora.
 
+### Wat-sl
+Source code for running improved wat-sl annotation tool.
+
 ### Java
+We use java for extracting claims from parliament statements.
+##### Source code
 
 The [src/main/java](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/tree/master/src/main/java) directory contains the java source code.
 
-### Resources
+##### Corpora
+
+In the [data](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/tree/master/data) directory exists a subdirectory for every corpus we were working on.
+
+In the directories of the different corpora there exist an "arff" directory (e.g. [debatepedia](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/tree/master/data/debatepedia/arff)), which contains the arff feature files for the corpora.
+
+##### Resources
 
 The [src/main/resources](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/tree/master/src/main/resources) directory contains uima descriptor files and property files for the feature extraction process.
 
@@ -76,5 +93,3 @@ The [experiment](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/tree/m
 The [feature](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/tree/master/src/main/resources/properties/feature) directory contains the property files for the feature configuration.
 
 The [normalization](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/tree/master/src/main/resources/properties/normalization) directory contains the property files, which are used for the computation of the features. They are created automatically during the feature computation process, so there is no need to modify anything in this directory.
-
-
