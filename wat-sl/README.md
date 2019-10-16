@@ -17,6 +17,10 @@ to start the server on the given port (default port is 2112) and base-path (defa
 
 [http://localhost:<port><base-path>/index.html](http://localhost:2112/index.html)
 
+Manual Changes
+--------
+    1. Changing lables for individual sentences
+    2. Adding labels for entire paragraph / speech
 
 Building
 --------
