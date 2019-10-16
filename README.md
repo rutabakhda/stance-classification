@@ -63,7 +63,7 @@ All the tasks that are run using Python. The input data is stored in webis 20.
 
 *[Same side classification](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19) - Classify whether the statements are in the same side of the topic.
 
-### Notebooks
+### Notebook
 
 The [notebook](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/tree/master/notebooks) directory contains jupyter notebooks, which contain the preprocessing steps and data analysis for the different corpora.
 
