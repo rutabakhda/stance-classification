@@ -1,6 +1,6 @@
 # wstud-visit-the-dome-ss19
 
-The repository for the student project "visit the dome".
+The repository for the student project "visit the dome".  This project analyzes the entire collection of canadian parliament discussions over 100 years and identifies arguments related to controversial topics and decides their stance in relation to topics. These arguments are then integrated into args.me search engine.
 
 ## Project Setup
 
