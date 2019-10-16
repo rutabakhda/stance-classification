@@ -26,7 +26,7 @@ __date__ = "2019.08.04"
 
 # some intialization
 argumentative_keys = ['conclusion','premise','non-argumentative'] # categories of sentence
-results_path = os.getcwd() + "/" + "curation_results" # get current path
+results_path = sys.argv[1] # "curation_results" # current path os.getcwd() + "/"
 files = []
 df = pd.DataFrame(columns=['segment_key']+argumentative_keys+['content','topic'])
 speechs_annotation_result = {}

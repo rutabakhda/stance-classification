@@ -326,7 +326,7 @@ while (ind<len(parliament_terms) and row_ind<df.shape[0]):
         rows = period_data["data"]
         period_data["data"] = rows.append(row)
         row_ind = row_ind + 1
-        sum_data = sum_data+1
+        sum_data = sum_data + 1
     # or other period
     # new period, new begin and end
     else:
