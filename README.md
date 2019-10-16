@@ -55,13 +55,13 @@ All Projects need to be on the same level in Eclipse, otherwise the project will
 
 All the tasks that are run using Python. The input data is stored in webis 20.
 
-*[Data Preprocessing](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19) - Preprocess the parliament dataset.
+*[Data Preprocessing](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/tree/master/python/data-processing-python) - Preprocess the parliament dataset.
 
-*[Agreement Processing](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19) - Get the results from wat-sl annotation and process.
+*[Agreement Processing](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/tree/master/python/agreement-processing) - Get the results from wat-sl annotation and process.
 
-*[Generate Pairs  Speeches](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19) - Generate pairs of statements based on political position, topic and period.
+*[Generate Pairs  Speeches](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/tree/master/python/generate-pairs-speeches) - Generate pairs of statements based on political position, topic and period.
 
-*[Same side classification](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19) - Classify whether the statements are in the same side of the topic.
+*[Same side classification](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/tree/master/python/same-side-classification) - Classify whether the statements are in the same side of the topic.
 
 ### Notebook
 
