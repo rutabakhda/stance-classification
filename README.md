@@ -74,7 +74,7 @@ Source code for running improved wat-sl annotation tool.
 We use java for extracting claims from parliament statements.
 ##### Source code
 
-The [src/main/java](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/tree/master/src/main/java) directory contains the java source code.
+The [src/main/java](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/tree/master/src/main/java) directory contains the java source code. More explanation on how to use the source code for the task is in [src/main/java/usage](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/tree/master/src/main/java/usage)
 
 ##### Corpora
 
