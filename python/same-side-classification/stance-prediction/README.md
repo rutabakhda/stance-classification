@@ -13,7 +13,7 @@ To classify if an argument is for or against a specific topic.
 3. Tfidf distribution => wordcloud
 4. Phrase distribution => wordcloud
 5. Sentence length distribution => barchart
-The results are saved into ```results``` folder.
+6. The results are saved into ```results``` folder.
 
 ## Train and test based on sentence similarity
 1. Read the csv ```data/argsme_all_claims_abortion/argsme_all_claims_abortion.csv```
@@ -36,6 +36,6 @@ The results are saved into ```results``` folder.
   - Create ```torchtext_data``` folder.
   - Install all necessary libraries.
   - Run the file.
-  - *Note: it needs a good processor to run the model well.*
+  - *Note: it needs a good processor / GPU to run the model well.*
 
-The result of task is discussed in this [presentation](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/tree/master/presentations/2019-10-18).
+The result of task is discussed in this [presentation](https://git.webis.de/webisstud/wstud-visit-the-dome-ss19/blob/master/presentations/2019-10-18/Final%20Presentation.pdf).
