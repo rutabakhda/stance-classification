@@ -27,7 +27,7 @@ The results are saved into ```results``` folder.
 2. Check the stance of statement towards abortion (for, against, no stance).
 3. Result is saved in ```data/parliament_all_abortion_statements/parliament_abortion.csv```
 
-### Train and Test with RNN
+## Train and Test with RNN
 1. File ```argsme_train_test_csv.py``` generates two file train.csv and test.csv for in-domain training (There are two methods: based on sentence or based on argument).
 2. File ```cross_domain_train_test_csv.py``` generates two file train.csv and test.csv for cross-domain training
 3. File ```train_test_RNN.py``` applies Glove Embedding and RNN for test classification task. Running instruction:
