@@ -12,7 +12,7 @@ To find the speech-text by Canadian parliament members which contains arguments 
 1. Removing cliches from the speech-texts ```remove_cliche.py```
 2. Using Wikipedia controversial topics list to identify controversial topics ```find_controversial_topics.py```
 3. Finding controversial speech-text for controversial topics based on the controversial word occurrences and sentiment analysis
-4. Running statistics on found controversial topics
+4. Running exploratary analysis on found controversial topics
 
 ## Identifying political position of the speech-text
 1. Generating a text file with time duration of each term with ruling party and opposition party with members list ```labelling.py```
